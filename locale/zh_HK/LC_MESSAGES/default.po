@@ -1,0 +1,23 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bookshare\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-20 18:49+0800\n"
+"PO-Revision-Date: 2011-09-20 18:56+0800\n"
+"Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
+"Language-Team: sys2do\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: HONG KONG\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: d:/dev\n"
+
+#: d:/dev/aa.php:18
+#: d:/dev/index.php:12
+msgid "hello"
+msgstr "干干"
+

@@ -9,8 +9,8 @@
 	//get promote book
 	//$db->get_results('select * from books b,categories c,book_category bc where b.active=0 and c.active=0 and b.id=bc.book_id and c.id=bc.category_id and c.name=\'PROMOTED\'');
 	
-	echo _('hello');
-	
-	$smarty->assign('content','world');
+	putenv('LANG=zh_HK');
+	bindtextdomain("default", "locale");
+	textdomain("default");
 	$smarty->display('index.html');
 ?>
