@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	{config_load file="site.conf"}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>{$title|default:$smarty.config.website_title}</title>
+	<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/grid960.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/type.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/tables.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/forms.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/helpers.css" />
+	<link rel="stylesheet" type="text/css" href="../public/css/ux.css" />	
+	
+	<link rel="stylesheet" type="text/css" href="../public/css/screen.css" />
+
+	{block name="extCSS"}{/block}
+
+	<script type="text/javascript" src="../public/js/jquery-1.6.4.min.js"></script>
+	<script language="JavaScript" type="text/javascript">
+    //<![CDATA[
+          
+    //]]>
+   </script>
+
+   {block name="extJavaScript"}{/block}
+</head>
+<body>
+
+<div id="container" class="outter round_5">
+	{block name="header"}
+		<div class="full height_100" id="header">
+			<div>Banner here</div>
+			{block name="header_menu"}
+				<ul>
+					<li><a href="/index.php">Home</a></li>
+					<li><a href="/"></a></li>
+					<li><a href="/"></a></li>
+					<li><a href="/"></a></li>
+				</ul>
+			{/block}
+		</div>
+	{/block}
+    
+   	{block name="main"}
+    	<div class="full height_500" id="main">
+    		{block name="main_content"}{/block}
+    	</div>
+    {/block}
+    
+    {block name="footer"}
+		<div class="full" id="footer"><p class="obj_right">Powered By <a href="http://www.sys2do.com">www.sys2do.com</a></p></div>
+	{/block}
+</div>  
+ 
+</body>
+</html>

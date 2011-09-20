@@ -1,0 +1,36 @@
+body{
+	background-color: #369;
+	
+}
+
+.outter{
+	background-color: #fff;
+	overflow : auto;
+	margin-top : 7px !important;
+	margin-bottom : 0px !important;
+}
+
+
+.height_700{
+	height: auto !important;
+	min-height : 700px;
+	height:700px;
+}
+
+.height_600{
+	height: auto !important;
+	min-height : 600px;
+	height:600px;
+}
+
+.height_500{
+	height: auto !important;
+	min-height : 500px;
+	height:500px;
+}
+
+.height_400{
+	height: auto !important;
+	min-height : 400px;
+	height:400px;
+}
