@@ -169,8 +169,10 @@
 				
 				// Take note of column info	
 				$i=0;
+				
 				while ($i < @sqlite_num_fields($this->result))
 				{
+					$this->col_info[$i] = (object) Array();  //update by CL.Lam
 					$this->col_info[$i]->name       = sqlite_field_name ( $this->result, $i);
 					$this->col_info[$i]->type       = null;
 					$this->col_info[$i]->max_length = null;

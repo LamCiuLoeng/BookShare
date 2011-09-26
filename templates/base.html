@@ -31,11 +31,18 @@
 	{block name="header"}
 		<div class="full height_100" id="header">
 			<div>Banner here</div>
+			{if in_array('logged',$smarty.session)}
+				welcome,{$smarty.session.user->email},<a href="logout_handler.php">Logout</a>
+			{else}
+				<a href="login.php">Login</a>,<a href="register.php">Register</a>
+			{/if}
+			
+			
 			{block name="header_menu"}
 				<ul>
 					<li><a href="/index.php">Home</a></li>
-					<li><a href="/"></a></li>
-					<li><a href="/"></a></li>
+					<li><a href="/upload.php">Upload</a></li>
+					<li><a href="/admin">admin</a></li>
 					<li><a href="/"></a></li>
 				</ul>
 			{/block}

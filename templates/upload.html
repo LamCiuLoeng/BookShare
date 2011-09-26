@@ -1,0 +1,16 @@
+{extends file='base.html'}
+
+
+{block name="main_content"}
+	<form action="save_upload.php" method="post" enctype="application/x-www-form-urlencoded">
+		<div>
+			<p><label>Book Name</label><input type="text" name="name"/></p>
+			<p><label>Description</label><textarea name="desc"></textarea></p>
+			<p><label>Short Description</label><textarea name="short_desc"></textarea></p>
+			<p><input type="file" name=""/></p>
+		</div>
+		<div>
+			<button type="submit">Upload</button>
+		</div>
+	</form>
+{/block}

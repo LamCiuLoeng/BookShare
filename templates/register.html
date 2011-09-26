@@ -1,0 +1,15 @@
+{extends file='base.html'}
+
+
+{block name="main_content"}
+	<form action="save_register.php" method="post">
+		<div>
+			<p><label>E-mail</label><input type="text" name="email"/></p>
+			<p><label>Password</label><input type="password" name="password"/></p>
+			<p><label>Confirmed Password</label><input type="password" name="repassword"/></p>
+		</div>
+		<div>
+			<button type="submit">Submit</button>
+		</div>
+	</form>
+{/block}

@@ -1,0 +1,14 @@
+{extends file='base.html'}
+
+
+{block name="main_content"}
+	<form action="login_handler.php" method="post">
+		<div>
+			<p><label>E-mail</label><input name="email" type="text"/></p>
+			<p><label>Password</label><input type="password" name="password"/></p>
+		</div>
+		<div>
+			<button type="submit">Loggin</button>
+		</div>
+	</form>
+{/block}
