@@ -1,6 +1,6 @@
 <?php 
 
-	require_once 'model/__init__.php';
+	require_once('util.php');
 	require_once 'libs/Smarty.class.php';
 	$smarty = new Smarty();
 	

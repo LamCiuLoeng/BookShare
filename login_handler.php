@@ -1,6 +1,5 @@
 <?php
 	require_once('util.php');
-	require_once('model/__init__.php');
 
 	$email = $_REQUEST['email'];
 	$password = $_REQUEST['password'];

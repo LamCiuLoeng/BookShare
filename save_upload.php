@@ -1,5 +1,5 @@
 <?php 
-	require_once 'model/__init__.php';
+	require_once('util.php');
 	$db = getDBInstance();
 	
 	$name = $_REQUEST['name'];

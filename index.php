@@ -1,8 +1,7 @@
 <?php 
 	session_start();
-	require_once 'model/__init__.php';
-	require_once 'libs/Smarty.class.php';
-	$smarty = new Smarty();
+	require_once('util.php');
+	$smarty = getSmartyInstance();
 	
 	$db = getDBInstance();
 	//echo var_dump($db);

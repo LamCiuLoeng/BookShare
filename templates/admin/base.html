@@ -1,9 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	{config_load file="site.conf"}
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>{$title|default:$smarty.config.website_title}</title>
+	<title>Administrator</title>
 	<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/grid960.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/type.css" />
@@ -30,7 +29,7 @@
 <div id="container" class="outter round_5">
 	{block name="header"}
 		<div class="full height_100" id="header">
-			<div>Banner here</div>
+			<div>Administrator</div>
 			{if in_array('logged',$smarty.session)}
 				welcome,{$smarty.session.user->email},<a href="logout_handler.php">Logout</a>
 			{else}
@@ -41,8 +40,6 @@
 			{block name="header_menu"}
 				<ul>
 					<li><a href="/index.php">Home</a></li>
-					<li><a href="/upload.php">Upload</a></li>
-					<li><a href="/admin">admin</a></li>
 				</ul>
 			{/block}
 		</div>

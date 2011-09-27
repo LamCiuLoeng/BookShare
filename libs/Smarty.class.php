@@ -1127,6 +1127,7 @@ class Smarty extends Smarty_Internal_TemplateBase {
         $compile_id = $compile_id === null ? $this->compile_id : $compile_id;
         // already in template cache?
         $_templateId =  sha1($template . $cache_id . $compile_id);
+        
         if ($do_clone) {
             if (isset($this->template_objects[$_templateId])) {
                 // return cached template object
@@ -1151,6 +1152,7 @@ class Smarty extends Smarty_Internal_TemplateBase {
                 $tpl->tpl_vars[$_key] = new Smarty_variable($_val);
             }
         }
+       
         return $tpl;
     }
 

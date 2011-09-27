@@ -1,0 +1,23 @@
+{extends file='admin/base.html'}
+
+
+{block name="main_content"}
+	<table>
+		<thead>
+			<tr>
+				<td>Book Name</td>
+				<td>Desc</td>
+				<td>Short Desc</td>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach from=$result item=b}
+				<tr>
+					<td>{$b->name}</td>
+					<td>{$b->desc}</td>
+					<td>{$b->short_desc}</td>
+				</tr>
+			{/foreach}
+		</tbody>
+	</table>
+{/block}
