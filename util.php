@@ -21,4 +21,62 @@
 		return $smarty;		
 	}
 	
+	function message($msg){
+		//session_start();
+		$_SESSION['message'] = $msg;
+	}
+	
+//	function fireMessage(){		
+//		if(isset($_SESSION['message'])){
+//			$msg = $_SESSION['message'];
+//			unset($_SESSION['message']);
+//			return $msg;
+//		}else{
+//			return NULL;
+//		}
+//	}
+	
+	function nowStr() {
+		return date('YmdGis');
+	}
+	
+	function randomStr($min,$max) {
+		return (string) rand($min,$max);
+	}
+	
+	function handleUpload($field_name) {
+		try{
+			$pi = pathinfo($_FILES[$field_name]['name']);
+			$url = '/public/upload/'.nowStr().randomStr(1,1000).'.'.$pi['extension'];	
+			$fn = $_SERVER["DOCUMENT_ROOT"].$url;
+			if (move_uploaded_file($_FILES[$field_name]['tmp_name'], $fn)) {
+			    return $url;
+			} 
+		}catch (Exception $e){
+			throw $e;
+			return NULL;
+		}
+		return NULL;
+	}
+	
+	function download($file_name,$file_path){
+		try {
+			$file_full_path = $_SERVER["DOCUMENT_ROOT"].$file_path;		
+			$path_parts = pathinfo($file_full_path);
+			$name = $path_parts["basename"];		
+			Header("Content-type: application/octet-stream");
+			Header("Accept-Ranges: bytes");
+			Header("Accept-Length: ".filesize($file_full_path));
+			Header("Content-Disposition: attachment; filename=".$name);
+			$file = fopen($file_full_path,"r");
+			echo fread($file,filesize($file_full_path));
+			fclose($file);
+		} catch (Exception $e) {
+			throw $e;
+		}		
+	}
+	
+	function test(){
+		return 'kkk';
+	}
 ?>

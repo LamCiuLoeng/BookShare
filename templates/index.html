@@ -13,9 +13,9 @@
 		<tbody>
 			{foreach from=$result item=b}
 				<tr>
-					<td>{$b->name}</td>
-					<td>{$b->desc}</td>
-					<td>{$b->short_desc}</td>
+					<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
+					<td>{$b->description}</td>
+					<td>{$b->short_description}</td>
 				</tr>
 			{/foreach}
 		</tbody>
