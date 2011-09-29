@@ -2,22 +2,43 @@
 
 
 {block name="main_content"}
-	<table>
-		<thead>
-			<tr>
-				<td>Book Name</td>
-				<td>Desc</td>
-				<td>Short Desc</td>
-			</tr>
-		</thead>
-		<tbody>
-			{foreach from=$result item=b}
-				<tr>
-					<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
-					<td>{$b->description}</td>
-					<td>{$b->short_description}</td>
-				</tr>
-			{/foreach}
-		</tbody>
-	</table>
+	<div>New Books<span style="float:right"><a href="books.php">More</a></span></div>
+	<div class="books_div">
+		{foreach from=$new_books item=b}
+			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
+				<div class="preface_div">
+					<a href="book.php?id={$b->id}"><img width="120" height="120" src="../public/images/no_cover.jpg"/></a>
+				</div>
+				<a href="book.php?id={$b->id}">{$b->name}</a>
+			</div>
+		{/foreach}
+	</div>
+	<br class="clear"/>
+	
+	
+	<div>Top Art Books<span style="float:right"><a href="books.php?name=act">More</a></span></div>
+	<div class="books_div">
+		{foreach from=$art_books item=b}
+			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
+				<div class="preface_div">
+					<a href="book.php?id={$b->id}"><img width="120" height="120" src="../public/images/no_cover.jpg"/></a>
+				</div>
+				<a href="book.php?id={$b->id}">{$b->name}</a>
+			</div>
+		{/foreach}
+	</div>
+	<br class="clear"/>
+	
+	
+	<div>Top Comic Books<span style="float:right"><a href="books.php?name=comic">More</a></span></div>
+	<div class="books_div">
+		{foreach from=$comic_books item=b}
+			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
+				<div class="preface_div">
+					<a href="book.php?id={$b->id}"><img width="120" height="120" src="../public/images/no_cover.jpg"/></a>
+				</div>
+				<a href="book.php?id={$b->id}">{$b->name}</a>
+			</div>
+		{/foreach}
+	</div>
 {/block}

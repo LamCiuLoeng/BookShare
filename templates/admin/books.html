@@ -1,0 +1,27 @@
+{extends file='admin/base.html'}
+
+
+{block name="main_content"}
+	<table>
+		<thead>
+			<tr>
+				<td>Book Name</td>
+				<td>Upload Time</td>
+				<td>Points</td>
+				<td>Upload By</td>
+				<td>Download Times</td>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach from=$books item=b}
+				<tr>
+					<td>{$b->name}</td>
+					<td>{$b->create_time}</td>
+					<td>{$b->points}</td>
+					<td>{$b->email}</td>
+					<td>{$b->download_times}</td>
+				</tr>
+			{/foreach}
+		</tbody>
+	</table>
+{/block}

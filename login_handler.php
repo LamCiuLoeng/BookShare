@@ -12,6 +12,8 @@
 		session_start();
 		$_SESSION['user'] = (object) Array();
 		$_SESSION['user']->email = $user[0]->email;
+		$_SESSION['user']->id = $user[0]->id;
+		$_SESSION['user']->points = $user[0]->points;
 		$_SESSION['logged'] = true;
 		redirect('index.php');
 	}else {

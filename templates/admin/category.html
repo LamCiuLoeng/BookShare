@@ -1,0 +1,23 @@
+{extends file='admin/base.html'}
+
+
+{block name="main_content"}
+	<table>
+		<thead>
+			<tr>
+				<td>Category Name</td>
+				<td>Create Time</td>
+				<td>Create By</td>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach from=$categories item=b}
+				<tr>
+					<td>{$b->name}</td>
+					<td>{$b->create_time}</td>
+					<td>{$b->create_by}</td>
+				</tr>
+			{/foreach}
+		</tbody>
+	</table>
+{/block}

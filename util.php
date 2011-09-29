@@ -44,6 +44,13 @@
 		return (string) rand($min,$max);
 	}
 	
+	function isUserLogin() {
+		if(isset($_SESSION['logged']) && $_SESSION['logged']){
+			return true;
+		}
+		return false;
+	}
+	
 	function handleUpload($field_name) {
 		try{
 			$pi = pathinfo($_FILES[$field_name]['name']);
@@ -76,7 +83,6 @@
 		}		
 	}
 	
-	function test(){
-		return 'kkk';
-	}
+	
+		
 ?>

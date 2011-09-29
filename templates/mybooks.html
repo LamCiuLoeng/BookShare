@@ -1,0 +1,42 @@
+{extends file='base.html'}
+
+
+{block name="main_content"}
+
+	<table cellpadding="0" cellspacing="0" border="1">
+		<caption>My Upload Books</caption>
+		<thead>
+			<tr>
+				<td>Book Name</td>
+				<td>Upload Time</td>
+				<td>Points</td>
+			</tr>
+		</thead>
+		{foreach from=$upload_books item=b}
+			<tr>
+				<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
+				<td>{$b->create_time}</td>
+				<td>{$b->points}</td>
+			</tr>
+		{/foreach}
+	</table>
+	
+
+	<table cellpadding="0" cellspacing="0" border="1">
+		<caption>My Downoad Book</caption>
+		<thead>
+			<tr>
+				<td>Book Name</td>
+				<td>Download Time</td>
+				<td>Points</td>
+			</tr>
+		</thead>
+		{foreach from=$download_books item=b}
+			<tr>
+				<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
+				<td>{$b->create_time}</td>
+				<td>{$b->points}</td>
+			</tr>
+		{/foreach}
+	</table>
+{/block}

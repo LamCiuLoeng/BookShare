@@ -10,17 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="../public/css/tables.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/forms.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/helpers.css" />
-	<link rel="stylesheet" type="text/css" href="../public/css/ux.css" />	
+	<link rel="stylesheet" type="text/css" href="../public/css/ux.css" />
+	
+	<link rel="stylesheet" href="../public/css/menu_style.css" type="text/css" />
 	
 	<link rel="stylesheet" type="text/css" href="../public/css/screen.css" />
 
 	{block name="extCSS"}{/block}
 
 	<script type="text/javascript" src="../public/js/jquery-1.6.4.min.js"></script>
-	
-	
-
-	
 	
 	<script language="JavaScript" type="text/javascript">
     //<![CDATA[
@@ -38,21 +36,20 @@
 	{block name="header"}
 		<div class="full height_100" id="header">
 			<div>Banner here</div>
+			<p class="obj_right">
 			{if in_array('logged',$smarty.session)}
 				welcome,{$smarty.session.user->email},<a href="logout_handler.php">Logout</a>
 			{else}
 				<a href="login.php">Login</a>,<a href="register.php">Register</a>
 			{/if}
-			
-			
-			{block name="header_menu"}
-				<ul>
-					<li><a href="/index.php">Home</a></li>
-					<li><a href="/upload.php">Upload</a></li>
-					<li><a href="/admin">admin</a></li>
-				</ul>
-			{/block}
+			</p>
 		</div>
+			
+		<div class="full menu_bar">
+			{block name="header_menu"}			
+				{insert name='menu_bar'}				
+			{/block}
+		</div>			
 	{/block}
     
    	{block name="main"}

@@ -1,0 +1,23 @@
+{extends file='admin/base.html'}
+
+
+{block name="main_content"}
+	<table>
+		<thead>
+			<tr>
+				<td>User E-mail</td>
+				<td>Register Time</td>
+				<td>Points</td>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach from=$users item=b}
+				<tr>
+					<td>{$b->email}</td>
+					<td>{$b->create_time}</td>
+					<td>{$b->points}</td>
+				</tr>
+			{/foreach}
+		</tbody>
+	</table>
+{/block}

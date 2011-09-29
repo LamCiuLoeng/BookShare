@@ -1,6 +1,5 @@
 body{
-	background-color: #369;
-	
+	background-color: #369;	
 }
 
 .outter{
@@ -33,4 +32,36 @@ body{
 	height: auto !important;
 	min-height : 400px;
 	height:400px;
+}
+
+
+.menu_bar{
+	margin: 0px;
+	width: 960px;
+}
+
+
+.books_div{
+	
+}
+
+.book_div{
+	float : left;
+	width: 150px;
+	height : 150px;
+	margin-right: 8px;
+	margin-bottom:8px;
+}
+
+.last_book_div{
+	float : left;
+	width: 150px;
+	height : 150px;
+	margin-right: 0px;
+	margin-bottom: 8px;
+}
+
+.preface_div{
+	text-align: center;
+	margin: 5px;
 }
