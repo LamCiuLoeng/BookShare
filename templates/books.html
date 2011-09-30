@@ -3,8 +3,8 @@
 
 {block name="main_content"}
 	<div>Books</div>
-	<div class="books_div">
-		{foreach from=$books item=b}
+	<div class="books_div height_400">
+		{foreach from=$books['data'] item=b}
 			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
 				<div class="preface_div">
 					<a href="book.php?id={$b->id}"><img width="120" height="120" src="../public/images/no_cover.jpg"/></a>
@@ -15,5 +15,5 @@
 	</div>
 	<br class="clear"/>
 	
-
+	{insert name="populate_paginate" result=$books pageurl='books.php?a=1'}
 {/block}

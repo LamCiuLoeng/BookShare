@@ -2,7 +2,7 @@
 
 
 {block name="main_content"}
-	<div>New Books<span style="float:right"><a href="books.php">More</a></span></div>
+	<div><span class="obj_left">New Books</span><span class="obj_right"><a href="books.php">More</a></span><br class="clear"/></div>
 	<div class="books_div">
 		{foreach from=$new_books item=b}
 			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
@@ -15,8 +15,7 @@
 	</div>
 	<br class="clear"/>
 	
-	
-	<div>Top Art Books<span style="float:right"><a href="books.php?name=act">More</a></span></div>
+	<div><span class="obj_left">Top Art Books</span><span class="obj_right"><a href="books.php?name=act">More</a></span><br class="clear"/></div>
 	<div class="books_div">
 		{foreach from=$art_books item=b}
 			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
@@ -29,8 +28,7 @@
 	</div>
 	<br class="clear"/>
 	
-	
-	<div>Top Comic Books<span style="float:right"><a href="books.php?name=comic">More</a></span></div>
+	<div><span class="obj_left">Top Comic Books</span><span class="obj_right"><a href="books.php?name=comic">More</a></span><br class="clear"/></div>
 	<div class="books_div">
 		{foreach from=$comic_books item=b}
 			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">

@@ -84,5 +84,28 @@
 	}
 	
 	
+	function paginate($db,$sql,$current,$perpage=16){
+		$result = array();
+		$db->get_results($sql);	
+		$total = $db->num_rows ;
+		$start = $perpage * ($current-1);
+		$selectsql = "select temp.* from ($sql) temp limit $start,$perpage";	
+		
+		$result['data'] = $db->get_results($selectsql);
+
+		$result['totalpages'] = ceil( $total/$perpage );
+		$result['current'] = $current;
+		$result['total'] = $total;
+				
+		if($current>1){
+			$result['pre'] = $current - 1;
+		}
+		
+		if($current<$result['totalpages']){
+			$result['next'] = $current + 1;
+		}
+		return $result;
+		
+	}
 		
 ?>

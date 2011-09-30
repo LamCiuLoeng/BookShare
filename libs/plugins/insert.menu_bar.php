@@ -1,4 +1,6 @@
 <?php
+require_once 'util.php';
+
 function smarty_insert_menu_bar($params,&$smarty){
 	$current =  $smarty->getTemplateVars('menu_current');
 	if(!$current){
@@ -9,6 +11,10 @@ function smarty_insert_menu_bar($params,&$smarty){
 		$tab_home = '<li><a href="index.php"  title="Home" class="current">Home</a></li>';
 	}else{
 		$tab_home = '<li><a href="index.php"  title="Home">Home</a></li>';
+	}
+	
+	if(!isUserLogin()){
+		return '<ul id="menu">'.$tab_home.'</ul>';
 	}
 	
 	if($current=='TAB_UPLOAD'){

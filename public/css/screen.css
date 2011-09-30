@@ -65,3 +65,14 @@ body{
 	text-align: center;
 	margin: 5px;
 }
+
+
+/* revise the 960 css */
+table.plain caption{
+	caption-side : top;
+	text-align : left;
+	text-transform: inherit;
+}
+table.plain thead{
+	text-transform: inherit;
+}
