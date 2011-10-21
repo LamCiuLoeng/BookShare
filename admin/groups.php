@@ -1,32 +1,33 @@
 <?php
 	require_once '../util.php';
 	require_once '../db_helper.php';
-
+	
 	$action = isset($_REQUEST['q']) ? $_REQUEST['q'] : 'LIST';
 	
 	if($action=='LIST'){
-		$result = getAllRows(getDBInstance(), 'categories', 'name');
+		$groups = getAllRows(getDBInstance(), 'groups', 'name');
 		$smarty = getSmartyInstance();
-		$smarty->assign('categories',$result);
-		$smarty->assign('menu_current','TAB_CATEGORY');
-		$smarty->display('admin/category.html');
-	}elseif ($action == 'EDIT') {
+		$smarty->assign('groups',$groups);
+		$smarty->assign('menu_current','TAB_GROUP');
+		$smarty->display('admin/groups.html');
+	}elseif ($action == 'EDIT'){
 		$smarty = getSmartyInstance();
 		if(isset($_REQUEST['id'])){
 			$id = $_REQUEST['id'];
 			$db = getDBInstance();
-			$c = getRowById($db, 'categories', $id);
-			$smarty->assign('category',$c);
+			$g = getRowById($db, 'groups', $id);
+			$smarty->assign('group',$g);
 			$smarty->assign('type','UPDATE');
 		}else{
 			$smarty->assign('type','NEW');
 		}
-		$smarty->assign('menu_current','TAB_CATEGORY');
-		$smarty->display('admin/category_edit.html');
+		$smarty->assign('menu_current','TAB_GROUP');
+		$smarty->display('admin/groups_edit.html');		
+		
 	}elseif ($action == 'SAVE') {
 		if(!isset($_REQUEST['type'])){
 			message('No such action type!');
-			redirect('category.php');
+			redirect('groups.php');
 		}
 		
 		$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : null;
@@ -35,20 +36,21 @@
 		$desc = $_REQUEST['desc'];
 		$create_by = $_SESSION['user']->id;
 		$db = getDBInstance();
-		saveCateogry($db,$type, $id, $name, $desc, $create_by);
+		saveGroup($db,$type, $id, $name, $desc, $create_by);
 		$db->debug();
 		$msg = $_REQUEST['type'] == 'UPDATE' ? 'Update the record successfully!' : 'Add the record successfully!';
 		message($msg);
-		redirect('category.php');
+		redirect('groups.php');
 	}elseif ($action == 'DELETE') {
 		$id = $_REQUEST['id'];
 		$db = getDBInstance();
-		saveCateogry($db, 'DELETE', $id, null , null, null);
+		saveGroup($db, 'DELETE', $id, null , null, null);
 		echo json_encode(array('flag' => 0));
-		
 	}else{
 		message('No such action!');
-		redirect('category.php');
+		redirect('groups.php');
 	}
-
+	
+	
 ?>
+	

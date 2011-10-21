@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../public/css/helpers.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/ux.css" />	
 	
+	<link rel="stylesheet" href="../public/css/menu_style.css" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/screen.css" />
 
 	{block name="extCSS"}{/block}
@@ -18,7 +19,9 @@
 	<script type="text/javascript" src="../public/js/jquery-1.6.4.min.js"></script>
 	<script language="JavaScript" type="text/javascript">
     //<![CDATA[
-          
+          $(document).ready(function(){
+        	  {insert name='fire_message'}
+          });
     //]]>
    </script>
 
@@ -30,24 +33,22 @@
 	{block name="header"}
 		<div class="full height_100" id="header">
 			<div>Administrator</div>
+			<p class="obj_right">
 			{if in_array('logged',$smarty.session)}
-				welcome,{$smarty.session.user->email},<a href="logout_handler.php">Logout</a>
+				welcome,{$smarty.session.user->email},<a href="../logout_handler.php">Logout</a>
 			{else}
-				<a href="login.php">Login</a>,<a href="register.php">Register</a>
+				<a href="../login.php">Login</a>,<a href="register.php">Register</a>
 			{/if}
+			</p>
+		</div>
 			
-			
-			{block name="header_menu"}
-				<ul>
-					<li><a href="/index.php">Home</a></li>
-					<li><a href="users.php">User Management</a></li>
-					<li><a href="groups.php">Group Management</a></li>
-					<li><a href="books.php">Books Management</a></li>
-					<li><a href="category.php">Category Management</a></li>
-					<li><a href="system.php">System Management</a></li>
-				</ul>
+
+		<div class="full menu_bar">
+			{block name="header_menu"}			
+				{insert name='admin_menu_bar'}				
 			{/block}
 		</div>
+			
 	{/block}
     
    	{block name="main"}

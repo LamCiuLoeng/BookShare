@@ -2,24 +2,19 @@
 
 
 {block name="main_content"}
+<a href="groups.php?q=EDIT">Add New Category</a>
 	<table class="plain" width="100%">
 		<thead>
 			<tr>
-				<td>Book Name</td>
-				<td>Upload Time</td>
-				<td>Points</td>
-				<td>Upload By</td>
-				<td>Download Times</td>
+				<td>Group Name</td>
+				<td>Create Time</td>
 			</tr>
 		</thead>
 		<tbody>
-			{foreach from=$books item=b}
+			{foreach from=$groups item=b}
 				<tr>
 					<td>{$b->name}</td>
 					<td>{$b->create_time}</td>
-					<td>{$b->points}</td>
-					<td>{$b->email}</td>
-					<td>{$b->download_times}</td>
 				</tr>
 			{/foreach}
 		</tbody>

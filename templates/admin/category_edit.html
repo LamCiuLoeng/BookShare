@@ -1,0 +1,18 @@
+{extends file='admin/base.html'}
+
+{block name="main_content"}
+	<form action="category.php" method="post">
+		<input type="hidden" name="q" value="SAVE"/>
+		{if $type == 'UPDATE'}
+			<input type="hidden" name="type" value="UPDATE"/>
+			<input type="hidden" name="id" value="{$category->id}"/>
+			<p>Name <input type="text" name="name" value="{$category->name}"/></p>
+			<p>Description <textarea name="desc">{$category->description}</textarea></p>
+		{else}
+			<input type="hidden" name="type" value="NEW"/>
+			<p>Name <input type="text" name="name" value=""/></p>
+			<p>Description <textarea name="desc"></textarea></p>
+		{/if}
+		<input type="submit" value="Save"/>
+	</form>
+{/block}

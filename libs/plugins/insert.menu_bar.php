@@ -35,9 +35,9 @@ function smarty_insert_menu_bar($params,&$smarty){
 		$tab_profile = '<li><a href="profile.php"  title="Profile">Profile</a></li>';
 	}
 	
-	$tab_admin = '<li><a href="admin/index.php"  title="Admin">Admin</a></li>';
+	$tab_admin = '<li><a href="admin/users.php"  title="Admin">Admin</a></li>';
 
-	$html = '<ul id="menu">'.$tab_home.$tab_upload.$tab_mybook.$tab_profile.'</ul>';
+	$html = '<ul id="menu">'.$tab_home.$tab_upload.$tab_mybook.$tab_profile.$tab_admin.'</ul>';
 	return $html;
 }
 ?>
