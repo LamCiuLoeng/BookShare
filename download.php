@@ -6,14 +6,14 @@
 		redirect('login.php');
 	}
 	
-	
 	$db = getDBInstance();
 	$id = $_REQUEST['id'];
 		
 	$download_book = getDownloadBook($db, $_SESSION['user']->id, $id);
-	$book = $db->get_row("select * from books where id=$id");
+	$book = getRowById($db, 'books', $id);
+	
 	if($download_book){
-		download($book->name,$book->path);
+		download($book->name,$book->file_path);
 	}else{
 		$new_point = $_SESSION['user']->points - $book->points;	
 		if($new_point < 0){
@@ -29,6 +29,6 @@
 			
 		//update the book's download times
 		addDownloadTime($db,$id);
-		download($book->name,$book->path);
+		download($book->name,$book->file_path);
 	}
 ?>

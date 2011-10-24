@@ -1,27 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<table>
-		<tr>
-			<td>E-mail</td>
-			<td>Password</td>
-		</tr>
-		
-		{foreach $result as $user}
-			<tr>
-				<td>{$user->id}</td>
-				<td>{$user->email}</td>
-			</tr>
-		{/foreach}
-	</table>
+{extends file='base.html'}
+
+
+{block name="extCSS"}
+<link rel="stylesheet" href="../public/css/jquery/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="../public/css/jquery/jquery.fileupload-ui.css" type="text/css" />
+{/block}
+
+{block name="extJavaScript"}
+<script type="text/javascript" src="../public/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../public/js/jquery.iframe-transport.js"></script>
+	<script type="text/javascript" src="../public/js/jquery.fileupload.js"></script>
+	<script language="JavaScript" type="text/javascript">
+	 //<![CDATA[
+	       $(document).ready(function(){
+	            
+		       $('#fileupload').fileupload({
+			        dataType: 'json',
+			        url: 'ajax_upload.php',
+			        done: function (e, data) {
+			            $.each(data.result, function (index, file) {
+			                $('<p/>').text(file.name).appendTo('#files_list');
+			            });
+			        }
+			    });
+	       });
+	 //]]>
+	</script>
+
+{/block}
+
+{block name="main_content"}
+	<input id="fileupload" type="file" name="files[]" multiple>
 	
-	{config_load file="site.conf"}
-	<p>{$smarty.config.db_path}</p>
-	<p>{$smarty.config.website_title}</p>
-	<p>{$smarty.get.page}</p>
-</body>
-</html>
+	
+	
+	<div id="files_list"></div>
+{/block}

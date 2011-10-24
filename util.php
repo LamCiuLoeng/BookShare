@@ -3,10 +3,10 @@
 	//include_once 'model/ez_sql_sqlite.php';
 	include_once 'model/ez_sql_mysql.php';
 	include_once 'libs/Smarty.class.php';
+	require_once 'config.php';
 	
 	function getDBInstance() {
-		//return new ezSQL_sqlite('./','test.db');
-		return new ezSQL_mysql('root','admin','bookshare','192.168.21.157');
+		return new ezSQL_mysql(DB_USER,DB_PASSWORD,DB_NAME,DB_IP);
 	}
 
 	function redirect($url) {
@@ -35,6 +35,14 @@
 //			return NULL;
 //		}
 //	}
+	
+	function get_val($name) {
+		if (!get_magic_quotes_gpc()) {
+		    return addslashes($_REQUEST[$name]);
+		}
+		return $_REQUEST[$name];
+	}
+	
 	
 	function nowStr() {
 		return date('YmdGis');
@@ -66,16 +74,15 @@
 		return NULL;
 	}
 	
-	function download($file_name,$file_path){
+	function download($file_name,$file_full_path){
 		try {
-			$file_full_path = $_SERVER["DOCUMENT_ROOT"].$file_path;		
 			$path_parts = pathinfo($file_full_path);
 			$name = $path_parts["basename"];		
 			Header("Content-type: application/octet-stream");
 			Header("Accept-Ranges: bytes");
 			Header("Accept-Length: ".filesize($file_full_path));
 			Header("Content-Disposition: attachment; filename=".$name);
-			$file = fopen($file_full_path,"r");
+			$file = fopen($file_full_path,"rb");
 			echo fread($file,filesize($file_full_path));
 			fclose($file);
 		} catch (Exception $e) {

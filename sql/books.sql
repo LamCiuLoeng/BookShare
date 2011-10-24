@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2011-10-14 18:35:34
+Date: 2011-10-24 18:36:50
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,11 +26,16 @@ CREATE TABLE `books` (
   `points` float default '0',
   `create_time` timestamp NULL default CURRENT_TIMESTAMP,
   `create_by` int(10) unsigned default NULL,
-  `url_path` varchar(45) default NULL,
-  `path` varchar(45) default NULL,
   `rating` int(11) default '0',
   `active` int(11) default '0',
   `download_times` int(11) default '0',
+  `pages` varchar(500) default NULL,
+  `xml` varchar(10000) default NULL,
+  `file_path` varchar(500) default NULL,
+  `file_url` varchar(500) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of books
+-- ----------------------------

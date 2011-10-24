@@ -55,10 +55,10 @@
 		return $db->get_results($sql);
 	}
 	
-	function addBook($db,$name,$desc,$short_desc,$path,$point,$create_by){
-		$sql = "insert into books(name,description,short_description,path,points,create_by) values ('$name','$desc','$short_desc','$path',$point,$create_by);";
+	function addBook($db,$name,$desc,$short_desc,$point,$create_by,$pages){
+		$sql = "insert into books(name,description,short_description,points,create_by,pages) values ('$name','$desc','$short_desc',$point,$create_by,'$pages');";
 		$db->query($sql);
-		return $db->rows_affected;
+		return $db->insert_id;
 	}
 	
 	
@@ -111,4 +111,15 @@
 		$db->query($sql);
 		return $db->rows_affected;
 	}
+	
+	
+	//**********************************
+	//function related to the attachments
+	//**********************************
+	function saveAttachment($db,$file_name,$file_path,$file_url,$create_by,$file_size,$file_type) {
+		$sql = "insert into attachments(name,file_path,file_url,create_by,file_size,file_type) values('$file_name','$file_path','$file_url',$create_by,$file_size,'$file_type');";
+		$db->query($sql);
+		return $db->insert_id;
+	}
+	
 ?>
