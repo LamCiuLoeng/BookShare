@@ -1,24 +1,71 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: bookshare\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 18:29+0800\n"
-"PO-Revision-Date: 2011-09-20 18:37+0800\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
-"Language-Team: sys2do\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _\n"
-"X-Poedit-Basepath: .\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Poedit-Language: Chinese\n"
-"X-Poedit-Country: CHINA\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: D:\\dev\n"
 
-#: D:\dev/aa.php:7
-#: D:\dev/index.php:12
-msgid "hello"
-msgstr "你好"
+#: D:\dev/libs/plugins/insert.menu_bar.php:11
+#: D:\dev/libs/plugins/insert.menu_bar.php:13
+msgid "Home"
+msgstr "主页"
 
+#: D:\dev/libs/plugins/insert.menu_bar.php:21
+#: D:\dev/libs/plugins/insert.menu_bar.php:23
+msgid "Upload"
+msgstr "上传"
+
+#: D:\dev/libs/plugins/insert.menu_bar.php:27
+#: D:\dev/libs/plugins/insert.menu_bar.php:29
+msgid "My Books"
+msgstr "我的书"
+
+#: D:\dev/libs/plugins/insert.menu_bar.php:33
+#: D:\dev/libs/plugins/insert.menu_bar.php:35
+msgid "Profile"
+msgstr "账户"
+
+#: D:\dev/libs/plugins/insert.menu_bar.php:38
+msgid "Admin"
+msgstr "管理"
+
+#: D:\dev/templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:76
+#: D:\dev/templates_c/05b143acdc50731311b48d7001385e844715105d.file.login.html.php:76
+#: D:\dev/templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:76
+#: D:\dev/templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:106
+#: D:\dev/templates_c/75d3fb466d0d335b2c2e31d21b78c92dfda5e791.file.upload.html.php:106
+msgid "welcome"
+msgstr "欢迎"
+
+#: D:\dev/templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:78
+#: D:\dev/templates_c/05b143acdc50731311b48d7001385e844715105d.file.login.html.php:78
+#: D:\dev/templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:78
+#: D:\dev/templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:108
+#: D:\dev/templates_c/75d3fb466d0d335b2c2e31d21b78c92dfda5e791.file.upload.html.php:108
+msgid "Logout"
+msgstr "注销"
+
+#: D:\dev/templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:81
+#: D:\dev/templates_c/05b143acdc50731311b48d7001385e844715105d.file.login.html.php:81
+#: D:\dev/templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:81
+#: D:\dev/templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:111
+#: D:\dev/templates_c/75d3fb466d0d335b2c2e31d21b78c92dfda5e791.file.upload.html.php:111
+msgid "Register"
+msgstr "注册"
+
+#: D:\dev/templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:82
+msgid "Login"
+msgstr "登录"
+
+#: D:\dev/templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:107
+#: D:\dev/templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:130
+#: D:\dev/templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:153
+msgid "More"
+msgstr "更多"
+
+#~ msgid "hello"
+#~ msgstr "ä½ å¥½"

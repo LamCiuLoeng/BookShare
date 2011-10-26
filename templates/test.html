@@ -1,38 +1,10 @@
 {extends file='base.html'}
 
-
-{block name="extCSS"}
-<link rel="stylesheet" href="../public/css/jquery/jquery-ui.css" type="text/css" />
-<link rel="stylesheet" href="../public/css/jquery/jquery.fileupload-ui.css" type="text/css" />
-{/block}
-
 {block name="extJavaScript"}
-<script type="text/javascript" src="../public/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="../public/js/jquery.iframe-transport.js"></script>
-	<script type="text/javascript" src="../public/js/jquery.fileupload.js"></script>
-	<script language="JavaScript" type="text/javascript">
-	 //<![CDATA[
-	       $(document).ready(function(){
-	            
-		       $('#fileupload').fileupload({
-			        dataType: 'json',
-			        url: 'ajax_upload.php',
-			        done: function (e, data) {
-			            $.each(data.result, function (index, file) {
-			                $('<p/>').text(file.name).appendTo('#files_list');
-			            });
-			        }
-			    });
-	       });
-	 //]]>
-	</script>
 
 {/block}
+
 
 {block name="main_content"}
-	<input id="fileupload" type="file" name="files[]" multiple>
-	
-	
-	
-	<div id="files_list"></div>
+	{t}Home{/t}
 {/block}

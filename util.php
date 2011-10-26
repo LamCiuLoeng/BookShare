@@ -4,6 +4,8 @@
 	include_once 'model/ez_sql_mysql.php';
 	include_once 'libs/Smarty.class.php';
 	require_once 'config.php';
+	require_once 'smarty-gettext.php';
+	
 	
 	function getDBInstance() {
 		return new ezSQL_mysql(DB_USER,DB_PASSWORD,DB_NAME,DB_IP);
@@ -17,7 +19,10 @@
 		$smarty =  new Smarty();
 		$smarty->template_dir = dirname(__FILE__).'/templates';
 		$smarty->compile_dir = dirname(__FILE__).'/templates_c';
+		$smarty->registerPlugin('block','t', 'smarty_translate');
 //		$smarty->debugging = true;
+		$smarty->assign('SUPPORTED_LANG',get_supported_lang());
+		set_locale_env();
 		return $smarty;		
 	}
 	
@@ -26,15 +31,45 @@
 		$_SESSION['message'] = $msg;
 	}
 	
-//	function fireMessage(){		
-//		if(isset($_SESSION['message'])){
-//			$msg = $_SESSION['message'];
-//			unset($_SESSION['message']);
-//			return $msg;
-//		}else{
-//			return NULL;
-//		}
-//	}
+	function get_locale(){
+		//if login
+		if(isset($_SESSION['locale'])){
+			return $_SESSION['locale'];
+		}else{
+			$langs =  explode(",", $_SERVER["HTTP_ACCEPT_LANGUAGE"]);
+			switch ($langs[0]) {
+				case 'zh-cn':
+					$lang = 'zh_CN';
+					break;
+				case 'zh-hk':
+					$lang = 'zh_HK';
+					break;
+				default:
+					$lang = 'en';
+			}
+			$_SESSION['locale'] = $lang;
+			return $lang;
+		}
+	}
+	
+	function set_locale_env(){
+		$locale = get_locale();
+		putenv("LANG=$locale");
+		setlocale(LC_ALL, $locale);
+		bindtextdomain("default", "locale");
+		textdomain("default");
+	}
+	
+	function get_supported_lang(){
+		return array('en'=>'English','zh_CN'=>'简体中文','zh_HK'=>'繁體中文');
+	}
+
+	function update_user_locale($id,$locale){
+		$db = getDBInstance();
+		$sql = "update users set locale='$locale' where id=$id";
+		$db->query($sql);
+		return $db->rows_affected;
+	}
 	
 	function get_val($name) {
 		if (!get_magic_quotes_gpc()) {

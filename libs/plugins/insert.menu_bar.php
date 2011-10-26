@@ -8,9 +8,9 @@ function smarty_insert_menu_bar($params,&$smarty){
 	}
 	
 	if($current=='TAB_HOME'){
-		$tab_home = '<li><a href="index.php"  title="Home" class="current">Home</a></li>';
+		$tab_home = '<li><a href="index.php"  title="Home" class="current">'._('Home').'</a></li>';
 	}else{
-		$tab_home = '<li><a href="index.php"  title="Home">Home</a></li>';
+		$tab_home = '<li><a href="index.php"  title="Home">'._('Home').'</a></li>';
 	}
 	
 	if(!isUserLogin()){
@@ -18,24 +18,24 @@ function smarty_insert_menu_bar($params,&$smarty){
 	}
 	
 	if($current=='TAB_UPLOAD'){
-		$tab_upload = '<li><a href="upload.php"  title="Upload" class="current">Upload</a></li>';
+		$tab_upload = '<li><a href="upload.php"  title="Upload" class="current">'._('Upload').'</a></li>';
 	}else{
-		$tab_upload = '<li><a href="upload.php"  title="Upload">Upload</a></li>';
+		$tab_upload = '<li><a href="upload.php"  title="Upload">'._('Upload').'</a></li>';
 	}
 	
 	if($current=='TAB_MYBOOKS'){
-		$tab_mybook = '<li><a href="mybooks.php"  title="My Books" class="current">My Books</a></li>';
+		$tab_mybook = '<li><a href="mybooks.php"  title="My Books" class="current">'._('My Books').'</a></li>';
 	}else{
-		$tab_mybook = '<li><a href="mybooks.php"  title="My Books">My Books</a></li>';
+		$tab_mybook = '<li><a href="mybooks.php"  title="My Books">'._('My Books').'</a></li>';
 	}
 	
 	if($current=='TAB_PROFILE'){
-		$tab_profile = '<li><a href="profile.php"  title="Profile" class="current">Profile</a></li>';
+		$tab_profile = '<li><a href="profile.php"  title="Profile" class="current">'._('Profile').'</a></li>';
 	}else{
-		$tab_profile = '<li><a href="profile.php"  title="Profile">Profile</a></li>';
+		$tab_profile = '<li><a href="profile.php"  title="Profile">'._('Profile').'</a></li>';
 	}
 	
-	$tab_admin = '<li><a href="admin/users.php"  title="Admin">Admin</a></li>';
+	$tab_admin = '<li><a href="admin/users.php"  title="Admin">'._('Admin').'</a></li>';
 
 	$html = '<ul id="menu">'.$tab_home.$tab_upload.$tab_mybook.$tab_profile.$tab_admin.'</ul>';
 	return $html;

@@ -4,12 +4,12 @@
 {block name="main_content"}
 	<div class="bottom_margin_20">
 	<table class="plain" width="100%">
-		<caption>My Upload Books</caption>
+		<caption>{_('My Upload Books')}</caption>
 		<thead>
 			<tr>
-				<td>Book Name</td>
-				<td>Upload Time</td>
-				<td>Points</td>
+				<td>{_('Book Name')}</td>
+				<td>{_('Upload Time')}</td>
+				<td>{_('Points')}</td>
 			</tr>
 		</thead>
 		{foreach from=$upload_books item=b}
@@ -24,12 +24,12 @@
 	
 	<div class="bottom_margin_20">
 	<table class="plain" width="100%">
-		<caption>My Downoad Book</caption>
+		<caption>{_('My Downoad Book')}</caption>
 		<thead>
 			<tr>
-				<td>Book Name</td>
-				<td>Download Time</td>
-				<td>Points</td>
+				<td>{_('Book Name')}</td>
+				<td>{_('Download Time(s)')}</td>
+				<td>{_('Points')}</td>
 			</tr>
 		</thead>
 		{foreach from=$download_books item=b}

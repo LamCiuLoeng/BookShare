@@ -7,4 +7,6 @@
 	define('WEBSITE_URL', 'http://localhost');
 	define('UPLOAD_PREFIX','/public/upload/');
 	define('UPLOAD_PATH', $_SERVER["DOCUMENT_ROOT"]);
+	define('DEFAULT_LOCALE', 'zh_CN');
+//	define('SUPPORTED_LANG', array('en'=>'English','zh_CN'=>'简体中文','zh_HK'=>'繁體中文'));
 ?>

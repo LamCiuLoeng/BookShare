@@ -9,40 +9,28 @@
 <script type="text/javascript" src="../public/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../public/js/jquery.iframe-transport.js"></script>
 <script type="text/javascript" src="../public/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="../public/js/custom/book.js"></script>
 
-<script language="JavaScript" type="text/javascript">
- //<![CDATA[
-       $(document).ready(function(){
-    	   $('#fileupload').fileupload({
-		        dataType: 'json',
-		        url: 'ajax_upload.php',
-		        done: function (e, data) {
-		            $.each(data.result, function (index, file) {               
-		                var html = '<tr><td>'+file.file_name+'</td><td>'+file.file_size+'</td><td>Delete</td></tr>' ;
-		                $(html).appendTo('#files_list');
-		                var ids = $("#file_ids").val();
-		                ids = ids ? ids + '|' + file.id : file.id;
-		                $("#file_ids").val(ids);
-		            });
-		        }
-		    });
-       });
- //]]>
-</script>
 {/block}
 		                
 
 {block name="main_content"}
-	<form action="save_upload.php" method="post" enctype="multipart/form-data">
+	<form action="save_book.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="file_ids" id="file_ids" value=""/>
+		<input type="hidden" name="action" value="NEW"/>
 		<div>
-			<p><label>Book Name</label><input type="text" name="name"/></p>
-			<p><label>Description</label><textarea name="description"></textarea></p>
-			<p><label>Short Description</label><textarea name="short_description"></textarea></p>
+			<p><label>{_('Book Name')}</label><input type="text" name="name"/></p>
+			<p><label>{_('Category')}</label>
+				{foreach from=$categories item=c}
+					<input type="checkbox" value="{$c->id}" name="categories[]" id="cid_{$c->id}"/> <label for="cid_{$c->id}">{$c->name}</label>
+				{/foreach}
+			</p>
+			<p><label>{_('Description')}</label><textarea name="description"></textarea></p>
+			<p><label>{_('Short Description')}</label><textarea name="short_description"></textarea></p>
 			<p><label>Files</label><input id="fileupload" type="file" name="files[]" multiple></p>
 		</div>
 		<div>
-			<button type="submit">Submit</button>
+			<button type="submit">{_('Submit')}</button>
 		</div>
 		
 		<table id="files_list">

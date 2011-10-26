@@ -25,6 +25,15 @@
           $(document).ready(function(){
         	  {insert name='fire_message'}
           });
+          
+          function switch_language(obj){
+        	  var lang = $(obj).val();
+        	  $.getJSON('switch_lang.php',{ 'lang' : lang ,'t' : Date.parse(new Date()) },function(r){
+        		  if(r.flag==0){
+	        		  location.reload(true);
+        		  }        			  
+        	  })
+          }
     //]]>
    </script>
 
@@ -37,13 +46,23 @@
 		<div class="full height_100" id="header">
 			<div>Banner here</div>
 			<p class="obj_right">
-			{if in_array('logged',$smarty.session)}
-				welcome,{$smarty.session.user->email},<a href="logout_handler.php">Logout</a>
+			{if isset($smarty.session['logged']) && $smarty.session['logged'] }
+				{_('welcome')},{$smarty.session.user->email},<a href="logout_handler.php">{_('Logout')}</a>
 			{else}
-				<a href="login.php">Login</a>,<a href="register.php">Register</a>
+				<a href="login.php">{_('Login')}</a>,<a href="register.php">{_('Register')}</a>
 			{/if}
+			<select onchange="switch_language(this)">
+				{foreach from=$SUPPORTED_LANG item=lang key=code}
+					{if isset($smarty.session['locale']) && $smarty.session['locale']==$code }
+						<option value="{$code}" selected="selected">{$lang}</option>
+					{else}
+						<option value="{$code}">{$lang}</option>
+					{/if}
+				{/foreach}
+			</select>
 			</p>
 		</div>
+
 			
 		<div class="full menu_bar">
 			{block name="header_menu"}			

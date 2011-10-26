@@ -1,5 +1,5 @@
 <?php
-	require_once('libs/Smarty.class.php');
-	$smarty = new Smarty();
+	require_once 'util.php';
+	$smarty = getSmartyInstance();
 	$smarty->display('register.html');
 ?>

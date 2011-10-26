@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookshare\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 18:49+0800\n"
-"PO-Revision-Date: 2011-09-20 18:56+0800\n"
+"POT-Creation-Date: 2011-10-26 19:16+0800\n"
+"PO-Revision-Date: 2011-10-26 19:17+0800\n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
 "Language-Team: sys2do\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,125 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: d:/dev\n"
 
-#: d:/dev/aa.php:18
-#: d:/dev/index.php:12
-msgid "hello"
-msgstr "干干"
+#: d:/dev/default.c:1
+msgid "welcome"
+msgstr "歡迎"
 
+#: d:/dev/default.c:2
+msgid "Logout"
+msgstr "註銷"
+
+#: d:/dev/default.c:3
+msgid "Login"
+msgstr "登錄"
+
+#: d:/dev/default.c:4
+msgid "Register"
+msgstr "註冊"
+
+#: d:/dev/default.c:5
+#: d:/dev/default.c:16
+#: d:/dev/default.c:20
+#: d:/dev/default.c:23
+msgid "Book Name"
+msgstr "書名"
+
+#: d:/dev/default.c:6
+#: d:/dev/default.c:24
+msgid "Description"
+msgstr "介紹"
+
+#: d:/dev/default.c:7
+#: d:/dev/default.c:25
+msgid "Short Description"
+msgstr "簡短介紹"
+
+#: d:/dev/default.c:8
+msgid "Download"
+msgstr "下載"
+
+#: d:/dev/default.c:9
+#: d:/dev/default.c:10
+#: d:/dev/default.c:11
+msgid "More"
+msgstr "更多"
+
+#: d:/dev/default.c:12
+msgid "E-mail"
+msgstr "E-mail"
+
+#: d:/dev/default.c:13
+msgid "Password"
+msgstr "密碼"
+
+#: d:/dev/default.c:14
+#: d:/dev/default.c:26
+msgid "Submit"
+msgstr "提交"
+
+#: d:/dev/default.c:15
+#, fuzzy
+msgid "My Upload Books"
+msgstr "我的書"
+
+#: d:/dev/default.c:17
+#, fuzzy
+msgid "Upload Time"
+msgstr "上載"
+
+#: d:/dev/default.c:18
+#: d:/dev/default.c:22
+msgid "Points"
+msgstr "積分"
+
+#: d:/dev/default.c:19
+#, fuzzy
+msgid "My Downoad Book"
+msgstr "我的書"
+
+#: d:/dev/default.c:21
+msgid "Download Time(s)"
+msgstr "下載次數"
+
+#: d:/dev/save_book.php:7
+msgid "No such action!"
+msgstr "沒有這個操作！"
+
+#: d:/dev/save_book.php:26
+msgid "No such record!"
+msgstr "沒有這條記錄！"
+
+#: d:/dev/test.php:16
+msgid "Home"
+msgstr "首頁"
+
+#: d:/dev/libs/plugins/insert.menu_bar.php:21
+#: d:/dev/libs/plugins/insert.menu_bar.php:23
+msgid "Upload"
+msgstr "上載"
+
+#: d:/dev/libs/plugins/insert.menu_bar.php:27
+#: d:/dev/libs/plugins/insert.menu_bar.php:29
+msgid "My Books"
+msgstr "我的書"
+
+#: d:/dev/libs/plugins/insert.menu_bar.php:33
+#: d:/dev/libs/plugins/insert.menu_bar.php:35
+msgid "Profile"
+msgstr "帳戶"
+
+#: d:/dev/libs/plugins/insert.menu_bar.php:38
+msgid "Admin"
+msgstr "管理"
+
+#: d:/dev/templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:132
+#, fuzzy
+msgid "Point"
+msgstr "登錄"
+
+#: d:/dev/templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:146
+msgid "Category"
+msgstr "類別"
+
+#~ msgid "hello"
+#~ msgstr "干干"

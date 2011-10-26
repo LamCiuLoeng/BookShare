@@ -7,10 +7,29 @@
 		return $db->get_row($sql);
 	}
 	
-	function getAllRows($db,$table,$order_by){
+	
+	
+	function getAllRows($db,$table,$order_by='name'){
 		$sql = "select * from $table where active=0 order by $order_by;";
 		return $db->get_results($sql);
 	}
+	
+	function getRowsByCondition($db,$table,$where){	
+		$sql = "select * from $table ";
+		
+		$w = "";
+		for($i=0;$i<count($where);$i++){
+			$w .= $where[$i].' ';
+		}
+		
+		if($w){
+			return $db->get_results($sql.' where '.$w);
+		}else{
+			return $db->get_results($sql);
+		}
+		
+	}
+	
 
 	//**********************************
 	//function related to the user
