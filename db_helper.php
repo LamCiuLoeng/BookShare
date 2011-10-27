@@ -86,11 +86,11 @@
 	//function related to the category
 	//**********************************
 
-	function saveCateogry($db,$type,$id,$name,$desc,$create_by){
+	function saveCateogry($db,$type,$id,$name,$desc,$create_by,$promote){
 		if($type=='UPDATE'){
-			$sql = "update categories set name='$name',description='$desc' where id=$id;";
+			$sql = "update categories set name='$name',description='$desc',promote=$promote where id=$id;";
 		}elseif($type == 'NEW'){
-			$sql = "insert into categories (name,description,create_by) values ('$name','$desc',$create_by);";
+			$sql = "insert into categories (name,description,create_by,promote) values ('$name','$desc',$create_by,$promote);";
 		}elseif ($type == 'DELETE') {
 			$sql = "update categories set active = 1 where id=$id;";
 		}

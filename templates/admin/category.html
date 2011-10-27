@@ -22,13 +22,14 @@
 {/block}
 
 {block name="main_content"}
-	<a href="category.php?q=EDIT">Add New Category</a>
+	<a href="category.php?q=EDIT">{_('Add New Category')}</a>
 	<table class="plain" width="100%">
 		<thead>
 			<tr>
-				<td>Category Name</td>
-				<td>Create Time</td>
-				<td>Create By</td>
+				<td>{_('Category Name')}</td>
+				<td>{_('Create Time')}</td>
+				<td>{_('Create User')}</td>
+				<td>{_('Show On Homepage')}</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,6 +38,13 @@
 					<td>{$b->name} (<a href="category.php?q=EDIT&id={$b->id}">Edit</a>,<a href="#" onclick="delete_record({$b->id})">Delete</a>)</td>
 					<td>{$b->create_time}</td>
 					<td>{$b->create_by}</td>
+					<td>
+					   {if $b->promote == 0}
+					       NO
+					   {else}
+					       YES
+					   {/if}
+					</td>
 				</tr>
 			{/foreach}
 		</tbody>

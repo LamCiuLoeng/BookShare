@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2011-10-24 18:37:00
+Date: 2011-10-27 16:28:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -22,8 +22,9 @@ CREATE TABLE `book_category` (
   `book_id` int(10) unsigned NOT NULL auto_increment,
   `category_id` int(10) unsigned NOT NULL,
   PRIMARY KEY  (`book_id`,`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of book_category
 -- ----------------------------
+

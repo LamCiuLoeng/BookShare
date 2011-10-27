@@ -6,13 +6,13 @@
 		{if $type == 'UPDATE'}
 			<input type="hidden" name="type" value="UPDATE"/>
 			<input type="hidden" name="id" value="{$category->id}"/>
-			<p>Name <input type="text" name="name" value="{$category->name}"/></p>
-			<p>Description <textarea name="desc">{$category->description}</textarea></p>
+			<p>{_('Group Name')} <input type="text" name="name" value="{$category->name}"/></p>
+			<p>{_('Description')} <textarea name="desc">{$category->description}</textarea></p>
 		{else}
 			<input type="hidden" name="type" value="NEW"/>
-			<p>Name <input type="text" name="name" value=""/></p>
-			<p>Description <textarea name="desc"></textarea></p>
+			<p>{_('Group Name')} <input type="text" name="name" value=""/></p>
+			<p>{_('Description')} <textarea name="desc"></textarea></p>
 		{/if}
-		<input type="submit" value="Save"/>
+		<input type="submit" value="{_('Submit')}"/>
 	</form>
 {/block}

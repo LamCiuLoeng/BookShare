@@ -1,15 +1,35 @@
 {extends file='base.html'}
 
+{block name="extJavaScript"}
+<script language="JavaScript" type="text/javascript">
+ //<![CDATA[
+       function submit_form(){
+    	   var msg = Array();
+    	   if(!$("#email").val()){ msg.push("{_('The E-mail could not be blank!')}"); }
+    	   if(!$("#password").val()){ msg.push("{_('The password could not be blank!')}"); }
+    	   if(!$("#repassowrd").val()){ msg.push("{_('The confirmed password could not be blank!')}"); }
+    	   if( $("#password").val()!=$("#repassowrd").val() ){ msg.push("{_('The password and the confirmed password are not the same!')}"); }
+    	   
+    	   if(msg.length>0){
+    		   alert(msg.join("\n"));
+    	   }else{
+    		   $("form").submit();
+    	   }
+       }
+ //]]>
+</script>
+
+{/block}
 
 {block name="main_content"}
 	<form action="save_register.php" method="post">
 		<div>
-			<p><label>E-mail</label><input type="text" name="email"/></p>
-			<p><label>Password</label><input type="password" name="password"/></p>
-			<p><label>Confirmed Password</label><input type="password" name="repassword"/></p>
+			<p><label>{_('E-mail')}</label><input type="text" name="email" id="email"/></p>
+			<p><label>{_('Password')}</label><input type="password" name="password" id="password"/></p>
+			<p><label>{_('Confirmed Password')}</label><input type="password" name="repassword" id="repassword"/></p>
 		</div>
 		<div>
-			<button type="submit">Submit</button>
+			<input type="button" value="{_('Submit')}" onclick="submit_form()"/>
 		</div>
 	</form>
 {/block}

@@ -1,15 +1,36 @@
 {extends file='admin/base.html'}
 
+{block name="extCSS"}
+
+{/block}
+
+{block name="extJavaScript"}
+
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[          
+      function change_promote(id,v){
+    	  $.getJSON('switch_promoted.php',{ 'id' : id, 'v' : v },function(r){
+    		  if(r.flag==0){
+    			  alert("{_('Update the record successfully!')}");
+    			  window.location.reload(true);
+    		  }
+    	  });
+      }
+//]]>
+</script>
+{/block}
+
 
 {block name="main_content"}
 	<table class="plain" width="100%">
 		<thead>
 			<tr>
-				<td>Book Name</td>
-				<td>Upload Time</td>
-				<td>Points</td>
-				<td>Upload By</td>
-				<td>Download Times</td>
+				<td>{_('Book Name')}</td>
+				<td width="150">{_('Upload Time')}</td>
+				<td width="50">{_('Points')}</td>
+				<td width="150">{_('Upload User')}</td>
+				<td width="80">{_('Download Time(s)')}</td>
+				<td width="50">{_('Promoted')}</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -20,6 +41,13 @@
 					<td>{$b->points}</td>
 					<td>{$b->email}</td>
 					<td>{$b->download_times}</td>
+					<td>				
+					   {if $b->promote!=0}
+					       <input type="button" value="YES" onclick="change_promote({$b->id},0)"/>
+					   {else}
+					       <input type="button" value="NO" onclick="change_promote({$b->id},1)"/>
+					   {/if}
+					</td>
 				</tr>
 			{/foreach}
 		</tbody>

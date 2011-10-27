@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<title>Administrator</title>
+	<title>{_('Administrator Platform')}</title>
 	<link rel="stylesheet" type="text/css" href="../public/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/grid960.css" />
 	<link rel="stylesheet" type="text/css" href="../public/css/type.css" />
@@ -22,6 +22,15 @@
           $(document).ready(function(){
         	  {insert name='fire_message'}
           });
+          
+          function switch_language(obj){
+              var lang = $(obj).val();
+              $.getJSON('../switch_lang.php',{ 'lang' : lang ,'t' : Date.parse(new Date()) },function(r){
+                  if(r.flag==0){
+                      location.reload(true);
+                  }                   
+              })
+          }
     //]]>
    </script>
 
@@ -32,13 +41,23 @@
 <div id="container" class="outter round_5">
 	{block name="header"}
 		<div class="full height_100" id="header">
-			<div>Administrator</div>
+			<div>{_('Administrator')}</div>
 			<p class="obj_right">
 			{if in_array('logged',$smarty.session)}
-				welcome,{$smarty.session.user->email},<a href="../logout_handler.php">Logout</a>
+				{_('welcome')} , {$smarty.session.user->email} | <a href="../logout_handler.php">{_('Logout')}</a>
 			{else}
 				<a href="../login.php">Login</a>,<a href="register.php">Register</a>
 			{/if}
+			|
+			<select onchange="switch_language(this)">
+                {foreach from=$SUPPORTED_LANG item=lang key=code}
+                    {if isset($smarty.session['locale']) && $smarty.session['locale']==$code }
+                        <option value="{$code}" selected="selected">{$lang}</option>
+                    {else}
+                        <option value="{$code}">{$lang}</option>
+                    {/if}
+                {/foreach}
+            </select>
 			</p>
 		</div>
 			

@@ -19,6 +19,7 @@
 		$_SESSION['logged'] = true;
 		redirect('index.php');
 	}else {
+		message(_('E-mail or password is wrong!'));
 		redirect('login.php');
 	}
 ?>

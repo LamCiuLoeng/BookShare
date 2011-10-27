@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2011-10-24 18:36:50
+Date: 2011-10-27 16:28:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -33,8 +33,11 @@ CREATE TABLE `books` (
   `xml` varchar(10000) default NULL,
   `file_path` varchar(500) default NULL,
   `file_url` varchar(500) default NULL,
+  `promote` int(11) default '0',
+  `cover` varchar(500) default NULL,
+  `thumb` varchar(500) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of books

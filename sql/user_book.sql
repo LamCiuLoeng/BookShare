@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2011-10-24 18:37:26
+Date: 2011-10-27 16:27:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,3 +30,4 @@ CREATE TABLE `user_book` (
 -- ----------------------------
 -- Records of user_book
 -- ----------------------------
+

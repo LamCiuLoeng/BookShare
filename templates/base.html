@@ -47,10 +47,11 @@
 			<div>Banner here</div>
 			<p class="obj_right">
 			{if isset($smarty.session['logged']) && $smarty.session['logged'] }
-				{_('welcome')},{$smarty.session.user->email},<a href="logout_handler.php">{_('Logout')}</a>
+				{_('welcome')} , {$smarty.session.user->email} | <a href="logout_handler.php">{_('Logout')}</a>
 			{else}
-				<a href="login.php">{_('Login')}</a>,<a href="register.php">{_('Register')}</a>
+				<a href="login.php">{_('Login')}</a> | <a href="register.php">{_('Register')}</a>
 			{/if}
+			|
 			<select onchange="switch_language(this)">
 				{foreach from=$SUPPORTED_LANG item=lang key=code}
 					{if isset($smarty.session['locale']) && $smarty.session['locale']==$code }

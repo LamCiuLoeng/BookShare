@@ -46,12 +46,20 @@
 		
 	
 	//create the XML content for ipad etc
+	$cover = '';
 	$xml = "<?xml version='1.0' encoding='utf-8'?><book id='$id' name='$name'>";
 	$file_paths = array();
 	foreach (explode('|', $attachment_ids) as $v) {	
 		if(isset($_SESSION['attachments']) && isset($_SESSION['attachments'][$v])){
 			$xml .= "<page url='".WEBSITE_URL.$_SESSION['attachments'][$v]['url']."' version='1'></page>";
 			$file_paths[] = $_SESSION['attachments'][$v]['path'];
+			if(!$cover){
+				$p = pathinfo($_SESSION['attachments'][$v]['url']);
+				$ext = strtolower ($p['extension']);
+				if($ext =='jpg' || $ext =='jpeg' || $ext =='gif' || $ext == 'png'){
+					$cover = $_SESSION['attachments'][$v]['url'];
+				}
+			}
 		}
 	}
 	$xml .= "</book>";
@@ -59,6 +67,7 @@
 	if (!get_magic_quotes_gpc()) {
 	    $xml = addslashes($xml);
 	}
+	
 	
 	//zip the pages into one zip
 	if(count($file_paths) > 0){
@@ -78,7 +87,7 @@
 		$zip_file_url = null;
 	}
 		
-	$sql = "update books set xml='$xml',file_path='$zip_file_path',file_url='$zip_file_url' where id=$id;";
+	$sql = "update books set xml='$xml',file_path='$zip_file_path',file_url='$zip_file_url',cover='$cover' where id=$id;";
 	$db->query($sql);
 	$db->debug();
 		

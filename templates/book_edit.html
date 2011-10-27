@@ -20,8 +20,8 @@
 		<input type="hidden" name="file_ids" id="file_ids" value="{$book->pages}"/>
 		<input type="hidden" name="action" value="EDIT"/>
 		<div>
-			<p><label>{t}Book Name{/t}</label><input type="text" name="name" value="{$book->name}"/></p>
-			<p><label>{t}Category{/t}</label>
+			<p><label>{_('Book Name')}</label><input type="text" name="name" value="{$book->name}"/></p>
+			<p><label>{_('Category')}</label>
 				{foreach from=$all_categories item=c}
 				    {if array_search($c->id,$select_ids) > -1}
 				        <input type="checkbox" value="{$c->id}" name="categories[]" checked="checked" id="cid_{$c->id}"/>
@@ -31,21 +31,21 @@
 					<label for="cid_{$c->id}">{$c->name}</label>
 				{/foreach}
 			</p>
-			<p><label>{t}Description{/t}</label><textarea name="description">{$book->description}</textarea></p>
-			<p><label>{t}Short Description{/t}</label><textarea name="short_description">{$book->short_description}</textarea></p>
-			<p><label>Files</label><input id="fileupload" type="file" name="files[]" multiple></p>
+			<p><label>{_('Description')}</label><textarea name="description">{$book->description}</textarea></p>
+			<p><label>{_('Short Description')}</label><textarea name="short_description">{$book->short_description}</textarea></p>
+			<p><label>{_('File')}</label><input id="fileupload" type="file" name="files[]" multiple></p>
 		</div>
 		<div>
-			<button type="submit">{t}Submit{/t}</button>
+			<input type="submit" value="{_('Submit')}"/>
 		</div>
 		
 		<table id="files_list">
 			<tr>
-				<td width="200">File Name</td><td width="200">File Size</td><td width="100">Delete</td>
+				<td width="200">{_('Book Name')}</td><td width="200">{_('File Size')}</td><td width="100">{_('Delete')}</td>
 			</tr>
 			{foreach from=$attachments item=a}
 				<tr class="fs" fid="{$a->id}">
-					<td>{$a->name}</td><td>{$a->file_size}</td><td><a href="#" onclick="deleteAttachment({$a->id})">delete</a></td>
+					<td>{$a->name}</td><td>{$a->file_size} kb</td><td><a href="#" onclick="deleteAttachment({$a->id})">delete</a></td>
 				</tr>
 			{/foreach}
 		</table>

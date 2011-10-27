@@ -1,6 +1,7 @@
 <?php
 	require_once '../util.php';
 	require_once '../db_helper.php';
+	require_once 'check_login.php';
 
 	$action = isset($_REQUEST['q']) ? $_REQUEST['q'] : 'LIST';
 	
@@ -33,9 +34,10 @@
 		$type = $_REQUEST['type'];
 		$name = $_REQUEST['name'];		
 		$desc = $_REQUEST['desc'];
+		$promote = intval($_REQUEST['promote']);
 		$create_by = $_SESSION['user']->id;
 		$db = getDBInstance();
-		saveCateogry($db,$type, $id, $name, $desc, $create_by);
+		saveCateogry($db,$type, $id, $name, $desc, $create_by,$promote);
 		$db->debug();
 		$msg = $_REQUEST['type'] == 'UPDATE' ? 'Update the record successfully!' : 'Add the record successfully!';
 		message($msg);

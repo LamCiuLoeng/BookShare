@@ -2,43 +2,62 @@
 
 
 {block name="main_content"}
-	<div class="bottom_margin_20">
-	<table class="plain" width="100%">
-		<caption>{_('My Upload Books')}</caption>
-		<thead>
-			<tr>
-				<td>{_('Book Name')}</td>
-				<td>{_('Upload Time')}</td>
-				<td>{_('Points')}</td>
-			</tr>
-		</thead>
-		{foreach from=$upload_books item=b}
-			<tr>
-				<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
-				<td>{$b->create_time}</td>
-				<td>{$b->points}</td>
-			</tr>
-		{/foreach}
-	</table>
-	</div>
+
+	    {if $type=='UPLOAD'}
+            <p><h3 class="obj_left">{_('My Upload Books')}</h3>
+               <h5 class="obj_right"><a href="mybooks.php?type=DOWNLOAD">{_('My Downoad Book')}</a><h5>
+            </p>
+            <br class="clear"/>
+
+			<div class="bottom_margin_20">
+			<table class="plain" width="100%">
+				<thead>
+					<tr>
+						<td width="200">{_('Book Name')}</td>
+						<td>{_('Short Description')}</td>
+						<td width="150">{_('Upload Time')}</td>
+						<td width="80">{_('Download Time(s)')}</td>
+						<td width="50">{_('Points')}</td>
+					</tr>
+				</thead>
+				{foreach from=$books item=b}
+					<tr>
+						<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
+						<td>{$b->short_description}</td>
+						<td>{$b->create_time}</td>
+						<td>{$b->download_times}</td>
+						<td>{$b->points}</td>
+					</tr>
+				{/foreach}
+			</table>
+			</div>
 	
-	<div class="bottom_margin_20">
-	<table class="plain" width="100%">
-		<caption>{_('My Downoad Book')}</caption>
-		<thead>
-			<tr>
-				<td>{_('Book Name')}</td>
-				<td>{_('Download Time(s)')}</td>
-				<td>{_('Points')}</td>
-			</tr>
-		</thead>
-		{foreach from=$download_books item=b}
-			<tr>
-				<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
-				<td>{$b->create_time}</td>
-				<td>{$b->points}</td>
-			</tr>
-		{/foreach}
-	</table>
-	</div>
+	    {else}       
+		    <p><h3 class="obj_left">{_('My Downoad Book')}</h3>
+		       <h5 class="obj_right"><a href="mybooks.php?type=UPLOAD">{_('My Upload Books')}</a></h5>
+		    </p>
+		    
+		    <br class="clear"/>
+		    
+			<div class="bottom_margin_20">
+			<table class="plain" width="100%">
+				<thead>
+					<tr>
+						<td width="200">{_('Book Name')}</td>
+						<td>{_('Short Description')}</td>
+						<td width="50">{_('Points')}</td>
+					</tr>
+				</thead>
+				{foreach from=$books item=b}
+					<tr>
+						<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
+						<td>{$b->short_description}</td>
+						<td>{$b->points}</td>
+					</tr>
+				{/foreach}
+			</table>
+			</div>
+
+	    {/if}
+	
 {/block}

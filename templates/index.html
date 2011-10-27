@@ -2,43 +2,50 @@
 
 
 {block name="main_content"}
-		
-
-	<div><span class="obj_left">New Books</span><span class="obj_right"><a href="books.php">{_('More')}</a></span><br class="clear"/></div>
+	{if $promote_book}
+	   <div>
+	       <h4>{_('Promoted Book')} : {$promote_book->name}</h4>
+	       <div>
+	           <div class="obj_left" style="width : 250px; height: 250px; text-align: center;">
+			       <a href="book.php?id={$promote_book->id}"><img width="200" height="200" src="{$promote_book->cover|default:'../public/images/no_cover.jpg'}"/></a>
+	           </div>
+		       <div class="obj_left" style="width:600px">
+		          <p>{$promote_book->description}</p>
+		          <p>{$promote_book->short_description}</p>
+		       </div>
+	       </div>
+	   </div>
+	{/if}
+	
+	
+	
+    <hr />
+	<div><h4 class="obj_left">{_('New Upload Books')}</h4><span class="obj_right"><a href="books.php">{_('More')}</a></span><br class="clear"/></div>
 	<div class="books_div">
 		{foreach from=$new_books item=b}
 			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
 				<div class="preface_div">
-					<a href="book.php?id={$b->id}"><img width="120" height="120" src="../public/images/no_cover.jpg"/></a>
+					<a href="book.php?id={$b->id}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 				</div>
 				<a href="book.php?id={$b->id}">{$b->name}</a>
 			</div>
 		{/foreach}
+					   
 	</div>
-	<br class="clear"/>
 	
-	<div><span class="obj_left">Top Art Books</span><span class="obj_right"><a href="books.php?name=act">{_('More')}</a></span><br class="clear"/></div>
-	<div class="books_div">
-		{foreach from=$art_books item=b}
-			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
-				<div class="preface_div">
-					<a href="book.php?id={$b->id}"><img width="120" height="120" src="../public/images/no_cover.jpg"/></a>
-				</div>
-				<a href="book.php?id={$b->id}">{$b->name}</a>
-			</div>
-		{/foreach}
-	</div>
-	<br class="clear"/>
 	
-	<div><span class="obj_left">Top Comic Books</span><span class="obj_right"><a href="books.php?name=comic">{_('More')}</a></span><br class="clear"/></div>
-	<div class="books_div">
-		{foreach from=$comic_books item=b}
-			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
-				<div class="preface_div">
-					<a href="book.php?id={$b->id}"><img width="120" height="120" src="../public/images/no_cover.jpg"/></a>
-				</div>
-				<a href="book.php?id={$b->id}">{$b->name}</a>
-			</div>
-		{/foreach}
-	</div>
+	{foreach from=$promote_categories item=c key=c_id}
+	   <hr />
+	   <div><h4 class="obj_left">{$c['name']}</h4><span class="obj_right"><a href="books.php?id={$c_id}">{_('More')}</a></span><br class="clear"/></div>
+	    <div class="books_div">
+	        {foreach from=$c['data'] item=b}
+	            <div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
+	                <div class="preface_div">
+	                    <a href="book.php?id={$b->id}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
+	                </div>
+	                <a href="book.php?id={$b->id}">{$b->name}</a>
+	            </div>
+	        {/foreach}
+	    </div>
+	{/foreach}
 {/block}

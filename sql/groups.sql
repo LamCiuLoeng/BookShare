@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2011-10-24 15:41:45
+Date: 2011-10-27 16:27:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,4 +25,9 @@ CREATE TABLE `groups` (
   `description` varchar(200) default NULL,
   `create_time` timestamp NOT NULL default CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of groups
+-- ----------------------------
+

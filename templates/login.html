@@ -4,11 +4,11 @@
 {block name="main_content"}
 	<form action="login_handler.php" method="post">
 		<div>
-			<p><label>{t}E-mail{/t}</label><input name="email" type="text"/></p>
-			<p><label>{t}Password{/t}</label><input type="password" name="password"/></p>
+			<p><label>{_('E-mail')}</label><input name="email" type="text"/></p>
+			<p><label>{_('Password')}</label><input type="password" name="password"/></p>
 		</div>
 		<div>
-			<button type="submit">{t}Submit{/t}</button>
+			<input type="submit" value="{_('Submit')}"/>
 		</div>
 	</form>
 {/block}

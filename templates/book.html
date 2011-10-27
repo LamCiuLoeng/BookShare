@@ -2,19 +2,30 @@
 
 
 {block name="main_content"}
-	<p>{t}Book Name{/t} : {$book->name}</p>
+    <h3>{$book->name}</h3>
+    
+    <div class="obj_left" style="width : 250px; height: 250px; text-align: center;">
+        <img width="200" height="200" src="{$book->cover|default:'../public/images/no_cover.jpg'}"/>
+    </div>
+    
+    <div class="obj_left" style="width:600px">
+			
+		<p>{_('Category')} : 
+			{foreach from=$categories item=c}
+				{$c->name} 
+			{/foreach}
+		</p>
 	
-	<p>{t}Category{/t} : 
-		{foreach from=$categories item=c}
-			{$c->name} 
-		{/foreach}
-	</p>
+	<p>{_('Description')} : {$book->description}</p>
 	
-	<p>{t}Description{/t} : {$book->description}</p>
-	
-	<p>{t}Short Description{/t} : {$book->short_description}</p>
-	
-	<p><a href="download.php?id={$book->id}">{t}Download{/t}</a>
-	<p><a href="download_xml.php?id={$book->id}">XML</a>
-	<p><a href="book.php?id={$book->id}&action=EDIT">{t}EDIT{/t}</a>
+	<p>{_('Short Description')} : {$book->short_description}</p>
+    
+    
+    {if isset($smarty.session['logged'])}
+		<p><a href="download.php?id={$book->id}">{_('Download')}</a>
+		<p><a href="download_xml.php?id={$book->id}">XML</a>
+		<p><a href="book.php?id={$book->id}&action=EDIT">{_('Edit')}</a>
+    {/if}
+    
+	</div>
 {/block}

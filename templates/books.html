@@ -2,12 +2,12 @@
 
 
 {block name="main_content"}
-	<div>Books</div>
+	<h3>{$title}</h3>
 	<div class="books_div height_400">
 		{foreach from=$books['data'] item=b}
 			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
 				<div class="preface_div">
-					<a href="book.php?id={$b->id}"><img width="120" height="120" src="../public/images/no_cover.jpg"/></a>
+					<a href="book.php?id={$b->id}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 				</div>
 				<a href="book.php?id={$b->id}">{$b->name}</a>
 			</div>
@@ -15,5 +15,5 @@
 	</div>
 	<br class="clear"/>
 	
-	{insert name="populate_paginate" result=$books pageurl='books.php?a=1'}
+	{insert name="populate_paginate" result=$books pageurl=$page_url}
 {/block}

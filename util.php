@@ -4,8 +4,6 @@
 	include_once 'model/ez_sql_mysql.php';
 	include_once 'libs/Smarty.class.php';
 	require_once 'config.php';
-	require_once 'smarty-gettext.php';
-	
 	
 	function getDBInstance() {
 		return new ezSQL_mysql(DB_USER,DB_PASSWORD,DB_NAME,DB_IP);
@@ -19,7 +17,6 @@
 		$smarty =  new Smarty();
 		$smarty->template_dir = dirname(__FILE__).'/templates';
 		$smarty->compile_dir = dirname(__FILE__).'/templates_c';
-		$smarty->registerPlugin('block','t', 'smarty_translate');
 //		$smarty->debugging = true;
 		$smarty->assign('SUPPORTED_LANG',get_supported_lang());
 		set_locale_env();

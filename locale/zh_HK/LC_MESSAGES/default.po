@@ -2,139 +2,297 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookshare\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-26 19:16+0800\n"
-"PO-Revision-Date: 2011-10-26 19:17+0800\n"
+"POT-Creation-Date: 2011-10-27 17:27+0800\n"
+"PO-Revision-Date: 2011-10-27 17:27+0800\n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
-"Language-Team: sys2do\n"
+"Language-Team: sys2do <lamciuloeng@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: _\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: D:\\dev\n"
 "X-Poedit-Language: Chinese\n"
-"X-Poedit-Country: HONG KONG\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: d:/dev\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: d:/dev/default.c:1
-msgid "welcome"
-msgstr "歡迎"
+#: books.php:8
+msgid "New Upload Books"
+msgstr "最新上傳的書"
 
-#: d:/dev/default.c:2
-msgid "Logout"
-msgstr "註銷"
+#: login_handler.php:22
+msgid "E-mail or password is wrong!"
+msgstr "電子郵箱或者密碼錯誤！"
 
-#: d:/dev/default.c:3
-msgid "Login"
-msgstr "登錄"
-
-#: d:/dev/default.c:4
-msgid "Register"
-msgstr "註冊"
-
-#: d:/dev/default.c:5
-#: d:/dev/default.c:16
-#: d:/dev/default.c:20
-#: d:/dev/default.c:23
-msgid "Book Name"
-msgstr "書名"
-
-#: d:/dev/default.c:6
-#: d:/dev/default.c:24
-msgid "Description"
-msgstr "介紹"
-
-#: d:/dev/default.c:7
-#: d:/dev/default.c:25
-msgid "Short Description"
-msgstr "簡短介紹"
-
-#: d:/dev/default.c:8
-msgid "Download"
-msgstr "下載"
-
-#: d:/dev/default.c:9
-#: d:/dev/default.c:10
-#: d:/dev/default.c:11
-msgid "More"
-msgstr "更多"
-
-#: d:/dev/default.c:12
-msgid "E-mail"
-msgstr "E-mail"
-
-#: d:/dev/default.c:13
-msgid "Password"
-msgstr "密碼"
-
-#: d:/dev/default.c:14
-#: d:/dev/default.c:26
-msgid "Submit"
-msgstr "提交"
-
-#: d:/dev/default.c:15
-#, fuzzy
-msgid "My Upload Books"
-msgstr "我的書"
-
-#: d:/dev/default.c:17
-#, fuzzy
-msgid "Upload Time"
-msgstr "上載"
-
-#: d:/dev/default.c:18
-#: d:/dev/default.c:22
-msgid "Points"
-msgstr "積分"
-
-#: d:/dev/default.c:19
-#, fuzzy
-msgid "My Downoad Book"
-msgstr "我的書"
-
-#: d:/dev/default.c:21
-msgid "Download Time(s)"
-msgstr "下載次數"
-
-#: d:/dev/save_book.php:7
+#: save_book.php:7
 msgid "No such action!"
-msgstr "沒有這個操作！"
+msgstr "沒有這個操作"
 
-#: d:/dev/save_book.php:26
+#: save_book.php:26
 msgid "No such record!"
 msgstr "沒有這條記錄！"
 
-#: d:/dev/test.php:16
+#: libs/plugins/insert.admin_menu_bar.php:10
+#: libs/plugins/insert.menu_bar.php:11
+#: libs/plugins/insert.menu_bar.php:13
 msgid "Home"
 msgstr "首頁"
 
-#: d:/dev/libs/plugins/insert.menu_bar.php:21
-#: d:/dev/libs/plugins/insert.menu_bar.php:23
-msgid "Upload"
-msgstr "上載"
+#: libs/plugins/insert.admin_menu_bar.php:13
+#: libs/plugins/insert.admin_menu_bar.php:15
+msgid "User"
+msgstr "用戶"
 
-#: d:/dev/libs/plugins/insert.menu_bar.php:27
-#: d:/dev/libs/plugins/insert.menu_bar.php:29
-msgid "My Books"
-msgstr "我的書"
+#: libs/plugins/insert.admin_menu_bar.php:19
+#: libs/plugins/insert.admin_menu_bar.php:21
+msgid "Group"
+msgstr "級別"
 
-#: d:/dev/libs/plugins/insert.menu_bar.php:33
-#: d:/dev/libs/plugins/insert.menu_bar.php:35
-msgid "Profile"
-msgstr "帳戶"
+#: libs/plugins/insert.admin_menu_bar.php:25
+#: libs/plugins/insert.admin_menu_bar.php:27
+msgid "Book"
+msgstr "書"
 
-#: d:/dev/libs/plugins/insert.menu_bar.php:38
-msgid "Admin"
-msgstr "管理"
-
-#: d:/dev/templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:132
-#, fuzzy
-msgid "Point"
-msgstr "登錄"
-
-#: d:/dev/templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:146
+#: libs/plugins/insert.admin_menu_bar.php:31
+#: libs/plugins/insert.admin_menu_bar.php:33
 msgid "Category"
 msgstr "類別"
 
-#~ msgid "hello"
-#~ msgstr "干干"
+#: libs/plugins/insert.admin_menu_bar.php:37
+#: libs/plugins/insert.admin_menu_bar.php:39
+msgid "System"
+msgstr "系統"
+
+#: libs/plugins/insert.menu_bar.php:21
+#: libs/plugins/insert.menu_bar.php:23
+msgid "Upload"
+msgstr "上載"
+
+#: libs/plugins/insert.menu_bar.php:27
+#: libs/plugins/insert.menu_bar.php:29
+msgid "My Books"
+msgstr "我的書"
+
+#: libs/plugins/insert.menu_bar.php:33
+#: libs/plugins/insert.menu_bar.php:35
+msgid "Profile"
+msgstr "帳戶"
+
+#: libs/plugins/insert.menu_bar.php:38
+msgid "Admin"
+msgstr "管理"
+
+#: libs/plugins/insert.populate_paginate.php:7
+#, fuzzy
+msgid "No record."
+msgstr "沒有這條記錄！"
+
+#: libs/plugins/insert.populate_paginate.php:10
+msgid "This is page"
+msgstr "這是頁"
+
+#: libs/plugins/insert.populate_paginate.php:10
+msgid "First Page"
+msgstr "最前頁"
+
+#: libs/plugins/insert.populate_paginate.php:13
+msgid "Previous Page"
+msgstr "上一頁"
+
+#: libs/plugins/insert.populate_paginate.php:17
+msgid "Next Page"
+msgstr "下一頁"
+
+#: libs/plugins/insert.populate_paginate.php:20
+msgid "Last Page"
+msgstr "最後頁"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:84
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:102
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:84
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:96
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:84
+msgid "welcome"
+msgstr "歡迎"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:86
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:104
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:86
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:98
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:86
+msgid "Logout"
+msgstr "註銷"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:89
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:89
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:101
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:89
+msgid "Login"
+msgstr "登錄"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:90
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:90
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:102
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:90
+msgid "Register"
+msgstr "註冊"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:131
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:180
+msgid "My Upload Books"
+msgstr "我上載的書"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:133
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:178
+msgid "My Downoad Book"
+msgstr "我下載的書"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:142
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:190
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:145
+msgid "Book Name"
+msgstr "書名"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:144
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:192
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:164
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:155
+msgid "Short Description"
+msgstr "簡短介紹"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:146
+msgid "Upload Time"
+msgstr "上載時間"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:148
+msgid "Download Time(s)"
+msgstr "下載次數"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:150
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:194
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:133
+msgid "Points"
+msgstr "積分"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:40
+msgid "Administrator Platform"
+msgstr "管理平臺"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:98
+msgid "Administrator"
+msgstr "管理員"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:146
+msgid "Add New Category"
+msgstr "添加新類別"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:151
+msgid "Category Name"
+msgstr "類別名稱"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:153
+msgid "Create Time"
+msgstr "創建時間"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:155
+msgid "Create User"
+msgstr "創建的用戶"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:157
+msgid "Show On Homepage"
+msgstr "顯示在首頁"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:130
+msgid "E-mail"
+msgstr "電子郵件"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:162
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:151
+msgid "Description"
+msgstr "介紹"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:169
+msgid "Submit"
+msgstr "提交"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:175
+msgid "File Name"
+msgstr "文件名"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:176
+msgid "File Size"
+msgstr "文件大小"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:177
+msgid "Delete"
+msgstr "刪除"
+
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:162
+msgid "Download"
+msgstr "下載"
+
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:167
+msgid "Edit"
+msgstr "編輯"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:81
+msgid "The E-mail could not be blank!"
+msgstr "電子郵箱不能為空！"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:83
+msgid "The password could not be blank!"
+msgstr "密碼不能為空！"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:85
+msgid "The confirmed password could not be blank!"
+msgstr "確認密碼不能為空！"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:87
+msgid "The password and the confirmed password are not the same!"
+msgstr "密碼與確認密碼不相同！"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:158
+#: templates_c/5f84b61f2eb32122442a4bfccf279b9023f46ded.file.login.html.php:133
+msgid "Password"
+msgstr "密碼"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:160
+msgid "Confirmed Password"
+msgstr "確認密碼"
+
+#: templates_c/303d772a6edf1e9c51f35df7b6a5e3ba0b702a1e.file.users.html.php:130
+msgid "Register Time"
+msgstr "註冊時間"
+
+#: templates_c/5bd444ec477326f67375a25578a777a95a31ff34.file.book_edit.html.php:178
+msgid "File"
+msgstr "文件"
+
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:83
+msgid "Update the record successfully!"
+msgstr "成功更新這條記錄！"
+
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:155
+msgid "Upload User"
+msgstr "上載的用戶"
+
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:159
+msgid "Promoted"
+msgstr "推介"
+
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:132
+msgid "Promoted Book"
+msgstr "推介書"
+
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:155
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:191
+msgid "More"
+msgstr "更多"
+
+#: templates_c/a73815868021ac37bc2a3d5db03c3f6cd4b777b6.file.groups_edit.html.php:131
+#: templates_c/a73815868021ac37bc2a3d5db03c3f6cd4b777b6.file.groups_edit.html.php:139
+#: templates_c/bac944de3629c88c6680abc6704c39b1cad7da26.file.groups.html.php:130
+msgid "Group Name"
+msgstr "組別名稱"
+
+#~ msgid "EDIT"
+#~ msgstr "編輯"

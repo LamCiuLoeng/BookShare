@@ -1,5 +1,6 @@
 <?php 
 	require_once '../util.php';
+	require_once 'check_login.php';
 
 	$smarty = getSmartyInstance();
 	$db = getDBInstance();

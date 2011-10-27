@@ -1,71 +1,298 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
+"Project-Id-Version: bookshare\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-27 17:23+0800\n"
+"PO-Revision-Date: 2011-10-27 17:24+0800\n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
-"Language-Team: \n"
+"Language-Team: sys2do <lamciuloeng@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
+"X-Poedit-Basepath: D:\\dev\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: D:\dev/libs/plugins/insert.menu_bar.php:11
-#: D:\dev/libs/plugins/insert.menu_bar.php:13
+#: books.php:8
+msgid "New Upload Books"
+msgstr "最近上传的书"
+
+#: login_handler.php:22
+msgid "E-mail or password is wrong!"
+msgstr "电子邮箱或者密码错误！"
+
+#: save_book.php:7
+msgid "No such action!"
+msgstr "没有这个操作！"
+
+#: save_book.php:26
+msgid "No such record!"
+msgstr "没有这条记录！"
+
+#: libs/plugins/insert.admin_menu_bar.php:10
+#: libs/plugins/insert.menu_bar.php:11
+#: libs/plugins/insert.menu_bar.php:13
 msgid "Home"
 msgstr "主页"
 
-#: D:\dev/libs/plugins/insert.menu_bar.php:21
-#: D:\dev/libs/plugins/insert.menu_bar.php:23
+#: libs/plugins/insert.admin_menu_bar.php:13
+#: libs/plugins/insert.admin_menu_bar.php:15
+msgid "User"
+msgstr "用户"
+
+#: libs/plugins/insert.admin_menu_bar.php:19
+#: libs/plugins/insert.admin_menu_bar.php:21
+msgid "Group"
+msgstr "组别"
+
+#: libs/plugins/insert.admin_menu_bar.php:25
+#: libs/plugins/insert.admin_menu_bar.php:27
+msgid "Book"
+msgstr "书"
+
+#: libs/plugins/insert.admin_menu_bar.php:31
+#: libs/plugins/insert.admin_menu_bar.php:33
+msgid "Category"
+msgstr "分类"
+
+#: libs/plugins/insert.admin_menu_bar.php:37
+#: libs/plugins/insert.admin_menu_bar.php:39
+msgid "System"
+msgstr "系统"
+
+#: libs/plugins/insert.menu_bar.php:21
+#: libs/plugins/insert.menu_bar.php:23
 msgid "Upload"
 msgstr "上传"
 
-#: D:\dev/libs/plugins/insert.menu_bar.php:27
-#: D:\dev/libs/plugins/insert.menu_bar.php:29
+#: libs/plugins/insert.menu_bar.php:27
+#: libs/plugins/insert.menu_bar.php:29
 msgid "My Books"
 msgstr "我的书"
 
-#: D:\dev/libs/plugins/insert.menu_bar.php:33
-#: D:\dev/libs/plugins/insert.menu_bar.php:35
+#: libs/plugins/insert.menu_bar.php:33
+#: libs/plugins/insert.menu_bar.php:35
 msgid "Profile"
 msgstr "账户"
 
-#: D:\dev/libs/plugins/insert.menu_bar.php:38
+#: libs/plugins/insert.menu_bar.php:38
 msgid "Admin"
 msgstr "管理"
 
-#: D:\dev/templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:76
-#: D:\dev/templates_c/05b143acdc50731311b48d7001385e844715105d.file.login.html.php:76
-#: D:\dev/templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:76
-#: D:\dev/templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:106
-#: D:\dev/templates_c/75d3fb466d0d335b2c2e31d21b78c92dfda5e791.file.upload.html.php:106
+#: libs/plugins/insert.populate_paginate.php:7
+#, fuzzy
+msgid "No record."
+msgstr "没有这条记录！"
+
+#: libs/plugins/insert.populate_paginate.php:10
+msgid "This is page"
+msgstr "这是页"
+
+#: libs/plugins/insert.populate_paginate.php:10
+msgid "First Page"
+msgstr "最前页"
+
+#: libs/plugins/insert.populate_paginate.php:13
+msgid "Previous Page"
+msgstr "前一页"
+
+#: libs/plugins/insert.populate_paginate.php:17
+msgid "Next Page"
+msgstr "下一页"
+
+#: libs/plugins/insert.populate_paginate.php:20
+msgid "Last Page"
+msgstr "最后页"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:84
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:102
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:84
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:96
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:84
 msgid "welcome"
 msgstr "欢迎"
 
-#: D:\dev/templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:78
-#: D:\dev/templates_c/05b143acdc50731311b48d7001385e844715105d.file.login.html.php:78
-#: D:\dev/templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:78
-#: D:\dev/templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:108
-#: D:\dev/templates_c/75d3fb466d0d335b2c2e31d21b78c92dfda5e791.file.upload.html.php:108
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:86
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:104
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:86
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:98
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:86
 msgid "Logout"
 msgstr "注销"
 
-#: D:\dev/templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:81
-#: D:\dev/templates_c/05b143acdc50731311b48d7001385e844715105d.file.login.html.php:81
-#: D:\dev/templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:81
-#: D:\dev/templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:111
-#: D:\dev/templates_c/75d3fb466d0d335b2c2e31d21b78c92dfda5e791.file.upload.html.php:111
-msgid "Register"
-msgstr "注册"
-
-#: D:\dev/templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:82
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:89
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:89
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:101
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:89
 msgid "Login"
 msgstr "登录"
 
-#: D:\dev/templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:107
-#: D:\dev/templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:130
-#: D:\dev/templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:153
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:90
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:90
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:102
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:90
+msgid "Register"
+msgstr "注册"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:131
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:180
+msgid "My Upload Books"
+msgstr "我上传的书"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:133
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:178
+msgid "My Downoad Book"
+msgstr "我下载的书"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:142
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:190
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:145
+msgid "Book Name"
+msgstr "书名"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:144
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:192
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:164
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:155
+msgid "Short Description"
+msgstr "简短描述"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:146
+msgid "Upload Time"
+msgstr "上传时间"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:148
+msgid "Download Time(s)"
+msgstr "下载次数"
+
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:150
+#: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:194
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:133
+msgid "Points"
+msgstr "积分"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:40
+msgid "Administrator Platform"
+msgstr "管理平台"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:98
+msgid "Administrator"
+msgstr "管理员"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:146
+msgid "Add New Category"
+msgstr "添加新类别"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:151
+msgid "Category Name"
+msgstr "分类名称"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:153
+msgid "Create Time"
+msgstr "创建时间"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:155
+msgid "Create User"
+msgstr "创建的用户"
+
+#: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:157
+msgid "Show On Homepage"
+msgstr "显示在主页"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:130
+msgid "E-mail"
+msgstr "电子邮件"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:162
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:151
+msgid "Description"
+msgstr "描述"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:169
+msgid "Submit"
+msgstr "提交"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:175
+msgid "File Name"
+msgstr "文件名"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:176
+msgid "File Size"
+msgstr "文件大小"
+
+#: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:177
+msgid "Delete"
+msgstr "删除"
+
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:162
+msgid "Download"
+msgstr "下载"
+
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:167
+msgid "Edit"
+msgstr "编辑"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:81
+msgid "The E-mail could not be blank!"
+msgstr "电子邮箱不能为空！"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:83
+msgid "The password could not be blank!"
+msgstr "密码不能为空！"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:85
+msgid "The confirmed password could not be blank!"
+msgstr "确认密码不能为空！"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:87
+msgid "The password and the confirmed password are not the same!"
+msgstr "密码与确认密码不相符！"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:158
+#: templates_c/5f84b61f2eb32122442a4bfccf279b9023f46ded.file.login.html.php:133
+msgid "Password"
+msgstr "密码"
+
+#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:160
+msgid "Confirmed Password"
+msgstr "确认密码"
+
+#: templates_c/303d772a6edf1e9c51f35df7b6a5e3ba0b702a1e.file.users.html.php:130
+msgid "Register Time"
+msgstr "注册时间"
+
+#: templates_c/5bd444ec477326f67375a25578a777a95a31ff34.file.book_edit.html.php:178
+msgid "File"
+msgstr "文件"
+
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:83
+msgid "Update the record successfully!"
+msgstr "成功更新这条记录！"
+
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:155
+msgid "Upload User"
+msgstr "上传的用户"
+
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:159
+msgid "Promoted"
+msgstr "推介"
+
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:132
+msgid "Promoted Book"
+msgstr "推介书"
+
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:155
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:191
 msgid "More"
 msgstr "更多"
 
-#~ msgid "hello"
-#~ msgstr "ä½ å¥½"
+#: templates_c/a73815868021ac37bc2a3d5db03c3f6cd4b777b6.file.groups_edit.html.php:131
+#: templates_c/a73815868021ac37bc2a3d5db03c3f6cd4b777b6.file.groups_edit.html.php:139
+#: templates_c/bac944de3629c88c6680abc6704c39b1cad7da26.file.groups.html.php:130
+msgid "Group Name"
+msgstr "组别名称"
+
+#~ msgid "EDIT"
+#~ msgstr "编辑"

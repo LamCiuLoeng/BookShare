@@ -6,13 +6,23 @@
 		{if $type == 'UPDATE'}
 			<input type="hidden" name="type" value="UPDATE"/>
 			<input type="hidden" name="id" value="{$category->id}"/>
-			<p>Name <input type="text" name="name" value="{$category->name}"/></p>
-			<p>Description <textarea name="desc">{$category->description}</textarea></p>
+			<p>{_('Category Name')} <input type="text" name="name" value="{$category->name}"/></p>
+			<p>{_('Description')} <textarea name="desc">{$category->description}</textarea></p>
+			<p>{_('Show On Homepage')}
+			    {if $category->promote == 1}
+			        <input type="radio" checked="checked" name="promote" value="1"/> YES 
+                    <input type="radio" name="promote" value="0"/> No</p>
+			    {else}
+			        <input type="radio" name="promote" value="1"/> YES 
+			        <input type="radio" checked="checked" name="promote" value="0"/> No</p>
+			    {/if}
+		    </p>
 		{else}
 			<input type="hidden" name="type" value="NEW"/>
-			<p>Name <input type="text" name="name" value=""/></p>
-			<p>Description <textarea name="desc"></textarea></p>
+			<p>{_('Category Name')} <input type="text" name="name" value=""/></p>
+			<p>{_('Description')} <textarea name="desc"></textarea></p>
+			<p>{_('Show On Homepage')} <input type="radio" name="promote" value="1"/> YES <input type="radio" checked="checked" name="promote" value="0"/> No</p>
 		{/if}
-		<input type="submit" value="Save"/>
+		<input type="submit" value="{_('Submit')}"/>
 	</form>
 {/block}

@@ -4,7 +4,7 @@ $(document).ready(function(){
         url: 'ajax_upload.php',
         done: function (e, data) {
             $.each(data.result, function (index, file) {               
-                var html = '<tr class="fs" fid="'+file.id+'"><td>'+file.file_name+'</td><td>'+file.file_size+'</td><td><a href="#" onclick="deleteAttachment('+file.id+')">Delete</a></td></tr>' ;
+                var html = '<tr class="fs" fid="'+file.id+'"><td>'+file.file_name+'</td><td>'+file.file_size+' kb</td><td><a href="#" onclick="deleteAttachment('+file.id+')">Delete</a></td></tr>' ;
                 $(html).appendTo('#files_list');
 	                getIDs();
 	        });

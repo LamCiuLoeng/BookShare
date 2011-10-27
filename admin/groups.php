@@ -1,6 +1,7 @@
 <?php
 	require_once '../util.php';
 	require_once '../db_helper.php';
+	require_once 'check_login.php';
 	
 	$action = isset($_REQUEST['q']) ? $_REQUEST['q'] : 'LIST';
 	
