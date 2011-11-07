@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
 <head>
 	{config_load file="site.conf"}
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -39,8 +39,8 @@
 
    {block name="extJavaScript"}{/block}
 </head>
-<body>
-
+<body>    
+      
 <div id="container" class="outter round_5">
 	{block name="header"}
 		<div class="full height_100" id="header">
@@ -50,6 +50,32 @@
 				{_('welcome')} , {$smarty.session.user->email} | <a href="logout_handler.php">{_('Logout')}</a>
 			{else}
 				<a href="login.php">{_('Login')}</a> | <a href="register.php">{_('Register')}</a>
+				
+				
+				
+				<div id="fb-root"></div>
+				<script>
+				  window.fbAsyncInit = function() {
+				    FB.init({
+				      appId      : '188767117872337',
+				      status     : true, 
+				      cookie     : true,
+				      xfbml      : true
+				    });
+				  };
+				  (function(d){
+				     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) { return; }
+				     js = d.createElement('script'); js.id = id; js.async = true;
+				     js.src = "//connect.facebook.net/en_US/all.js";
+				     d.getElementsByTagName('head')[0].appendChild(js);
+				   }(document));
+				</script>
+				<div class="fb-login-button" data-perms="email,user_checkins">
+				  Login with Facebook
+				</div>
+				
+				
+				
 			{/if}
 			|
 			<select onchange="switch_language(this)">
