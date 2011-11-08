@@ -8,4 +8,5 @@
 	define('UPLOAD_PREFIX','/public/upload/');
 	define('UPLOAD_PATH', $_SERVER["DOCUMENT_ROOT"]);
 	define('DEFAULT_LOCALE', 'zh_CN');
+	define('APPID', '188767117872337');
 ?>

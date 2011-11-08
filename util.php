@@ -17,8 +17,11 @@
 		$smarty =  new Smarty();
 		$smarty->template_dir = dirname(__FILE__).'/templates';
 		$smarty->compile_dir = dirname(__FILE__).'/templates_c';
-//		$smarty->debugging = true;
+		//set the global var
 		$smarty->assign('SUPPORTED_LANG',get_supported_lang());
+		$smarty->assign('WEBSITE_URL',WEBSITE_URL);
+		$smarty->assign('APPID',APPID);
+//		$smarty->debugging = true;
 		set_locale_env();
 		return $smarty;		
 	}

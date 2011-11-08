@@ -50,32 +50,7 @@
 				{_('welcome')} , {$smarty.session.user->email} | <a href="logout_handler.php">{_('Logout')}</a>
 			{else}
 				<a href="login.php">{_('Login')}</a> | <a href="register.php">{_('Register')}</a>
-				
-				
-				
-				<div id="fb-root"></div>
-				<script>
-				  window.fbAsyncInit = function() {
-				    FB.init({
-				      appId      : '188767117872337',
-				      status     : true, 
-				      cookie     : true,
-				      xfbml      : true
-				    });
-				  };
-				  (function(d){
-				     var js, id = 'facebook-jssdk'; if (d.getElementById(id)) { return; }
-				     js = d.createElement('script'); js.id = id; js.async = true;
-				     js.src = "//connect.facebook.net/en_US/all.js";
-				     d.getElementsByTagName('head')[0].appendChild(js);
-				   }(document));
-				</script>
-				<div class="fb-login-button" data-perms="email,user_checkins">
-				  Login with Facebook
-				</div>
-				
-				
-				
+	            {*insert name='facebook_login'*}				
 			{/if}
 			|
 			<select onchange="switch_language(this)">

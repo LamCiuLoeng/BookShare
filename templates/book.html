@@ -2,16 +2,6 @@
 
 
 {block name="main_content"}
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) { return; }
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-	
-
     <h3>{$book->name}</h3>
     
     <div class="obj_left" style="width : 250px; height: 250px; text-align: center;">
@@ -37,9 +27,9 @@
 		<p><a href="book.php?id={$book->id}&action=EDIT">{_('Edit')}</a></p>
     {/if}
     
-    <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fme.sys2do.com&amp;send=false&amp;layout=standard&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=verdana&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:40px;" allowTransparency="true"></iframe>
     
-    
-    <fb:comments href="book.php?id={$book->id}" num_posts="5" width="500"></fb:comments>
+    {assign var="url" value= "$WEBSITE_URL/book.php?id={$book->id}" }    
+    {insert name='facebook_like' url=$url}
+    {insert name='facebook_comment' url=$url}
 	</div>
 {/block}
