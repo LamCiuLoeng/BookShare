@@ -1,9 +1,47 @@
 {extends file='base.html'}
 
+{block name="extJavaScript"}
+<script language="JavaScript" type="text/javascript">
+ //<![CDATA[
+       $("form").submit(function(){
+    	   return false;
+    	   
+       });
+       
+       function toSubmit(){
+    	   var points = $("#points").val();
+    	   var total_points = $("#total_points").val();
+    	   if(!points){
+    		   alert("{_('Please input the points you want to exchange!')}");
+    		   return;
+    	   }
+    	   
+    	   points = parseFloat(points);
+    	   total_points = parseFloat(total_points);
+    	   if(points>total_points){
+    		   alert("{_('The points you want to exchange are more than your total points!')}");
+    		   return;
+    	   }
+    	   $("form").submit();
+    	   
+       }
+ //]]>
+</script>
+
+{/block}
 
 {block name="main_content"}
 	<div>
 		<p><label>{_('E-mail')}</label>{$info->email}</p>
 		<p><label>{_('Points')}</label>{$info->points}</p>
+	</div>
+	
+	
+	<div>
+	   <form action="exchange_points.php" method="post">
+	   <input type="hidden" name="total_points" id="total_points" value="{$info->points}"/>
+	   <input type="text" name="points" id="points" value="{$info->points}"/>
+	   <input type="button" value="{_('exchange points')}" onclick="toSubmit();"/>
+	   </form>
 	</div>
 {/block}

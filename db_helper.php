@@ -50,7 +50,11 @@
 		return $db->rows_affected;
 	}
 	
-	
+	function addExchangeLog($db,$user_id,$points){
+		$sql = "Insert into exchange_log(user_id,points) values($user_id,$points);";
+		$db->query($sql);
+		return $db->insert_id;
+	}
 	//**********************************
 	//function related to the group
 	//**********************************	
@@ -140,5 +144,38 @@
 		$db->query($sql);
 		return $db->insert_id;
 	}
+
 	
+	//**********************************
+	//function related to the exchange points
+	//**********************************
+	
+	//$status  : 0 is new ,1 is approved, -1 is cancel, 2 is not disapproved.
+	function getExchangeLog($db,$user_id,$status) {
+		$sql = "select l.*,u.email,u.points as user_points  from exchange_log l, users u where l.active=0 and u.id=l.user_id ";
+		$conditions = array();
+		
+		if($user_id){
+			array_push($conditions," user_id=$user_id ");
+		}
+		if($status){
+			array_push($conditions, " status=$status");
+		}
+		
+		if(sizeof($conditions) > 0){
+			$sql .= join(' and ', $conditions);
+		}
+		
+		$sql .= ' order by id DESC ;';
+		return $db->get_results($sql);
+	}
+	
+	
+	
+	function processExchangeLog($db,$id,$status) {
+		$sql = "update exchange_log set status=$status where id=$id; ";
+		$db->query($sql);
+		return $db->rows_affected;
+	}
 ?>
+

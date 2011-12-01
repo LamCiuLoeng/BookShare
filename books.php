@@ -22,6 +22,6 @@
 	$smarty->assign('books',$books);
 	$smarty->assign('title',$title);
 	$smarty->assign('category',$category);
-	$smarty->assign('page_url',$category ? 'books.php?id='.$category->id : 'books.php?a=1');
+	$smarty->assign('page_url',$category ? 'books.php?id='.$category->id : 'books.php');
 	$smarty->display('books.html');
 ?>

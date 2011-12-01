@@ -9,15 +9,21 @@ function smarty_insert_populate_paginate($params,&$smarty){
 	
 	$html = "<div class='pagescontainer'>"._('This is page').' '.$result['current']."/".$result['totalpages'].". <a href='$pageurl'>"._('First Page')."</a>";
 	if(isset($result['pre'])){
-		$preurl = $pageurl."&page=".$result['pre'];
+		$preurl =  strripos($pageurl,'?') ? $pageurl."&page=".$result['pre'] : $pageurl."?page=".$result['pre'];
 		$html = $html." <a href='$preurl'>"._('Previous Page')."</a>";
 	}
 	if(isset($result['next'])){
-		$nexturl = $pageurl."&page=".$result['next'];
+		$nexturl = strripos($pageurl,'?') ? $pageurl."&page=".$result['next']: $pageurl."?page=".$result['next'];
 		$html = $html." <a href='$nexturl'>"._('Next Page')."</a>";
 	}
 	
-	$html = $html." <a href='".$pageurl."&page=".$result['totalpages']."'>"._('Last Page')."</a>  ";
+	if(strripos($pageurl,'?')){
+		$html = $html." <a href='".$pageurl."&page=".$result['totalpages']."'>"._('Last Page')."</a>  ";
+	}else{
+		$html = $html." <a href='".$pageurl."?page=".$result['totalpages']."'>"._('Last Page')."</a>  ";
+	}
+		
+	
 	$select = "<select onchange='go2url(this);'>";
 	for($i=1;$i<=$result['totalpages'];$i++){
 		if($i==$result['current']){
@@ -27,9 +33,12 @@ function smarty_insert_populate_paginate($params,&$smarty){
 		}
 	}
 	$select = $select.'</select>';
+	
+	$page_prefix = strripos($pageurl,'?') ? $pageurl.'&page=' : $pageurl.'?page=' ;
+	
 	$js = "<script language='JavaScript' type='text/javascript'>
 					function go2url(obj){
-						window.location = '$pageurl&page='+$(obj).val();
+						window.location = '$page_prefix'+$(obj).val();
 					}
 				</script>";
 	$html = $html.$select.'</div>'.$js;

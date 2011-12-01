@@ -2,5 +2,39 @@
 
 
 {block name="main_content"}
-	
+    <table>
+        <thead>
+            <tr>
+                <td>{_('Exchange user')}</td>
+                <td>{_('Request time')}</td>
+                <td>{_('Request points')}</td>
+                <td>{_('Status')}</td>
+                <td>{_('Action')}</td>
+            </tr>
+        </thead>    
+	{foreach from=$result['data'] item=b}
+          <tr>
+              <td>{$b->email}</td>
+              <td>{$b->create_time}</td>
+              <td>{$b->points}</td>
+              
+              {if $b->status==0}
+                    <td>New</td>
+                    <td>
+                        <a href="exchange_process.php?id={$b->id}&action=1">{_('Approve')}</a>
+                        <a href="exchange_process.php?id={$b->id}&action=2">{_('Disapprove')}</a>
+                    </td>
+              {else if $b->status==1}
+                    <td>{_('Approved')}</td><td>&nbsp;</td>
+              {else if $b->status==2}
+                    <td>{_('Disapproved')}</td><td>&nbsp;</td>
+              {else if $b->status==2}
+                    <td>{_('Cancelled')}</td><td>&nbsp;</td>
+              {/if}
+          </tr>
+      {/foreach}
+      
+    </table>
+    <br />
+      {insert name="populate_paginate" result=$result pageurl=$page_url}
 {/block}
