@@ -1,11 +1,15 @@
 {extends file='admin/base.html'}
 
 
+{block name="extCSS"}
+
+{/block}
+
 {block name="main_content"}
-    <table>
+    <table class="plain" width="100%">
         <thead>
             <tr>
-                <td>{_('Exchange user')}</td>
+                <th>{_('Exchange user')}</td>
                 <td>{_('Request time')}</td>
                 <td>{_('Request points')}</td>
                 <td>{_('Status')}</td>
@@ -14,12 +18,12 @@
         </thead>    
 	{foreach from=$result['data'] item=b}
           <tr>
-              <td>{$b->email}</td>
+              <th>{$b->email}</td>
               <td>{$b->create_time}</td>
               <td>{$b->points}</td>
               
               {if $b->status==0}
-                    <td>New</td>
+                    <td>{_('New')}</td>
                     <td>
                         <a href="exchange_process.php?id={$b->id}&action=1">{_('Approve')}</a>
                         <a href="exchange_process.php?id={$b->id}&action=2">{_('Disapprove')}</a>

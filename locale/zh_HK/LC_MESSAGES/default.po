@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookshare\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-27 17:27+0800\n"
-"PO-Revision-Date: 2011-10-27 17:27+0800\n"
+"POT-Creation-Date: 2011-12-05 16:24+0800\n"
+"PO-Revision-Date: 2011-12-05 16:25+0800\n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
 "Language-Team: sys2do <lamciuloeng@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,22 @@ msgstr ""
 msgid "New Upload Books"
 msgstr "最新上傳的書"
 
+#: exchange_points.php:10
+msgid "Please input the points you want to exchange!"
+msgstr "請輸入你要兌換的積分！"
+
+#: exchange_points.php:19
+msgid "The points you want to exchange are more than your total points!"
+msgstr "你要兌換的積分多于你的總積分！"
+
+#: exchange_points.php:32
+msgid "Your request has been accepted ,please wait for the approval."
+msgstr "你的兌換請求已經成功發送，請耐心等候審批。"
+
+#: exchange_points.php:36
+msgid "The service is not avaiable now,please try it later."
+msgstr "該服務暫時不可用，請稍候再試。"
+
 #: login_handler.php:22
 msgid "E-mail or password is wrong!"
 msgstr "電子郵箱或者密碼錯誤！"
@@ -31,9 +47,20 @@ msgstr "沒有這個操作"
 msgid "No such record!"
 msgstr "沒有這條記錄！"
 
+#: admin/exchange_process.php:8
+#, fuzzy
+msgid "No such operation!"
+msgstr "沒有這個操作"
+
+#: admin/exchange_process.php:16
+msgid "No id supplied for the record!"
+msgstr "沒有提供該記錄的ID！"
+
+#: admin/exchange_process.php:29
+msgid "Update the record successfully!"
+msgstr "成功更新這條記錄！"
+
 #: libs/plugins/insert.admin_menu_bar.php:10
-#: libs/plugins/insert.menu_bar.php:11
-#: libs/plugins/insert.menu_bar.php:13
 msgid "Home"
 msgstr "首頁"
 
@@ -102,37 +129,50 @@ msgstr "上一頁"
 msgid "Next Page"
 msgstr "下一頁"
 
-#: libs/plugins/insert.populate_paginate.php:20
+#: libs/plugins/insert.populate_paginate.php:21
+#: libs/plugins/insert.populate_paginate.php:23
 msgid "Last Page"
 msgstr "最後頁"
 
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:84
 #: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:102
-#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:84
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:123
 #: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:96
-#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:84
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:86
+#: templates_c/303d772a6edf1e9c51f35df7b6a5e3ba0b702a1e.file.users.html.php:81
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:86
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:102
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:85
+#: templates_c/bac944de3629c88c6680abc6704c39b1cad7da26.file.groups.html.php:81
 msgid "welcome"
 msgstr "歡迎"
 
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:86
 #: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:104
-#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:86
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:125
 #: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:98
-#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:86
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:88
+#: templates_c/303d772a6edf1e9c51f35df7b6a5e3ba0b702a1e.file.users.html.php:83
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:88
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:104
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:87
+#: templates_c/bac944de3629c88c6680abc6704c39b1cad7da26.file.groups.html.php:83
 msgid "Logout"
 msgstr "註銷"
 
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:89
-#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:89
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:128
 #: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:101
-#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:89
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:91
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:90
 msgid "Login"
 msgstr "登錄"
 
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:90
-#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:90
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:129
 #: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:102
-#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:90
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:92
+#: templates_c/967100d3833207e68e749ecb2f41426ce849b024.file.index.html.php:91
 msgid "Register"
 msgstr "註冊"
 
@@ -149,39 +189,53 @@ msgstr "我下載的書"
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:142
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:190
 #: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:145
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:149
 msgid "Book Name"
 msgstr "書名"
 
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:144
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:192
 #: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:164
-#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:155
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:158
 msgid "Short Description"
 msgstr "簡短介紹"
 
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:146
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:151
 msgid "Upload Time"
 msgstr "上載時間"
 
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:148
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:157
 msgid "Download Time(s)"
 msgstr "下載次數"
 
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:150
 #: templates_c/02b07f9fd00ad09ca2cc372b25fe9a4ae4850455.file.mybooks.html.php:194
-#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:133
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:172
+#: templates_c/303d772a6edf1e9c51f35df7b6a5e3ba0b702a1e.file.users.html.php:132
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:153
 msgid "Points"
 msgstr "積分"
 
 #: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:40
+#: templates_c/303d772a6edf1e9c51f35df7b6a5e3ba0b702a1e.file.users.html.php:40
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:41
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:40
+#: templates_c/bac944de3629c88c6680abc6704c39b1cad7da26.file.groups.html.php:40
 msgid "Administrator Platform"
 msgstr "管理平臺"
 
 #: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:98
+#: templates_c/303d772a6edf1e9c51f35df7b6a5e3ba0b702a1e.file.users.html.php:77
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:82
+#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:98
+#: templates_c/bac944de3629c88c6680abc6704c39b1cad7da26.file.groups.html.php:77
 msgid "Administrator"
 msgstr "管理員"
 
 #: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:146
+#: templates_c/bac944de3629c88c6680abc6704c39b1cad7da26.file.groups.html.php:125
 msgid "Add New Category"
 msgstr "添加新類別"
 
@@ -190,6 +244,7 @@ msgid "Category Name"
 msgstr "類別名稱"
 
 #: templates_c/0381f7aa296c1a3e7654dff175486609ddec4019.file.category.html.php:153
+#: templates_c/bac944de3629c88c6680abc6704c39b1cad7da26.file.groups.html.php:132
 msgid "Create Time"
 msgstr "創建時間"
 
@@ -201,12 +256,57 @@ msgstr "創建的用戶"
 msgid "Show On Homepage"
 msgstr "顯示在首頁"
 
-#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:130
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:169
+#: templates_c/303d772a6edf1e9c51f35df7b6a5e3ba0b702a1e.file.users.html.php:128
 msgid "E-mail"
 msgstr "電子郵件"
 
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:183
+msgid "exchange points"
+msgstr "兌換積分"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:191
+msgid "Exchange history"
+msgstr "兌換歷史"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:196
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:135
+msgid "Request time"
+msgstr "申請時間"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:198
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:137
+#, fuzzy
+msgid "Request points"
+msgstr "兌換積分"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:200
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:139
+msgid "Status"
+msgstr "狀態"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:216
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:160
+msgid "New"
+msgstr "新建"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:219
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:171
+msgid "Approved"
+msgstr "已同意"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:222
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:174
+msgid "Disapproved"
+msgstr "已否決"
+
+#: templates_c/067cbdf96799b0d19201a23c67868ddd6c32f688.file.profile.html.php:225
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:177
+msgid "Cancelled"
+msgstr "取消"
+
 #: templates_c/2380fe2d875431174a52c603d03acba25a0fb8bd.file.upload.html.php:162
-#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:151
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:154
 msgid "Description"
 msgstr "介紹"
 
@@ -226,50 +326,33 @@ msgstr "文件大小"
 msgid "Delete"
 msgstr "刪除"
 
-#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:162
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:165
 msgid "Download"
 msgstr "下載"
 
-#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:167
+#: templates_c/27aab26edbf731217efc3a384f5aa8584403b4c2.file.book.html.php:170
 msgid "Edit"
 msgstr "編輯"
-
-#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:81
-msgid "The E-mail could not be blank!"
-msgstr "電子郵箱不能為空！"
-
-#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:83
-msgid "The password could not be blank!"
-msgstr "密碼不能為空！"
-
-#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:85
-msgid "The confirmed password could not be blank!"
-msgstr "確認密碼不能為空！"
-
-#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:87
-msgid "The password and the confirmed password are not the same!"
-msgstr "密碼與確認密碼不相同！"
-
-#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:158
-#: templates_c/5f84b61f2eb32122442a4bfccf279b9023f46ded.file.login.html.php:133
-msgid "Password"
-msgstr "密碼"
-
-#: templates_c/2e87d56f87c9bab4dbd159ba7c84ac4872ea506f.file.register.html.php:160
-msgid "Confirmed Password"
-msgstr "確認密碼"
 
 #: templates_c/303d772a6edf1e9c51f35df7b6a5e3ba0b702a1e.file.users.html.php:130
 msgid "Register Time"
 msgstr "註冊時間"
 
-#: templates_c/5bd444ec477326f67375a25578a777a95a31ff34.file.book_edit.html.php:178
-msgid "File"
-msgstr "文件"
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:133
+msgid "Exchange user"
+msgstr "兌換用戶"
 
-#: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:83
-msgid "Update the record successfully!"
-msgstr "成功更新這條記錄！"
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:141
+msgid "Action"
+msgstr "操作"
+
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:164
+msgid "Approve"
+msgstr "同意"
+
+#: templates_c/38633645a13aed2ddeacfcc76c63b3ca0735d888.file.system.html.php:167
+msgid "Disapprove"
+msgstr "不同意"
 
 #: templates_c/9393a023b2c9ea6213b45ba6b6cf36c644dc43e7.file.books.html.php:155
 msgid "Upload User"
@@ -288,11 +371,30 @@ msgstr "推介書"
 msgid "More"
 msgstr "更多"
 
-#: templates_c/a73815868021ac37bc2a3d5db03c3f6cd4b777b6.file.groups_edit.html.php:131
-#: templates_c/a73815868021ac37bc2a3d5db03c3f6cd4b777b6.file.groups_edit.html.php:139
 #: templates_c/bac944de3629c88c6680abc6704c39b1cad7da26.file.groups.html.php:130
 msgid "Group Name"
 msgstr "組別名稱"
+
+#~ msgid "The E-mail could not be blank!"
+#~ msgstr "電子郵箱不能為空！"
+
+#~ msgid "The password could not be blank!"
+#~ msgstr "密碼不能為空！"
+
+#~ msgid "The confirmed password could not be blank!"
+#~ msgstr "確認密碼不能為空！"
+
+#~ msgid "The password and the confirmed password are not the same!"
+#~ msgstr "密碼與確認密碼不相同！"
+
+#~ msgid "Password"
+#~ msgstr "密碼"
+
+#~ msgid "Confirmed Password"
+#~ msgstr "確認密碼"
+
+#~ msgid "File"
+#~ msgstr "文件"
 
 #~ msgid "EDIT"
 #~ msgstr "編輯"

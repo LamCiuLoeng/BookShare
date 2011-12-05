@@ -1,8 +1,14 @@
 {extends file='base.html'}
 
 {block name="extJavaScript"}
+<script type="text/javascript" src="../public/js/numeric.js"></script>
 <script language="JavaScript" type="text/javascript">
  //<![CDATA[
+       $(document).ready(function(){
+    	   $(".numeric").numeric();
+       });     
+            
+       
        $("form").submit(function(){
     	   return false;
     	   
@@ -40,8 +46,41 @@
 	<div>
 	   <form action="exchange_points.php" method="post">
 	   <input type="hidden" name="total_points" id="total_points" value="{$info->points}"/>
-	   <input type="text" name="points" id="points" value="{$info->points}"/>
+	   <input type="text" name="points" id="points" value="" class="numeric"/>
 	   <input type="button" value="{_('exchange points')}" onclick="toSubmit();"/>
 	   </form>
+	</div>
+	
+	<br /><br />
+	
+	<div>
+	   <h3>{_('Exchange history')}</h3>
+	   <table class="plain" width="100%">
+        <thead>
+            <tr>
+                <td>{_('Request time')}</td>
+                <td>{_('Request points')}</td>
+                <td>{_('Status')}</td>
+            </tr>
+        </thead>    
+	    {foreach from=$result['data'] item=b}
+	          <tr>
+	              <td>{$b->create_time}</td>
+	              <td>{$b->points}</td>
+	              {if $b->status==0}
+	                    <td>{_('New')}</td>
+	              {else if $b->status==1}
+	                    <td>{_('Approved')}</td>
+	              {else if $b->status==2}
+	                    <td>{_('Disapproved')}</td>
+	              {else if $b->status==2}
+	                    <td>{_('Cancelled')}</td>
+	              {/if}
+	          </tr>
+	      {/foreach}
+      
+    </table>
+    <br />
+      {insert name="populate_paginate" result=$result pageurl=$page_url}
 	</div>
 {/block}
