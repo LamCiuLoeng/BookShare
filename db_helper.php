@@ -178,4 +178,3 @@
 		return $db->rows_affected;
 	}
 ?>
-
