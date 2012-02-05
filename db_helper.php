@@ -177,4 +177,25 @@
 		$db->query($sql);
 		return $db->rows_affected;
 	}
+	
+	//**********************************
+	//function related to the buy points
+	//**********************************
+	function createOrderNo(){
+		
+	}
+	
+	
+	function createOrder($points,$currency,$amount,$remark,$pay_way,$user_id){
+		$no = createOrder();
+		$sql = "insert into buy_lob(no,points,currency,amount,remark,pay_way,user_id) values ($no,$points,$currency,$amount,$remark,$pay_way,$user_id);";
+		$db->query($sql);
+		return $db->insert_id;
+	}
+	
+	function updateOrderStatus($id,$status){
+		$sql = "update buy_log set status=$status where id=$id; ";
+		$db->query($sql);
+		return $db->rows_affected;
+	}
 ?>

@@ -1,0 +1,44 @@
+{extends file='base.html'}
+
+{block name="extJavaScript"}
+
+{/block}
+
+
+{block name="main_content"}
+	<form action="pay.php">
+	   
+	   
+	   <table>
+	       <tr>
+	           <td width="150">{_('Points Amount')}</td>
+	           <td>
+	               <select name="amount">
+			           <option value="1">1 Point</option>
+			           <option value="10">10 Points</option>
+			           <option value="20">20 Points</option>
+			           <option value="50">50 Points</option>
+			           <option value="100">100 Points</option>
+			       </select>
+			   </td>
+	       </tr>
+	       <tr>
+	           <td>{_('Paid by')}</td>
+	           <td>
+	               <div>
+	                   <div class="oneitem"><input type="radio" name="bank" value="1" id="bank_1"/><label for="bank_1"><img src="../public/images/"/></label></div>
+                       <div class="oneitem"><input type="radio" name="bank" value="2" id="bank_2"/><label for="bank_2"><img src="../public/images/"/></label></div>
+                       <div class="oneitem"><input type="radio" name="bank" value="3" id="bank_3"/><label for="bank_3"><img src="../public/images/"/></label></div>
+                       <div class="oneitem"><input type="radio" name="bank" value="4" id="bank_4"/><label for="bank_4"><img src="../public/images/"/></label></div>
+                       <div class="oneitem"><input type="radio" name="bank" value="5" id="bank_5"/><label for="bank_5"><img src="../public/images/"/></label></div>
+                       <div class="oneitem"><input type="radio" name="bank" value="6" id="bank_6"/><label for="bank_6"><img src="../public/images/"/></label></div>    
+	               </div>
+	           </td>
+	       </tr>
+	       <tr>
+	           <td><input type="submit" value="Submit"/></td>
+	       </tr>
+	   </table>
+	   
+	</form>
+{/block}
