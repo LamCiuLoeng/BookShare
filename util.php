@@ -55,8 +55,10 @@
 	function set_locale_env(){
 		$locale = get_locale();
 		putenv("LANG=$locale");
+		putenv("LANGUAGE=$locale"); //add this to solve the problem on english ubuntu
 		setlocale(LC_ALL, $locale);
 		bindtextdomain("default", "locale");
+		bind_textdomain_codeset("default", 'UTF-8'); 
 		textdomain("default");
 	}
 	
