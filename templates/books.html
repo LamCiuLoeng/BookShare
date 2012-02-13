@@ -10,6 +10,7 @@
 					<a href="book.php?id={$b->id}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 				</div>
 				<a href="book.php?id={$b->id}">{$b->name}</a>
+			<p><a href="cart_action.php?action=ADD&id={$b->id}">{_('Add to cart')}</a></p>
 			</div>
 		{/foreach}
 	</div>

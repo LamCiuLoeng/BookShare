@@ -25,11 +25,18 @@
 		<p><a href="download.php?id={$book->id}">{_('Download')}</a></p>
 		<p><a href="download_xml.php?id={$book->id}">XML</a></p>
 		<p><a href="book.php?id={$book->id}&action=EDIT">{_('Edit')}</a></p>
+		<p><a href="cart_action.php?action=ADD&id={$book->id}">{_('Add To Shopping Cart')}</a></p>
     {/if}
     
-    
-    {assign var="url" value= "$WEBSITE_URL/book.php?id={$book->id}" }    
-    {insert name='facebook_like' url=$url}
-    {insert name='facebook_comment' url=$url}
+    {if isset($smarty.session['locale']) && $smarty.session['locale'] == 'zh_CN'}
+		<div id="uyan_frame"></div>
+		<script type="text/javascript" id="UYScript" src="http://v1.uyan.cc/js/iframe.js?UYUserId=89706" async=""></script>
+	{else}
+		{assign var="url" value= "$WEBSITE_URL/book.php?id={$book->id}" }    
+		{insert name='facebook_like' url=$url}
+		{insert name='facebook_comment' url=$url}
+	{/if}
+	
 	</div>
+
 {/block}

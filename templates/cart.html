@@ -1,0 +1,25 @@
+{extends file='base.html'}
+
+{block name="extJavaScript"}
+
+{/block}
+
+
+{block name="main_content"}
+	<table class="plain" width="100%">
+	   <tr>
+	       <td width="50">{_('Book Name')}</td>
+	       <td>{_('Points')}</td>
+	       <td>{_('Short Description')}</td>
+	       <td>{_('Action')}</td>
+	   </tr>
+	   {foreach from=$books item=b}
+	       <tr>
+	           <td><a href="book.php?id={$b->id}">{$b->name}</a></td>
+	           <td>{$b->points}</td>
+	           <td>{$b->short_description}</td>
+	           <td><a href="cart_action.php?action=DELETE&id={$b->id}">{_('Delete')}</a></td>
+	       </tr>
+	   {/foreach}
+	</table>
+{/block}

@@ -12,14 +12,14 @@
 		       <div class="obj_left" style="width:600px">
 		          <p>{$promote_book->description}</p>
 		          <p>{$promote_book->short_description}</p>
+		          <p><a href="cart_action.php?action=ADD&id={$promote_book->id}">{_('Add To Shopping Cart')}</a></p>
 		       </div>
 	       </div>
 	   </div>
 	{/if}
-	
-	
-	
     <hr />
+	
+	
 	<div><h4 class="obj_left">{_('New Upload Books')}</h4><span class="obj_right"><a href="books.php">{_('More')}</a></span><br class="clear"/></div>
 	<div class="books_div">
 		{foreach from=$new_books item=b}
@@ -28,10 +28,12 @@
 					<a href="book.php?id={$b->id}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 				</div>
 				<a href="book.php?id={$b->id}">{$b->name}</a>
+				<p><a href="cart_action.php?action=ADD&id={$b->id}">{_('Add To Shopping Cart')}</a></p>
 			</div>
 		{/foreach}
-					   
 	</div>
+	<div><br class="clear"/></div>
+    					   
 	
 	
 	{foreach from=$promote_categories item=c key=c_id}
@@ -44,8 +46,10 @@
 	                    <a href="book.php?id={$b->id}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 	                </div>
 	                <a href="book.php?id={$b->id}">{$b->name}</a>
+	                <p><a href="cart_action.php?action=ADD&id={$b->id}">{_('Add To Shopping Cart')}</a></p>
 	            </div>
 	        {/foreach}
 	    </div>
+	    <div><br class="clear"/></div>
 	{/foreach}
 {/block}
