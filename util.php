@@ -151,5 +151,25 @@
 		return $result;
 		
 	}
+	
+	function point2money($points,$locale) {
+		//1 point == 1 USD
+		$result = array();
+		if( $locale == 'en'){
+			array_push($result,'USD');
+			array_push($result ,$points);
+		}elseif ( $locale == 'zh_CN') {
+			array_push($result,'RMB');
+			array_push($result,$points * 6.3);
+		}elseif ( $locale == 'zh_HK'){
+			array_push($result, 'HKD');
+			array_push($result , $points * 7.7);
+		}else{
+			$result[] = 'USD';
+			$result[] = $points;
+		}
+// 		var_dump($result);
+		return $result;
+	}
 		
 ?>

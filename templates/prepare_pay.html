@@ -1,0 +1,42 @@
+{extends file='base.html'}
+
+{block name="extJavaScript"}
+
+{/block}
+
+
+{block name="main_content"}
+	<form action="bank.php" method="post">
+		<table>
+		  <tr>
+		      <td>{_('Points')}</td>
+		      <td>
+			    <select name="points">
+			      <option value="{$points}">{$points} points ( {$pm[0] } {$pm[1] } )</option>
+			      <option value="10">10 points ( {$10pm[0]} {$10pm[1]} )</option>
+			      <option value="20">20 points ( {$20pm[0]} {$20pm[1]} )</option>
+			      <option value="50">50 points ( {$50pm[0]} {$50pm[1]} )</option>
+			    </select>
+		      </td>
+		  </tr>
+		  <tr>
+            <td>{_('Pay Type')}</td>		
+		    <td>
+			  <ul>
+			      <li><input type="radio" name="pay_type" value="Band1"/> Band 1</li>
+			      <li><input type="radio" name="pay_type" value="Band2"/> Band 2</li>
+			      <li><input type="radio" name="pay_type" value="Band3"/> Band 3</li>
+			      <li><input type="radio" name="pay_type" value="Band4"/> Band 4</li>
+			      <li><input type="radio" name="pay_type" value="Band5"/> Band 5</li>
+			  </ul>
+		    </td>
+		  </tr>
+		  <tr>
+		      <td colspan="2">
+			    <input type="submit" value="{_('Submit')}"/>
+		      </td>
+		  </tr>
+	    
+		</table>
+	</form>
+{/block}

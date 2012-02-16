@@ -22,4 +22,29 @@
 	       </tr>
 	   {/foreach}
 	</table>
+	
+	<hr />
+	<div>
+	   <!-- exchange by points -->
+	   <p>{_('Exchenge by points')}</p>
+	   <p>{_('Current Points')} : {$smarty.session['user']->points}</p>
+	   <form action='' method="post">
+	       <input type='hidden' name='books_ids' value='{$book_ids}'/>
+	       <input type="submit" value="{_('Submit')}"/>
+	   </form>
+	</div>
+	
+	       
+	
+	<hr />
+	<div>
+	   <!-- pay by band -->
+	   <p>{_('Pay the points')}</p>
+	   <form action="prepare_pay.php" method="post">
+	       <input type="submit" value="{_('Submit')}"/>
+	       <input type="hidden" name="points" value="{$book_points}"/>
+	       <input type='hidden' name='user_id' value='{$smarty.session['user']->id}'/>
+	   </form>
+	</div>
+	
 {/block}
