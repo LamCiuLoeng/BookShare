@@ -55,6 +55,37 @@
 		$db->query($sql);
 		return $db->insert_id;
 	}
+	
+	function points2Books($db,$user_id,$book_ids) {
+		$download_book_ids = array();
+		foreach ( getDownloadBooks($db,$user_id) as $b ){
+			array_push($download_book_ids, $b->id);
+		}
+		
+		$user = getRowById($db, 'users', $user_id);
+		$total_points = 0;
+		$new_books = array();
+		foreach ($book_ids as $bid){
+			if(!array_key_exists($bid, $download_book_ids)){
+				$new_book = getRowById($db, 'books', $bid);
+				$total_points += $new_book->points;
+				array_push($new_books, $new_book);				
+			}
+		}
+		
+		if($user->points < $total_points){
+			$result = array('1','No enought points for the download books!',$user->points,$total_points);
+		}else{
+			foreach ($new_books as $nb){
+				addDownloadHistory($db, $user_id, $nb->id, $nb->points);				
+			}
+			updateUserPoints($db, $user_id, $total_points * -1);
+			$result = array('0','OK',$user->points,$total_points);
+		}
+		return $result;
+	}
+	
+	
 	//**********************************
 	//function related to the group
 	//**********************************	

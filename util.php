@@ -96,6 +96,22 @@
 		return false;
 	}
 	
+	function reloadUserInfo($db,$user_id){
+		$user = getRowById($db, 'users', $user_id);
+		if(isset($_SESSION['user'])){
+			unset($_SESSION['user']);
+		}
+		
+		$_SESSION['user'] = (object) Array();
+		$_SESSION['user']->email = $user->email;
+		$_SESSION['user']->id = $user->id;
+		$_SESSION['user']->points = $user->points;
+		$_SESSION['user']->locale = $user->locale;
+		$_SESSION['locale'] = $user->locale;
+		
+		return true;
+	}
+	
 	function handleUpload($field_name) {
 		try{
 			$pi = pathinfo($_FILES[$field_name]['name']);
