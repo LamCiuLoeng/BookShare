@@ -38,49 +38,99 @@
 
 {block name="main_content"}
 	<div>
-		<p><label>{_('E-mail')}</label>{$info->email}</p>
-		<p><label>{_('Points')}</label>{$info->points} (<a href="buy_points.php">Buy Points</a>)</p>
+	   <table>
+	       <tr>
+	           <td>{_('E-mail')}<td><td>{$info->email}</td>
+	       </tr>
+	       <tr>
+	           <td>{_('Points')}</td><td>{$info->points}</td>
+	       </tr>
+	   </table>
 	</div>
 	
 	
-	<div>
-	   <form action="exchange_points.php" method="post">
-	   <input type="hidden" name="total_points" id="total_points" value="{$info->points}"/>
-	   <input type="text" name="points" id="points" value="" class="numeric"/>
-	   <input type="button" value="{_('exchange points')}" onclick="toSubmit();"/>
-	   </form>
-	</div>
-	
-	<br /><br />
-	
-	<div>
-	   <h3>{_('Exchange history')}</h3>
-	   <table class="plain" width="100%">
-        <thead>
-            <tr>
-                <td>{_('Request time')}</td>
-                <td>{_('Request points')}</td>
-                <td>{_('Status')}</td>
-            </tr>
-        </thead>    
-	    {foreach from=$result['data'] item=b}
-	          <tr>
-	              <td>{$b->create_time}</td>
-	              <td>{$b->points}</td>
-	              {if $b->status==0}
-	                    <td>{_('New')}</td>
-	              {else if $b->status==1}
-	                    <td>{_('Approved')}</td>
-	              {else if $b->status==2}
-	                    <td>{_('Disapproved')}</td>
-	              {else if $b->status==2}
-	                    <td>{_('Cancelled')}</td>
-	              {/if}
-	          </tr>
-	      {/foreach}
-      
-    </table>
-    <br />
-      {insert name="populate_paginate" result=$result pageurl=$page_url}
-	</div>
+	{if !isset($type) || $type=='EXCHANGE'}
+		<div>
+		   <form action="exchange_points.php" method="post">
+		   <input type="hidden" name="total_points" id="total_points" value="{$info->points}"/>
+		   <input type="text" name="points" id="points" value="" class="numeric"/>
+		   <input type="button" value="{_('exchange points')}" onclick="toSubmit();"/>
+		   </form>
+		</div>
+		
+		<div>
+		   <p>
+		      <h3 class="obj_left">{_('Exchange history')}</h3>
+		      <h5 class="obj_right"><a href="profile.php?type=BUY">{_('Buy history')}</a><h5>
+		   </p>
+		   
+		   <br class="clear"/>
+		   
+		   <table class="plain" width="100%">
+	        <thead>
+	            <tr>
+	                <td>{_('Request time')}</td>
+	                <td>{_('Request points')}</td>
+	                <td>{_('Status')}</td>
+	            </tr>
+	        </thead>    
+		    {foreach from=$result['data'] item=b}
+		          <tr>
+		              <td>{$b->create_time}</td>
+		              <td>{$b->points}</td>
+		              {if $b->status==0}
+		                    <td>{_('New')}</td>
+		              {else if $b->status==1}
+		                    <td>{_('Approved')}</td>
+		              {else if $b->status==2}
+		                    <td>{_('Disapproved')}</td>
+		              {else if $b->status==2}
+		                    <td>{_('Cancelled')}</td>
+		              {/if}
+		          </tr>
+		      {/foreach}
+	      
+	    </table>
+	    <br />
+	      {insert name="populate_paginate" result=$result pageurl=$page_url}
+		</div>
+	{elseif  isset($type) && $type=='BUY'}
+	   <div>
+	       <p><a href="prepare_pay.php">{_('Buy Points')}</a></p>
+	   </div>
+	    <div>
+           <p>
+               <h3 class="obj_left">{_('Buy history')}</h3>
+               <h5 class="obj_right"><a href="profile.php">{_('Exchange history')}</a></h5>
+           </p>
+           
+           <br class="clear"/>
+           
+           <table class="plain" width="100%">
+            <thead>
+                <tr>
+                    <td>{_('Buy time')}</td>
+                    <td>{_('Buy points')}</td>
+                    <td>{_('Status')}</td>
+                </tr>
+            </thead>    
+            {foreach from=$result['data'] item=b}
+                  <tr>
+                      <td>{$b->create_time}</td>
+                      <td>{$b->points}</td>
+                      {if $b->status==0}
+                            <td>{_('New')}</td>
+                      {else if $b->status==1}
+                            <td>{_('Successful')}</td>
+                      {else}
+                            <td>{_('Pending')}</td>
+                      {/if}
+                  </tr>
+              {/foreach}
+          
+        </table>
+        <br />
+          {insert name="populate_paginate" result=$result pageurl=$page_url}
+        </div>
+	{/if}
 {/block}

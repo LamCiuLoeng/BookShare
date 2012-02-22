@@ -2,20 +2,25 @@
 	require_once 'util.php';
 	require_once 'db_helper.php';
 	
-	$user_id = $_REQUEST['user_id'];
-	$points = $_REQUEST['points'];
+//	$user_id = $_REQUEST['user_id'];
+//	$points = $_REQUEST['points'];
 	
 	$db = getDBInstance();
-	updateUserPoints($db, $user_id, $points);
+	$order_id = $_REQUEST['order_id'];
+	$row = getRowById($db, 'buy_log', $order_id);
+	$user_id = $row->user_id;
+	$points = $row->points;
 	
-	message('Successfully pay the points!');
-	if(isset($_SESSION['cart'])){
-		unset($_SESSION['cart']);
-	}
+	//update the user's points
+	updateUserPoints($db, $user_id, $points);
+
+	//update the buy log
+	updateOrderStatus($db,$order_id, 1);
 	
 	if(isset($_SESSION['user'])){
-		$_SESSION['user']->points += floatval($points);
+		reloadUserInfo($db, $_SESSION['user']->id);
 	}
 	
+	message(_('Successfully pay the points!'));
 	redirect('cart.php');
 ?>

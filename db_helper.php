@@ -213,18 +213,21 @@
 	//function related to the buy points
 	//**********************************
 	function createOrderNo(){
-		
+		$timestr = nowStr();
+		$ramdon = randomStr(100, 999);
+		return 'SO'.$timestr.$ramdon;
 	}
 	
 	
-	function createOrder($points,$currency,$amount,$remark,$pay_way,$user_id){
-		$no = createOrder();
-		$sql = "insert into buy_lob(no,points,currency,amount,remark,pay_way,user_id) values ($no,$points,$currency,$amount,$remark,$pay_way,$user_id);";
+	function createOrder($db,$points,$currency,$amount,$remark,$pay_way,$user_id){
+		$no = createOrderNo();
+		$sql = "insert into buy_log(no,points,currency,amount,remark,pay_way,user_id) values ('$no',$points,'$currency',$amount,'$remark','$pay_way',$user_id);";
 		$db->query($sql);
+		echo  $sql;
 		return $db->insert_id;
 	}
 	
-	function updateOrderStatus($id,$status){
+	function updateOrderStatus($db,$id,$status){
 		$sql = "update buy_log set status=$status where id=$id; ";
 		$db->query($sql);
 		return $db->rows_affected;

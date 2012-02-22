@@ -7,12 +7,15 @@
 
 {block name="main_content"}
 	<form action="bank.php" method="post">
+	   <input type="hidden" name="currency" value="{$10pm[0]}"/>
 		<table>
 		  <tr>
 		      <td>{_('Points')}</td>
 		      <td>
 			    <select name="points">
+			    {if isset($points)}
 			      <option value="{$points}">{$points} points ( {$pm[0] } {$pm[1] } )</option>
+			    {/if}
 			      <option value="10">10 points ( {$10pm[0]} {$10pm[1]} )</option>
 			      <option value="20">20 points ( {$20pm[0]} {$20pm[1]} )</option>
 			      <option value="50">50 points ( {$50pm[0]} {$50pm[1]} )</option>

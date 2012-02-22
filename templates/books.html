@@ -10,7 +10,9 @@
 					<a href="book.php?id={$b->id}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 				</div>
 				<a href="book.php?id={$b->id}">{$b->name}</a>
-			<p><a href="cart_action.php?action=ADD&id={$b->id}">{_('Add to cart')}</a></p>
+			{if isset($smarty.session['logged']) && $smarty.session['logged'] }
+			    <p><a href="cart_action.php?action=ADD&id={$b->id}">{_('Add To Shopping Cart')}</a></p>
+			{/if}
 			</div>
 		{/foreach}
 	</div>
