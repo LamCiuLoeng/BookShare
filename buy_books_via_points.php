@@ -7,7 +7,7 @@
 	$result = points2Books($db,$_SESSION['user']->id,explode('|',$book_ids));
 	
 	if($result[0] == 0){
-		message('Successfully buy the books!');
+		message(_('Successfully buy the books!'));
 		if(isset($_SESSION['cart'])){
 			unset($_SESSION['cart']);
 		}

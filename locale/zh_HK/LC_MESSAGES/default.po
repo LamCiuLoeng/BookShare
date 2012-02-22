@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookshare\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-22 17:46+0800\n"
-"PO-Revision-Date: 2012-02-22 17:52+0800\n"
+"POT-Creation-Date: 2012-02-22 18:08+0800\n"
+"PO-Revision-Date: 2012-02-22 18:09+0800\n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
 "Language-Team: sys2do <lamciuloeng@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,10 @@ msgstr ""
 #: books.php:8
 msgid "New Upload Books"
 msgstr "最新上傳的書"
+
+#: buy_books_via_points.php:10
+msgid "Successfully buy the books!"
+msgstr "成功購買圖書！"
 
 #: exchange_points.php:10
 msgid "Please input the points you want to exchange!"
@@ -234,7 +238,7 @@ msgstr "積分"
 
 #: templates_c/3bbfa0235b4b1ddb1e865aff5d4ab9a9e472309b.file.prepare_pay.html.php:167
 msgid "Pay Type"
-msgstr "支付方式"
+msgstr "付費方式"
 
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:136
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:185
@@ -362,7 +366,7 @@ msgstr "當前積分"
 
 #: templates_c/a695af9711987d848cd23a7c59fbc48a7ae0c0cc.file.cart.html.php:191
 msgid "Pay the points"
-msgstr "付款以獲利積分"
+msgstr "付費以獲得積分"
 
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:179
 msgid "File Name"
