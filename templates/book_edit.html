@@ -16,7 +16,7 @@
 
 {block name="main_content"}
 	<form action="save_book.php" method="post" enctype="multipart/form-data">
-		<input type="hidden" name="id" value="{$book->id}"/>
+		<input type="hidden" name="id" value="{encode($book->id)}"/>
 		<input type="hidden" name="file_ids" id="file_ids" value="{$book->pages}"/>
 		<input type="hidden" name="action" value="EDIT"/>
 		<div>

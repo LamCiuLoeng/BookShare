@@ -1,14 +1,18 @@
 <?php
 	require_once 'util.php';
 	require_once 'db_helper.php';
-	$id = $_REQUEST['id'];
 	
+
+	$id = decode_and_int($_REQUEST['id']);
 	$db = getDBInstance();
+	
 	$book = getRowById($db, 'books', $id);
+//	$db->debug();
 	$smarty = getSmartyInstance();
 	$smarty->assign('book',$book);
-	$sql = "select c.* from categories c, book_category bc where bc.book_id = $id and bc.category_id = c.id";
+	$sql = "select c.* from categories c, book_category bc where bc.book_id = $id and bc.category_id = c.id;";
 	$categories = $db->get_results($sql);
+//	$db->debug();
 	$smarty->assign('categories',$categories);
 	
 	

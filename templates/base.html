@@ -21,6 +21,7 @@
 	{block name="extCSS"}{/block}
 
 	<script type="text/javascript" src="../public/js/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="../public/js/custom/common.js"></script>
 	
 	<script language="JavaScript" type="text/javascript">
     //<![CDATA[
@@ -28,14 +29,7 @@
         	  {insert name='fire_message'}
           });
           
-          function switch_language(obj){
-        	  var lang = $(obj).val();
-        	  $.getJSON('switch_lang.php',{ 'lang' : lang ,'t' : Date.parse(new Date()) },function(r){
-        		  if(r.flag==0){
-	        		  location.reload(true);
-        		  }        			  
-        	  })
-          }
+          
     //]]>
    </script>
 
@@ -51,7 +45,7 @@
 			{if isset($smarty.session['logged']) && $smarty.session['logged'] }
 				{_('welcome')} , {$smarty.session.user->email} | <a href="cart.php">{_('Shopping Cart')}</a> | <a href="logout_handler.php">{_('Logout')}</a>
 			{else}
-				<a href="login.php">{_('Login')}</a> | <a href="register.php">{_('Register')}</a>
+				<a href="login.php">{_('Login')}</a> | <a href="register.php">{_('Register')} </a> | <a href="cart.php">{_('Shopping Cart')}</a>
 	            {*insert name='facebook_login'*}				
 			{/if}
 			|

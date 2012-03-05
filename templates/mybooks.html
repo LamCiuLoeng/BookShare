@@ -22,7 +22,7 @@
 				</thead>
 				{foreach from=$books item=b}
 					<tr>
-						<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
+						<td><a href="book.php?id={encode($b->id)}">{$b->name}</a></td>
 						<td>{$b->short_description}</td>
 						<td>{$b->create_time}</td>
 						<td>{$b->download_times}</td>
@@ -50,7 +50,7 @@
 				</thead>
 				{foreach from=$books item=b}
 					<tr>
-						<td><a href="book.php?id={$b->id}">{$b->name}</a></td>
+						<td><a href="book.php?id={encode($b->id)}">{$b->name}</a></td>
 						<td>{$b->short_description}</td>
 						<td>{$b->points}</td>
 					</tr>

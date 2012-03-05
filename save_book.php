@@ -21,7 +21,7 @@
 		$create_by = $_SESSION['user']->id;
 		$id = addBook($db, $name, $desc, $short_desc,$point, $create_by,$attachment_ids);
 	}else{
-		$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : null;
+		$id = isset($_REQUEST['id']) ? decode($_REQUEST['id']) : null;
 		if(!$id){
 			message(_('No such record!'));
 			redirect('index.php');

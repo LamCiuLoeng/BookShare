@@ -15,14 +15,15 @@
 	   </tr>
 	   {foreach from=$books item=b}
 	       <tr>
-	           <td><a href="book.php?id={$b->id}">{$b->name}</a></td>
+	           <td><a href="book.php?id={encode($b->id)}">{$b->name}</a></td>
 	           <td>{$b->points}</td>
 	           <td>{$b->short_description}</td>
-	           <td><a href="cart_action.php?action=DELETE&id={$b->id}">{_('Delete')}</a></td>
+	           <td><a href="cart_action.php?action=DELETE&id={encode($b->id)}">{_('Delete')}</a></td>
 	       </tr>
 	   {/foreach}
 	</table>
 	
+	{if isset($smarty.session['logged']) && $smarty.session['logged'] }
 	<hr />
 	<div>
 	   <!-- exchange by points -->
@@ -33,9 +34,7 @@
 	       <input type="submit" value="{_('Submit')}"/>
 	   </form>
 	</div>
-	
-	       
-	
+
 	<hr />
 	<div>
 	   <!-- pay by band -->
@@ -46,5 +45,5 @@
 	       <input type='hidden' name='user_id' value='{$smarty.session['user']->id}'/>
 	   </form>
 	</div>
-	
+	{/if}
 {/block}

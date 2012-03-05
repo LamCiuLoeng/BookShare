@@ -7,7 +7,7 @@
 	}
 	
 	$db = getDBInstance();
-	$id = $_REQUEST['id'];
+	$id = decode($_REQUEST['id']);
 		
 	$download_book = getDownloadBook($db, $_SESSION['user']->id, $id);
 	$book = getRowById($db, 'books', $id);
@@ -18,7 +18,7 @@
 		$new_point = $_SESSION['user']->points - $book->points;	
 		if($new_point < 0){
 			message('Your points is not enough to download this book!');
-			redirect("book.php?id=$id");
+			redirect("book.php?id=".$_REQUEST['id']);
 		}
 		//minus the user's points
 		updateUserPoints($db, $_SESSION['user']->id, $book->points*-1);

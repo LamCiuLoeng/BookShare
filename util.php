@@ -187,5 +187,27 @@
 // 		var_dump($result);
 		return $result;
 	}
-		
+	
+	
+	function encode($v) {
+		$key = md5(PRIVATEKEY);
+		$iv_size = mcrypt_get_iv_size ( MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB );
+		$iv = mcrypt_create_iv ( $iv_size, MCRYPT_RAND );
+		$passcrypt = mcrypt_encrypt ( MCRYPT_RIJNDAEL_256, $key, $v, MCRYPT_MODE_ECB, $iv );
+		$passcrypt = base64_encode ( $passcrypt );
+		return urlencode($passcrypt);
+	}
+	
+	function decode($v) {		
+		$key = md5(PRIVATEKEY);
+		$v = base64_decode($v);
+		$iv_size = mcrypt_get_iv_size ( MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB );
+		$iv = mcrypt_create_iv ( $iv_size, MCRYPT_RAND );
+		$passcrypt = mcrypt_decrypt ( MCRYPT_RIJNDAEL_256, $key, $v, MCRYPT_MODE_ECB, $iv );
+		return $passcrypt;
+	}
+	
+	function decode_and_int($v){
+		return intval(decode($v));
+	}
 ?>

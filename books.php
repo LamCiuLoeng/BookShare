@@ -8,7 +8,7 @@
 		$title = _('New Upload Books');
 		$category = null;
 	}else{
-		$id = $_REQUEST['id'];
+		$id = decode_and_int($_REQUEST['id']);
 		$sql = "SELECT b.* FROM books b, book_category bc where b.id=bc.book_id and bc.category_id=$id";
 		$category = getRowById($db, 'categories', $id);
 		$title = $category->name;
@@ -22,6 +22,6 @@
 	$smarty->assign('books',$books);
 	$smarty->assign('title',$title);
 	$smarty->assign('category',$category);
-	$smarty->assign('page_url',$category ? 'books.php?id='.$category->id : 'books.php');
+	$smarty->assign('page_url',$category ? 'books.php?id='.encode($category->id) : 'books.php');
 	$smarty->display('books.html');
 ?>

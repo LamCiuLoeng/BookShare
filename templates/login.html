@@ -3,12 +3,19 @@
 
 {block name="main_content"}
 	<form action="login_handler.php" method="post">
-		<div>
-			<p><label>{_('E-mail')}</label><input name="email" type="text"/></p>
-			<p><label>{_('Password')}</label><input type="password" name="password"/></p>
-		</div>
-		<div>
-			<input type="submit" value="{_('Submit')}"/>
-		</div>
+		<table>
+		    <tr>
+		        <td><label>{_('E-mail')}</label></td>
+		        <td><input name="email" type="text"/></td>
+		    </tr>
+		    <tr>
+		        <td><label>{_('Password')}</label></td>
+		        <td><input type="password" name="password"/></td>
+		    </tr>
+		    <tr>
+		        <td>&nbsp;</td>
+		        <td><input type="submit" value="{_('Submit')}"/></td>
+		    </tr>
+		</table>
 	</form>
 {/block}

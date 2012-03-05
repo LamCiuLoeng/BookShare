@@ -22,11 +22,11 @@
     
     
     {if isset($smarty.session['logged'])}
-		<p><a href="download.php?id={$book->id}">{_('Download')}</a></p>
-		<p><a href="download_xml.php?id={$book->id}">XML</a></p>
-		<p><a href="book.php?id={$book->id}&action=EDIT">{_('Edit')}</a></p>
-		<p><a href="cart_action.php?action=ADD&id={$book->id}">{_('Add To Shopping Cart')}</a></p>
+		<p><a href="download.php?id={encode($book->id)}">{_('Download')}</a></p>
+		<p><a href="download_xml.php?id={encode($book->id)}">XML</a></p>
+		<p><a href="book.php?id={encode($book->id)}&action=EDIT">{_('Edit')}</a></p>
     {/if}
+		<p><a href="#" onclick="add2cart('{encode($book->id)}')">{_('Add To Shopping Cart')}</a></p>
     
     {if isset($smarty.session['locale']) && $smarty.session['locale'] == 'zh_CN'}
 		<div id="uyan_frame"></div>

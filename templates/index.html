@@ -7,14 +7,13 @@
 	       <h4>{_('Promoted Book')} : {$promote_book->name}</h4>
 	       <div>
 	           <div class="obj_left" style="width : 250px; height: 250px; text-align: center;">
-			       <a href="book.php?id={$promote_book->id}"><img width="200" height="200" src="{$promote_book->cover|default:'../public/images/no_cover.jpg'}"/></a>
+			       <a href="book.php?id={encode($promote_book->id)}"><img width="200" height="200" src="{$promote_book->cover|default:'../public/images/no_cover.jpg'}"/></a>
 	           </div>
 		       <div class="obj_left" style="width:600px">
 		          <p>{$promote_book->description}</p>
 		          <p>{$promote_book->short_description}</p>
-		          {if isset($smarty.session['logged']) && $smarty.session['logged'] }
-		              <p><a href="cart_action.php?action=ADD&id={$promote_book->id}">{_('Add To Shopping Cart')}</a></p>
-		          {/if}
+		          <p><a href="#" onclick="add2cart('{encode($promote_book->id)}')">{_('Add To Shopping Cart')}</a></p>
+		          
 		       </div>
 	       </div>
 	   </div>
@@ -27,12 +26,11 @@
 		{foreach from=$new_books item=b}
 			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
 				<div class="preface_div">
-					<a href="book.php?id={$b->id}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
+					<a href="book.php?id={encode($b->id)}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 				</div>
-				<a href="book.php?id={$b->id}">{$b->name}</a>
-				{if isset($smarty.session['logged']) && $smarty.session['logged'] }
-				    <p><a href="cart_action.php?action=ADD&id={$b->id}">{_('Add To Shopping Cart')}</a></p>
-				{/if}
+				<a href="book.php?id={encode($b->id)}">{$b->name}</a>
+			    <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>
+				
 			</div>
 		{/foreach}
 	</div>
@@ -42,20 +40,19 @@
 	
 	{foreach from=$promote_categories item=c key=c_id}
 	   <hr />
-	   <div><h4 class="obj_left">{$c['name']}</h4><span class="obj_right"><a href="books.php?id={$c_id}">{_('More')}</a></span><br class="clear"/></div>
+	   <div><h4 class="obj_left">{$c['name']}</h4><span class="obj_right"><a href="books.php?id={encode($c_id)}">{_('More')}</a></span><br class="clear"/></div>
 	    <div class="books_div">
 	        {foreach from=$c['data'] item=b}
 	            <div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
 	                <div class="preface_div">
-	                    <a href="book.php?id={$b->id}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
+	                    <a href="book.php?id={encode($b->id)}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 	                </div>
-	                <a href="book.php?id={$b->id}">{$b->name}</a>
-	                {if isset($smarty.session['logged']) && $smarty.session['logged'] }
-	                   <p><a href="cart_action.php?action=ADD&id={$b->id}">{_('Add To Shopping Cart')}</a></p>
-	                {/if}
+	                <a href="book.php?id={encode($b->id)}">{$b->name}</a>
+                    <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>
 	            </div>
 	        {/foreach}
 	    </div>
 	    <div><br class="clear"/></div>
 	{/foreach}
 {/block}
+	              
