@@ -9,4 +9,11 @@
 	define('UPLOAD_PATH', $_SERVER["DOCUMENT_ROOT"]);
 	define('DEFAULT_LOCALE', 'zh_CN');
 	define('APPID', '188767117872337');
+	define('PRIVATEKEY','1233211234567');
+	
+	//config for google auth
+	define('GOOGLE_CLIENT_ID','373587493538.apps.googleusercontent.com');
+	define('GOOGLE_CLIENT_SECRET','ylA-JCsvTYNRqFyw4OFsJRjN');
+
+	
 ?>
