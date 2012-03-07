@@ -4,7 +4,7 @@ require_once 'util.php';
 
 class GoogleUtil {
 	var $auth_url = "https://accounts.google.com/o/oauth2/auth";
-	var $token_url = "ssl://accounts.google.com";
+	var $token_url = "https://accounts.google.com/o/oauth2/token";
 	var $client_id = NULL;
 	var $client_secret = NULL;
 	var $redirect_uri = NULL;
@@ -18,44 +18,19 @@ class GoogleUtil {
 		$this->redirect_uri = $redirect_uri;
 	}
 	
-	function getToken($code) {
-		$fp = fsockopen( $this->token_url , 443, $errno, $errstr, 30);
-		$post = 'code='.$code;
-		$post.= '&client_id='.$this->client_id;
-		$post.= '&client_secret='.$this->client_secret;
-		$post.= '&redirect_uri='.urldecode($this->redirect_uri);
-		$post.= '&grant_type=authorization_code';
-		$len = strlen($post);
+	function authURL() {
+		$params = array ('client_id' => GOOGLE_CLIENT_ID, 'redirect_uri' => $this->redirect_uri, 'response_type' => 'code', 'scope' => 'https://www.googleapis.com/auth/userinfo.profile', 'state' => 'google', 'access_type' => 'offline', 'approval_prompt' => 'force' );
 		
-		echo $post;
-		
-		if (!$fp) {
-		    throw new Exception('Can not open the request!');
-		} else {
-			$receive = '';
-		    $out = "POST /o/oauth2/token HTTP/1.1\r\n";
-		    $out .= "Host: accounts.google.com\r\n";
-			$out .= "Content-Type: application/x-www-form-urlencoded\r\n";
-			$out .= "Connection: close\r\n";
-			$out .= "Content-Length: $len\r\n";
-			$out .="\r\n";
-			$out .= $post."\r\n";
-			
-		    fwrite($fp, $out);
-		    while (!feof($fp)) {
-		        $receive .= fgets($fp, 128);
-		    }
-		    fclose($fp);
-		    echo '<p><b>Received -begin</b></p>';
-		    echo $receive;
-		    echo '<p><b>Received -end</b></p>';		    
-		    return json_decode($receive);
-		    
-		}
+		$s = http_build_query ( $params );
+		$url = $this->auth_url . '?' . $s;
+		return $url;
 	}
 	
-	function getCode($redirect_uri, $scope, $state = NULL) {
-			
+	function getToken($code) {
+		$data = array ('code' => $code, 'client_id' => $this->client_id, 'client_secret' => $this->client_secret, 'redirect_uri' => $this->redirect_uri, 'grant_type' => 'authorization_code' );
+		
+		return http_post ( $this->token_url, $data );
+	
 	}
 
 }

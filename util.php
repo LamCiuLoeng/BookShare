@@ -208,57 +208,27 @@ function decode_and_int($v) {
 	return intval ( decode ( $v ) );
 }
 
+
 function http_post($url,$data=NULL,$time_out = "60") {
-	
-	$urlarr = parse_url ( $url );
-	$errno = "";
-	$errstr = "";
-	
-	if(isset($urlarr['scheme'])&&$urlarr ["scheme"] == "https"){
-		$urlarr ["port"] = "443";
-	}else{
-		$urlarr ["port"] = "80";
-	}
-	
-	if(!isset($urlarr['path'])){
-		$urlarr['path'] = '/';
-	}
-	
-	if(!isset($urlarr["query"])){
-		$urlarr["query"]='';
-	}
-	
+	$post_data = '';
 	if($data){
-		foreach ($data as $k=>$v){
-			$urlarr["query"].= rawurlencode($k)."=".rawurlencode($v);
-		}
+		$post_data=http_build_query($data);
 	}
-
 	
-	$fp = fsockopen ($urlarr['host'], $urlarr['port'], $errno, $errstr, $time_out );
-	
-	if (! $fp) {
-		throw new Exception("Can't connect to the $url");  
-	} else {
-		fputs ( $fp, "POST " . $urlarr["path"] . " HTTP/1.1\r\n" );
-		fputs ( $fp, "Host: " . $urlarr["host"] . "\r\n" );
-		fputs ( $fp, "Content-type: application/x-www-form-urlencoded\r\n" );
-		fputs ( $fp, "Content-length: " . strlen ( $urlarr["query"] ) . "\r\n" );
-		fputs ( $fp, "Connection: close\r\n\r\n" );
-		fputs ( $fp, $urlarr ["query"] . "\r\n\r\n" );
-		while ( ! feof ( $fp ) ) {
-			$info [] = fgets ( $fp, 1024 );
-		}
-		fclose ( $fp );
-		$info = implode ( "", $info );
-		return $info;
-	}
-
-}
-
-
-function my_get($url){
-	
+	curl_init();
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_HEADER, 0);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,  FALSE);
+	curl_setopt($ch, CURLOPT_URL,$url);
+	curl_setopt($ch, CURLOPT_POST, 1);
+//	curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookie.txt');
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+	$result = curl_exec($ch);
+	$c = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	curl_close($ch);
+	return $result;
 }
 
 ?>
