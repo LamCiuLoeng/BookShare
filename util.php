@@ -95,21 +95,31 @@ function isUserLogin() {
 	return false;
 }
 
-function reloadUserInfo($db, $user_id) {
-	$user = getRowById ( $db, 'users', $user_id );
-	if (isset ( $_SESSION ['user'] )) {
-		unset ( $_SESSION ['user'] );
-	}
-	
+
+function loginUser($user) {
 	$_SESSION ['user'] = ( object ) Array ();
 	$_SESSION ['user']->email = $user->email;
 	$_SESSION ['user']->id = $user->id;
 	$_SESSION ['user']->points = $user->points;
 	$_SESSION ['user']->locale = $user->locale;
 	$_SESSION ['locale'] = $user->locale;
-	
+	$_SESSION['logged'] = true;
 	return true;
 }
+
+
+
+function reloadUserInfo($db, $user_id) {
+	$user = getRowById ( $db, 'users', $user_id );
+	if (isset ( $_SESSION ['user'] )) {
+		unset ( $_SESSION ['user'] );
+	}	
+	loginUser($user);
+	return true;
+}
+
+
+
 
 function handleUpload($field_name) {
 	try {
@@ -214,13 +224,12 @@ function http_post($url,$data=NULL,$time_out = "60") {
 	if($data){
 		$post_data=http_build_query($data);
 	}
-	
-	curl_init();
+
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_HEADER, 0);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,  FALSE);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); #for https
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,  FALSE); #for https
 	curl_setopt($ch, CURLOPT_URL,$url);
 	curl_setopt($ch, CURLOPT_POST, 1);
 //	curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookie.txt');
@@ -229,6 +238,20 @@ function http_post($url,$data=NULL,$time_out = "60") {
 	$c = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	curl_close($ch);
 	return $result;
+}
+
+
+
+function http_get($url){
+	$ch = curl_init() ; 
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true) ; 
+	curl_setopt($ch, CURLOPT_BINARYTRANSFER, true) ; 
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);  #for https
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST,  FALSE); #for https
+	curl_setopt($ch, CURLOPT_URL, $url);
+	$output = curl_exec($ch) ; 
+	curl_close($ch);
+	return $output;	
 }
 
 ?>

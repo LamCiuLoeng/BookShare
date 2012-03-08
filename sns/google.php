@@ -5,6 +5,7 @@ require_once 'util.php';
 class GoogleUtil {
 	var $auth_url = "https://accounts.google.com/o/oauth2/auth";
 	var $token_url = "https://accounts.google.com/o/oauth2/token";
+	var $userinfo_url = "https://www.googleapis.com/oauth2/v1/userinfo";
 	var $client_id = NULL;
 	var $client_secret = NULL;
 	var $redirect_uri = NULL;
@@ -19,7 +20,15 @@ class GoogleUtil {
 	}
 	
 	function authURL() {
-		$params = array ('client_id' => GOOGLE_CLIENT_ID, 'redirect_uri' => $this->redirect_uri, 'response_type' => 'code', 'scope' => 'https://www.googleapis.com/auth/userinfo.profile', 'state' => 'google', 'access_type' => 'offline', 'approval_prompt' => 'force' );
+		$params = array (
+			'client_id' => GOOGLE_CLIENT_ID, 
+			'redirect_uri' => $this->redirect_uri, 
+			'response_type' => 'code', 
+			'scope' => 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email', 
+			'state' => 'google', 
+//			'access_type' => 'offline', 
+			'approval_prompt' => 'force' 
+		);
 		
 		$s = http_build_query ( $params );
 		$url = $this->auth_url . '?' . $s;
@@ -29,10 +38,15 @@ class GoogleUtil {
 	function getToken($code) {
 		$data = array ('code' => $code, 'client_id' => $this->client_id, 'client_secret' => $this->client_secret, 'redirect_uri' => $this->redirect_uri, 'grant_type' => 'authorization_code' );
 		
-		return http_post ( $this->token_url, $data );
+		return json_decode(http_post ( $this->token_url, $data ));
 	
 	}
-
+	
+	function getUserInfo($token) {
+		$url = $this->userinfo_url.'?access_token='.$token;
+		$result = http_get($url);
+		return json_decode($result);
+	}
 }
 
 ?>
