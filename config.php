@@ -15,5 +15,6 @@
 	define('GOOGLE_CLIENT_ID','373587493538.apps.googleusercontent.com');
 	define('GOOGLE_CLIENT_SECRET','ylA-JCsvTYNRqFyw4OFsJRjN');
 
-	
+	define('FACEBOOK_CLIENT_ID', '188767117872337');
+	define('FACEBOOK_CLIENT_SECRET', 'a66a597a4039b483880f7eacde84cf70');
 ?>

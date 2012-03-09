@@ -36,7 +36,7 @@ function getUserInfo($db, $user_id) {
 	return $db->get_row ( $sql );
 }
 
-function addUser($db, $email, $password, $locale = NULL, $account_type = 'NORNAM') {
+function addUser($db, $email, $password, $locale = NULL, $account_type = 'normal') {
 	if (! $locale) {
 		$locale = DEFAULT_LOCALE;
 	}

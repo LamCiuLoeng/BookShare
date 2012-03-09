@@ -38,7 +38,8 @@ class GoogleUtil {
 	function getToken($code) {
 		$data = array ('code' => $code, 'client_id' => $this->client_id, 'client_secret' => $this->client_secret, 'redirect_uri' => $this->redirect_uri, 'grant_type' => 'authorization_code' );
 		
-		return json_decode(http_post ( $this->token_url, $data ));
+		$result = json_decode(http_post ( $this->token_url, $data ));
+		return $result->access_token;
 	
 	}
 	
