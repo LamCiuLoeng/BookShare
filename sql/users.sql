@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2011-10-27 16:27:46
+Date: 2012-03-09 15:20:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,10 +26,7 @@ CREATE TABLE `users` (
   `password` varchar(45) NOT NULL,
   `points` float default '0',
   `locale` varchar(10) default 'en',
+  `account_type` varchar(50) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of users
--- ----------------------------
-INSERT INTO `users` VALUES ('1', 'aa@aa.com', '0', '2011-09-27 16:59:56', 'aa', '22', 'en');
