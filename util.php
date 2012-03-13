@@ -102,6 +102,7 @@ function loginUser($user) {
 	$_SESSION ['user']->id = $user->id;
 	$_SESSION ['user']->points = $user->points;
 	$_SESSION ['user']->locale = $user->locale;
+	$_SESSION ['user']->pic = $user->pic;
 	$_SESSION ['locale'] = $user->locale;
 	$_SESSION['logged'] = true;
 	return true;
