@@ -4,6 +4,7 @@ require_once 'db_helper.php';
 require_once 'sns/google.php';
 require_once 'sns/facebook.php';
 require_once 'sns/qq.php';
+require_once 'sns/yahoo.php';
 
 if (isset ( $_REQUEST ['code'] )) {
 	if ($_REQUEST ['state'] == 'google') {
@@ -21,7 +22,8 @@ if (isset ( $_REQUEST ['code'] )) {
 		$userinfo = $f->getUserInfo ( $token );
 		$email = $userinfo->email;
 		$pic = $userinfo->picture;
-	} elseif ($_REQUEST ['state'] == 'qq') {
+	} 
+	elseif ($_REQUEST ['state'] == 'qq') {
 		$q = new QQUtil ( WEBSITE_URL . '/login_via_3party_callback.php' );
 		$token = $q->getToken ( $_REQUEST ['code'] );		
 		$openid = $q->getOpenID($token);		
@@ -47,6 +49,29 @@ if (isset ( $_REQUEST ['code'] )) {
 	//login the user
 	loginUser ( $user );
 	redirect ( 'index.php' );
+	
+} elseif (isset($_REQUEST['oauth_token']) && isset($_REQUEST['oauth_verifier'])) {
+	$y = new YahooUtil('http://bookshare.sys2do.com/login_via_3party_callback.php');
+	
+	if(!isset($_SESSION['oauth_token_secret'])){
+		return null;
+	}else{
+		$oauth_token_secret = $_SESSION['oauth_token_secret'];
+		unset($_SESSION['oauth_token_secret']);
+	}
+	
+	$tmp = $y->exchangeToken($_REQUEST['oauth_token'], $_REQUEST['oauth_verifier'],$oauth_token_secret);
+	$token = $tmp['oauth_token'];
+	
+	echo YAHOO_CLIENT_ID.'<br /><br />';
+	echo YAHOO_CLIENT_SECRET.'<br /><br />';
+	echo $token.'<br /><br />';
+	echo $oauth_token_secret.'<br /><br />';
+	
+	
+	$userinfo = $y->getUserInfo($tmp['xoauth_yahoo_guid'], $token,$oauth_token_secret,$tmp['$oauth_session_handle']);
+	
+	var_dump($userinfo);
 
 } elseif (isset ( $_REQUEST ['error'] )) {
 	redirect ( 'login.php' );
