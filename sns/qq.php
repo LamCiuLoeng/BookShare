@@ -1,4 +1,5 @@
 <?php
+require_once 'config.php';
 require_once 'util.php';
 
 class QQUtil {
@@ -14,13 +15,13 @@ class QQUtil {
 	var $scope = NULL;
 	var $state = NULL;
 	
-	function __construct($redirect_uri) {
+	function __construct() {
 		$this->client_id = QQ_CLIENT_ID;
 		$this->client_secret = QQ_CLIENT_SECRET;
-		$this->redirect_uri = $redirect_uri;
+		$this->redirect_uri = LOGIN_CALLBACK_URL;
 	}
 	
-	function authURL() {
+	function authURL() {	
 		$params = array ('client_id' => $this->client_id, 'redirect_uri' => $this->redirect_uri, 'response_type' => 'code', 'scope' => 'get_user_info', 'state' => 'qq' );
 		$s = http_build_query ( $params );
 		$url = $this->auth_url . '?' . $s;
@@ -32,6 +33,7 @@ class QQUtil {
 		$s = http_build_query ( $data );
 		$result = http_get ( $this->token_url . '?' . $s );
 		parse_str ( $result );
+		return $access_token;
 	}
 	
 	function getOpenID($token) {

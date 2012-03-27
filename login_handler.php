@@ -6,7 +6,7 @@
 	
 	$db = getDBInstance();
 	
-	$user = $db->get_results("select * from users where active=0 and email='$email' and password='$password';");
+	$user = $db->get_results("select * from users where active=0 and email='$email' and password='$password' and account_type='normal';");
 	$db->debug();
 	if($db->num_rows == 1){
 		loginUser($user[0]);

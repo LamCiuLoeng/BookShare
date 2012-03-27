@@ -45,7 +45,7 @@
 			<div>{_('Administrator')}</div>
 			<p class="obj_right">
 			{if in_array('logged',$smarty.session)}
-				{_('welcome')} , {$smarty.session.user->email} | <a href="../logout_handler.php">{_('Logout')}</a>
+				<a href="profile.php"><img width="30" height="30" src="{$smarty.session.user->pic|default:'../public/images/somebody.png'}"/></a> | <a href="logout_handler.php">{_('Logout')}</a>
 			{else}
 				<a href="../login.php">Login</a>,<a href="register.php">Register</a>
 			{/if}

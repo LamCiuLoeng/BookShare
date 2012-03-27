@@ -13,10 +13,10 @@ class GoogleUtil {
 	var $scope = NULL;
 	var $state = NULL;
 	
-	function __construct($redirect_uri) {
+	function __construct() {
 		$this->client_id = GOOGLE_CLIENT_ID;
 		$this->client_secret = GOOGLE_CLIENT_SECRET;
-		$this->redirect_uri = $redirect_uri;
+		$this->redirect_uri = LOGIN_CALLBACK_URL;
 	}
 	
 	function authURL() {

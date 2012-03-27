@@ -13,10 +13,10 @@ class FacebookUtil {
 	var $scope = NULL;
 	var $state = NULL;
 	
-	function __construct($redirect_uri) {
+	function __construct() {
 		$this->client_id = FACEBOOK_CLIENT_ID;
 		$this->client_secret = FACEBOOK_CLIENT_SECRET;
-		$this->redirect_uri = $redirect_uri;
+		$this->redirect_uri = LOGIN_CALLBACK_URL;
 	}
 	
 	function authURL() {
@@ -51,6 +51,10 @@ class FacebookUtil {
 		$url = $this->userinfo_url.'?access_token='.$token;
 		$result = http_get($url);
 		return json_decode($result);
+	}
+	
+	function getUserPic($id){
+		return "http://graph.facebook.com/$id/picture";
 	}
 
 }

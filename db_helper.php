@@ -45,8 +45,8 @@ function addUser($db, $email, $password, $pic, $locale = NULL, $account_type = '
 	return getUserInfo ( $db, $db->insert_id );
 }
 
-function checkUserByEmail($db, $email) {
-	$sql = "select * from users where email='$email';";
+function checkUserByEmail($db, $email,$account_type) {
+	$sql = "select * from users where email='$email' and account_type='$account_type';";
 	return $db->get_results ( $sql );
 }
 

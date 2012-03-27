@@ -1,6 +1,5 @@
 <?php
 include_once 'model/ez_sql_core.php';
-//include_once 'model/ez_sql_sqlite.php';
 include_once 'model/ez_sql_mysql.php';
 include_once 'libs/Smarty.class.php';
 require_once 'config.php';
