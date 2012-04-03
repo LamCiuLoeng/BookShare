@@ -12,7 +12,7 @@
 		       <div class="obj_left" style="width:600px">
 		          <p>{$promote_book->description}</p>
 		          <p>{$promote_book->short_description}</p>
-		          <p><a href="#" onclick="add2cart('{encode($promote_book->id)}')">{_('Add To Shopping Cart')}</a></p>
+		          <!-- <p><a href="#" onclick="add2cart('{encode($promote_book->id)}')">{_('Add To Shopping Cart')}</a></p>  -->
 		          
 		       </div>
 	       </div>
@@ -29,7 +29,7 @@
 					<a href="book.php?id={encode($b->id)}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 				</div>
 				<a href="book.php?id={encode($b->id)}">{$b->name}</a>
-			    <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>
+			    <!-- <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>  -->
 				
 			</div>
 		{/foreach}
@@ -48,7 +48,7 @@
 	                    <a href="book.php?id={encode($b->id)}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 	                </div>
 	                <a href="book.php?id={encode($b->id)}">{$b->name}</a>
-                    <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>
+                    <!-- <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>  -->
 	            </div>
 	        {/foreach}
 	    </div>
