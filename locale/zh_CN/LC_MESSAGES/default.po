@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookshare\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-05 16:35+0800\n"
-"PO-Revision-Date: 2012-03-05 16:36+0800\n"
+"POT-Creation-Date: 2012-04-05 16:39+0800\n"
+"PO-Revision-Date: 2012-04-05 16:39+0800\n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
 "Language-Team: sys2do <lamciuloeng@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -39,9 +39,21 @@ msgstr "你的兑换请求已经成功发送，请耐心等候审批。"
 msgid "The service is not avaiable now,please try it later."
 msgstr "服务暂时不可用，请稍候再度。"
 
-#: login_handler.php:22
+#: login_handler.php:15
 msgid "E-mail or password is wrong!"
 msgstr "电子邮箱或者密码错误！"
+
+#: login_via_3party.php:31
+msgid "Don't support such login method now!"
+msgstr "不支持该登录方法！"
+
+#: login_via_3party_callback.php:51
+msgid "The auth type is not supported!"
+msgstr "暂时不支持该认证类型！"
+
+#: login_via_3party_callback.php:75
+msgid "Missing the required authorization code!"
+msgstr "认证码缺失！"
 
 #: pay_succ.php:24
 msgid "Successfully pay the points!"
@@ -69,8 +81,6 @@ msgid "Update the record successfully!"
 msgstr "成功更新这条记录！"
 
 #: libs/plugins/insert.admin_menu_bar.php:10
-#: libs/plugins/insert.menu_bar.php:11
-#: libs/plugins/insert.menu_bar.php:13
 msgid "Home"
 msgstr "主页"
 
@@ -144,158 +154,173 @@ msgstr "下一页"
 msgid "Last Page"
 msgstr "最后页"
 
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:40
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:40
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:40
-msgid "Administrator Platform"
-msgstr "管理平台"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:79
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:100
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:100
-msgid "Administrator"
-msgstr "管理员"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:83
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:82
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:104
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:84
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:82
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:104
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:107
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:84
-msgid "welcome"
-msgstr "欢迎"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:85
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:85
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:106
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:87
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:85
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:106
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:110
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:87
-msgid "Logout"
-msgstr "注销"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:127
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:148
-msgid "Add New Category"
-msgstr "添加新类别"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:132
-msgid "Group Name"
-msgstr "组别名称"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:134
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:155
-msgid "Create Time"
-msgstr "创建时间"
-
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:84
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:90
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:86
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:84
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:109
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:115
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:86
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:92
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:96
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:102
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:98
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:104
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:96
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:102
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:135
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:141
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:108
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:114
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:98
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:104
 msgid "Shopping Cart"
 msgstr "购物车"
 
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:88
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:90
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:88
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:113
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:90
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:97
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:99
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:97
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:136
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:109
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:99
+msgid "Logout"
+msgstr "注销"
+
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:100
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:102
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:100
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:139
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:112
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:102
 msgid "Login"
 msgstr "登录"
 
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:89
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:91
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:89
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:114
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:91
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:101
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:103
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:101
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:140
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:113
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:103
 msgid "Register"
 msgstr "注册"
 
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:132
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:157
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:144
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:183
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:156
 msgid "E-mail"
 msgstr "电子邮件"
 
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:137
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:162
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:149
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:161
 msgid "Password"
 msgstr "密码"
 
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:143
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:173
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:155
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:172
 msgid "Submit"
 msgstr "提交"
 
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:151
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:141
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:189
-msgid "Book Name"
-msgstr "书名"
-
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:153
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:145
-msgid "Upload Time"
-msgstr "上传时间"
-
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:155
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:149
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:193
-msgid "Points"
-msgstr "积分"
-
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:157
-msgid "Upload User"
-msgstr "上传的用户"
-
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:159
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:147
-msgid "Download Time(s)"
-msgstr "下载次数"
-
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:161
-msgid "Promoted"
-msgstr "推介"
-
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:151
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:174
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:163
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:190
 msgid "Add To Shopping Cart"
 msgstr "加入到购物车"
 
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:130
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:179
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:166
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:175
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:180
+msgid "Download"
+msgstr "下载"
+
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:143
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:192
 msgid "My Upload Books"
 msgstr "我上传的书"
 
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:132
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:177
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:145
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:190
 msgid "My Downoad Book"
 msgstr "我下载的书"
 
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:143
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:191
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:158
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:154
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:202
+msgid "Book Name"
+msgstr "书名"
+
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:156
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:204
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:170
 msgid "Short Description"
 msgstr "简短描述"
 
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:153
-msgid "Category Name"
-msgstr "分类名称"
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:158
+msgid "Upload Time"
+msgstr "上传时间"
 
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:157
-msgid "Create User"
-msgstr "创建的用户"
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:160
+msgid "Download Time(s)"
+msgstr "下载次数"
 
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:159
-msgid "Show On Homepage"
-msgstr "显示在主页"
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:162
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:206
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:188
+msgid "Points"
+msgstr "积分"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:202
+msgid "exchange points"
+msgstr "兑换积分"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:209
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:269
+msgid "Exchange history"
+msgstr "兑换历史"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:211
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:267
+msgid "Buy history"
+msgstr "购买历史"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:220
+msgid "Request time"
+msgstr "申请时间"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:222
+msgid "Request points"
+msgstr "申请积分"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:224
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:282
+msgid "Status"
+msgstr "状态"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:240
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:298
+msgid "New"
+msgstr "新建"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:243
+msgid "Approved"
+msgstr "已同意"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:246
+msgid "Disapproved"
+msgstr "已否决"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:249
+msgid "Cancelled"
+msgstr "取消"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:262
+msgid "Buy Points"
+msgstr "购买积分"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:278
+msgid "Buy time"
+msgstr "购买时间"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:280
+msgid "Buy points"
+msgstr "购买积分"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:301
+msgid "Successful"
+msgstr "成功"
+
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:304
+msgid "Pending"
+msgstr "进行中"
 
 #: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:79
 msgid "The E-mail could not be blank!"
@@ -313,140 +338,107 @@ msgstr "确认密码不能为空！"
 msgid "The password and the confirmed password are not the same!"
 msgstr "密码与确认密码不相符！"
 
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:167
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:166
 msgid "Confirmed Password"
 msgstr "确认密码"
 
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:154
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:166
 msgid "Description"
 msgstr "描述"
 
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:165
-msgid "Download"
-msgstr "下载"
-
-#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:170
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:185
 msgid "Edit"
 msgstr "编辑"
 
-#: templates_c/a695af9711987d848cd23a7c59fbc48a7ae0c0cc.file.cart.html.php:141
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:143
-msgid "Action"
-msgstr "操作"
-
-#: templates_c/a695af9711987d848cd23a7c59fbc48a7ae0c0cc.file.cart.html.php:159
-#: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:176
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:189
-msgid "Delete"
-msgstr "删除"
-
-#: templates_c/a695af9711987d848cd23a7c59fbc48a7ae0c0cc.file.cart.html.php:169
-msgid "Exchenge by points"
-msgstr "通过积分兑换"
-
-#: templates_c/a695af9711987d848cd23a7c59fbc48a7ae0c0cc.file.cart.html.php:171
-msgid "Current Points"
-msgstr "当前积分"
-
-#: templates_c/a695af9711987d848cd23a7c59fbc48a7ae0c0cc.file.cart.html.php:185
-msgid "Pay the points"
-msgstr "支付以获得积分"
-
-#: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:174
+#: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:186
 msgid "File Name"
 msgstr "文件名"
 
-#: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:175
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:188
+#: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:187
+#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:201
 msgid "File Size"
 msgstr "文件大小"
 
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:135
-msgid "Exchange user"
-msgstr "兑换用户"
+#: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:188
+#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:202
+msgid "Delete"
+msgstr "删除"
 
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:137
-msgid "Request time"
-msgstr "申请时间"
-
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:139
-msgid "Request points"
-msgstr "申请积分"
-
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:141
-msgid "Status"
-msgstr "状态"
-
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:162
-msgid "New"
-msgstr "新建"
-
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:166
-msgid "Approve"
-msgstr "同意"
-
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:169
-msgid "Disapprove"
-msgstr "不同意"
-
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:173
-msgid "Approved"
-msgstr "已同意"
-
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:176
-msgid "Disapproved"
-msgstr "已否决"
-
-#: templates_c/d29361a6bd7d18be599039254823cd8a7408cb0b.file.system.html.php:179
-msgid "Cancelled"
-msgstr "取消"
-
-#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:132
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:144
 msgid "Promoted Book"
 msgstr "推介书"
 
-#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:158
-#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:199
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:172
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:215
 msgid "More"
 msgstr "更多"
 
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:177
+#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:190
 msgid "File"
 msgstr "文件"
 
-#: templates_c/ff8693bea5f07478bf365ca8ee2111aca6d24188.file.users.html.php:132
-msgid "Register Time"
-msgstr "注册时间"
+#~ msgid "Administrator Platform"
+#~ msgstr "管理平台"
+
+#~ msgid "Administrator"
+#~ msgstr "管理员"
+
+#~ msgid "welcome"
+#~ msgstr "欢迎"
+
+#~ msgid "Add New Category"
+#~ msgstr "添加新类别"
+
+#~ msgid "Group Name"
+#~ msgstr "组别名称"
+
+#~ msgid "Create Time"
+#~ msgstr "创建时间"
+
+#~ msgid "Upload User"
+#~ msgstr "上传的用户"
+
+#~ msgid "Promoted"
+#~ msgstr "推介"
+
+#~ msgid "Category Name"
+#~ msgstr "分类名称"
+
+#~ msgid "Create User"
+#~ msgstr "创建的用户"
+
+#~ msgid "Show On Homepage"
+#~ msgstr "显示在主页"
+
+#~ msgid "Action"
+#~ msgstr "操作"
+
+#~ msgid "Exchenge by points"
+#~ msgstr "通过积分兑换"
+
+#~ msgid "Current Points"
+#~ msgstr "当前积分"
+
+#~ msgid "Pay the points"
+#~ msgstr "支付以获得积分"
+
+#~ msgid "Exchange user"
+#~ msgstr "兑换用户"
+
+#~ msgid "Approve"
+#~ msgstr "同意"
+
+#~ msgid "Disapprove"
+#~ msgstr "不同意"
+
+#~ msgid "Register Time"
+#~ msgstr "注册时间"
 
 #~ msgid "Points Amount"
 #~ msgstr "积分总额"
 
 #~ msgid "Pay Type"
 #~ msgstr "支付方式"
-
-#~ msgid "exchange points"
-#~ msgstr "兑换积分"
-
-#~ msgid "Exchange history"
-#~ msgstr "兑换历史"
-
-#~ msgid "Buy history"
-#~ msgstr "购买历史"
-
-#~ msgid "Buy Points"
-#~ msgstr "购买积分"
-
-#~ msgid "Buy time"
-#~ msgstr "购买时间"
-
-#~ msgid "Buy points"
-#~ msgstr "购买积分"
-
-#~ msgid "Successful"
-#~ msgstr "成功"
-
-#~ msgid "Pending"
-#~ msgstr "进行中"
 
 #~ msgid "EDIT"
 #~ msgstr "编辑"

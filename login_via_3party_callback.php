@@ -4,7 +4,6 @@ require_once 'db_helper.php';
 require_once 'sns/google.php';
 require_once 'sns/facebook.php';
 require_once 'sns/qq.php';
-require_once 'sns/yahoo.php';
 require_once 'sns/lib/OAuth/OAuth.php';
 require_once 'sns/lib/Yahoo/YahooOAuthApplication.class.php';
 

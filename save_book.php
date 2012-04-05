@@ -27,7 +27,7 @@
 			redirect('index.php');
 		}
 		//update the record
-		$db->query("update books set name='$name',description='$desc',short_description='$short_desc',pages='$attachment_ids' where id=$id;");
+		$db->query("update books set name='$name',description='$desc',short_description='$short_desc',pages='$attachment_ids',version=version+1 where id=$id;");
 		//delete all the book_category record
 		$db->query("delete from book_category where book_id=$id;");
 	}
