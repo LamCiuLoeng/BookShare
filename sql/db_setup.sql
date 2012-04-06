@@ -67,6 +67,7 @@ CREATE TABLE `books` (
   `promote` int(11) default '0',
   `cover` varchar(500) default NULL,
   `thumb` varchar(500) default NULL,
+  `version` int(11) NOT NULL default '1',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 

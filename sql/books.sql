@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2011-10-27 16:28:06
+Date: 2012-04-05 17:59:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -36,9 +36,7 @@ CREATE TABLE `books` (
   `promote` int(11) default '0',
   `cover` varchar(500) default NULL,
   `thumb` varchar(500) default NULL,
+  `version` int(11) NOT NULL default '1',
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of books
--- ----------------------------
