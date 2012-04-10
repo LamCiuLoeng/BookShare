@@ -20,7 +20,13 @@ function checkAndLogin($email, $pic, $account_type) {
 	}
 	
 	//login the user
-	loginUser ( $user );
+	$groups = getGroupsByUser($db,$user->id);
+	
+	if(!$groups){
+		$groups = array();
+	}
+	
+	loginUser ( $user ,$groups);
 
 }
 

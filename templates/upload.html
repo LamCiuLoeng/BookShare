@@ -10,7 +10,27 @@
 <script type="text/javascript" src="../public/js/jquery.iframe-transport.js"></script>
 <script type="text/javascript" src="../public/js/jquery.fileupload.js"></script>
 <script type="text/javascript" src="../public/js/custom/book.js"></script>
-
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+       function toSave(){
+    	   var msg = new Array();
+    	   if(!$('#name').val()){
+    		   msg.push( '{_('Please input the book name!')}' );
+    	   }
+    	   if(!$('#file_ids').val()){
+               msg.push( '{_('Please uplolad the book file(s)!')}' );
+           }
+    	   
+    	   if(msg.length>0){
+    		   alert(msg.join('\n'));
+    		   return false;
+    	   }else{
+    		   $("form").submit();
+    	   }
+    	   
+       }
+//]]>
+</script>
 {/block}
 		                
 
@@ -19,18 +39,18 @@
 		<input type="hidden" name="file_ids" id="file_ids" value=""/>
 		<input type="hidden" name="action" value="NEW"/>
 		<div>
-			<p><label>{_('Book Name')}</label><input type="text" name="name"/></p>
+			<p><label>{_('Book Name')}</label><input type="text" name="name" id="name"/></p>
 			<p><label>{_('Category')}</label>
 				{foreach from=$categories item=c}
 					<input type="checkbox" value="{$c->id}" name="categories[]" id="cid_{$c->id}"/> <label for="cid_{$c->id}">{$c->name}</label>
 				{/foreach}
 			</p>
-			<p><label>{_('Description')}</label><textarea name="description"></textarea></p>
+			<p><label>{_('Description')}</label><textarea name="description" id="description"></textarea></p>
 			<p><label>{_('Short Description')}</label><textarea name="short_description"></textarea></p>
 			<p><label>Files</label><input id="fileupload" type="file" name="files[]" multiple></p>
 		</div>
 		<div>
-			<input type="submit" value="{_('Submit')}"/>
+			<input type="button" value="{_('Submit')}" onclick="toSave()"/>
 		</div>
 		<br />
 		<table id="files_list">

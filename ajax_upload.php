@@ -5,6 +5,10 @@
 
 	function handle_file_upload($uploaded_file,$name,$size,$type) {
 		//save to disk
+		if(!file_exists(UPLOAD_PATH.UPLOAD_PREFIX)){
+			mkdir(UPLOAD_PATH.UPLOAD_PREFIX,777);
+		}
+		
 		$pi = pathinfo($name);
 		$url = UPLOAD_PREFIX.nowStr().randomStr(1,1000).'.'.$pi['extension'];
 		$file_path = UPLOAD_PATH.$url;

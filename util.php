@@ -94,8 +94,18 @@ function isUserLogin() {
 	return false;
 }
 
+function inGroup($group_name){
+	if(isset($_SESSION['groups'])){
+		if(in_array($group_name, $_SESSION['groups'])){
+			return TRUE;
+		}
+		return FALSE;
+	}else{
+		return FALSE;
+	}
+}
 
-function loginUser($user) {
+function loginUser($user,$groups) {
 	$_SESSION ['user'] = ( object ) Array ();
 	$_SESSION ['user']->email = $user->email;
 	$_SESSION ['user']->id = $user->id;
@@ -104,6 +114,10 @@ function loginUser($user) {
 	$_SESSION ['user']->pic = $user->pic;
 	$_SESSION ['locale'] = $user->locale;
 	$_SESSION['logged'] = true;
+	$_SESSION['groups'] = array();
+	foreach ($groups as $g){
+		array_push($_SESSION['groups'], $g->name);
+	}
 	return true;
 }
 

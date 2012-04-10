@@ -35,7 +35,12 @@ function smarty_insert_menu_bar($params,&$smarty){
 		$tab_profile = '<li><a href="profile.php"  title="Profile">'._('Profile').'</a></li>';
 	}
 	
-	$tab_admin = '<li><a href="admin/users.php"  title="Admin">'._('Admin').'</a></li>';
+	if(inGroup('ADMIN')){
+		$tab_admin = '<li><a href="admin/users.php"  title="Admin">'._('Admin').'</a></li>';
+	}else{
+		$tab_admin = '';
+	}
+		
 
 	$html = '<ul id="menu">'.$tab_home.$tab_upload.$tab_mybook.$tab_profile.$tab_admin.'</ul>';
 	return $html;

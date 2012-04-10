@@ -7,8 +7,8 @@
     	   var msg = Array();
     	   if(!$("#email").val()){ msg.push("{_('The E-mail could not be blank!')}"); }
     	   if(!$("#password").val()){ msg.push("{_('The password could not be blank!')}"); }
-    	   if(!$("#repassowrd").val()){ msg.push("{_('The confirmed password could not be blank!')}"); }
-    	   if( $("#password").val()!=$("#repassowrd").val() ){ msg.push("{_('The password and the confirmed password are not the same!')}"); }
+    	   if(!$("#repassword").val()){ msg.push("{_('The confirmed password could not be blank!')}"); }
+    	   if( $("#password").val()!=$("#repassword").val() ){ msg.push("{_('The password and the confirmed password are not the same!')}"); }
     	   
     	   if(msg.length>0){
     		   alert(msg.join("\n"));

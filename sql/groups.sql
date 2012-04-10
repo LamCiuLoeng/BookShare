@@ -31,3 +31,5 @@ CREATE TABLE `groups` (
 -- Records of groups
 -- ----------------------------
 
+INSERT INTO `groups` VALUES ('1', 'ADMIN', '0', 'Administrator Group','2012-04-21 15:46:54');
+INSERT INTO `groups` VALUES ('2', 'NORMAL', '0', 'Normal User Group','2012-04-21 15:46:54');

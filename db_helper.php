@@ -46,7 +46,7 @@ function addUser($db, $email, $password, $pic, $locale = NULL, $account_type = '
 }
 
 function checkUserByEmail($db, $email,$account_type) {
-	$sql = "select * from users where email='$email' and account_type='$account_type';";
+	$sql = "select * from users where email='$email' and account_type='$account_type' and active=0;";
 	return $db->get_results ( $sql );
 }
 
@@ -109,6 +109,12 @@ function saveGroup($db, $type, $id, $name, $desc) {
 	}
 	$db->query ( $sql );
 	return $db->rows_affected;
+}
+
+
+function getGroupsByUser($db,$userid){
+	$sql = "select g.* FROM groups g,user_group ug where g.id = ug.group_id and ug.user_id=$userid";
+	return $db->get_results ( $sql );
 }
 
 //**********************************

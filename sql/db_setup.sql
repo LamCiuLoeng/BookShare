@@ -16,6 +16,7 @@ CREATE TABLE `users` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+INSERT INTO `users` VALUES ('1', 'admin@bookcat.hk', '0','2014-047-21 15:46:54','1q2w3e4r5t',0,'zh_HK','normal',null);
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
@@ -31,6 +32,8 @@ CREATE TABLE `groups` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+INSERT INTO `groups` VALUES ('1', 'ADMIN', '0', 'Administrator Group','2012-04-21 15:46:54');
+INSERT INTO `groups` VALUES ('2', 'NORMAL', '0', 'Normal User Group','2012-04-21 15:46:54');
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
@@ -42,6 +45,8 @@ CREATE TABLE `user_group` (
   `group_id` int(10) unsigned NOT NULL,
   PRIMARY KEY  USING BTREE (`user_id`,`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `user_group` VALUES ('1','1');
 
 
 SET FOREIGN_KEY_CHECKS=0;

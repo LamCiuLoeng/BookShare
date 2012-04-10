@@ -31,3 +31,4 @@ CREATE TABLE `users` (
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+INSERT INTO `users` VALUES ('1', 'admin@bookcat.hk', '0','2014-047-21 15:46:54','1q2w3e4r5t',0,'zh_HK','normal',null);
