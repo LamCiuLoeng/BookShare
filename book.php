@@ -1,7 +1,6 @@
 <?php
 	require_once 'util.php';
 	require_once 'db_helper.php';
-	
 
 	$id = decode_and_int($_REQUEST['id']);
 	$db = getDBInstance();

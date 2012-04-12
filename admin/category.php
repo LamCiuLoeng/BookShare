@@ -32,8 +32,13 @@
 		
 		$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : null;
 		$type = $_REQUEST['type'];
-		$name = $_REQUEST['name'];		
-		$desc = $_REQUEST['desc'];
+		if (get_magic_quotes_gpc()) {
+			$name = $_REQUEST['name'];		
+			$desc = $_REQUEST['desc'];
+		}else{
+			$name = addslashes($_REQUEST['name']);		
+			$desc = addslashes($_REQUEST['desc']);
+		}
 		$promote = intval($_REQUEST['promote']);
 		$create_by = $_SESSION['user']->id;
 		$db = getDBInstance();

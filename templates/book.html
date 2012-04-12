@@ -25,7 +25,9 @@
     {if isset($smarty.session['logged'])}
 		<!-- <p><a href="download.php?id={encode($book->id)}">{_('Download')}</a></p> -->
 		<!-- <p><a href="download_xml.php?id={encode($book->id)}">XML</a></p>  -->
-		<p><a href="book.php?id={encode($book->id)}&action=EDIT">{_('Edit')}</a></p>
+		{if $book->create_by == $smarty.session['user']->id }
+		  <p><a href="book.php?id={encode($book->id)}&action=EDIT">{_('Edit')}</a></p>
+		{/if}
     {/if}
 		
 		<!-- <p><a href="#" onclick="add2cart('{encode($book->id)}')">{_('Add To Shopping Cart')}</a></p>  -->

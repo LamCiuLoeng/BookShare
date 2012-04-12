@@ -173,9 +173,10 @@ function addDownloadTime($db, $book_id) {
 }
 
 function addDownloadHistory($db, $user_id, $book_id, $points) {
-	$sql = "insert into user_book (user_id,book_id,points) values ($user_id,$book_id,$points)";
+	$sql = "insert into user_book (user_id,book_id,points) values ($user_id,$book_id,$points);";	
+	echo $sql;
 	$db->query ( $sql );
-	return $db->rows_affected;
+	return $db->insert_id;
 }
 
 //**********************************
