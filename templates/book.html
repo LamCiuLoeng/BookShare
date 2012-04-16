@@ -21,10 +21,10 @@
 	<p>{_('Short Description')} : {$book->short_description}</p>
     
     <p><a href="download.php?id={encode($book->id)}">{_('Download')}</a></p>
-    
+    <p><a href="download_xml.php?id={encode($book->id)}">XML</a></p>
     {if isset($smarty.session['logged'])}
 		<!-- <p><a href="download.php?id={encode($book->id)}">{_('Download')}</a></p> -->
-		<!-- <p><a href="download_xml.php?id={encode($book->id)}">XML</a></p>  -->
+		
 		{if $book->create_by == $smarty.session['user']->id }
 		  <p><a href="book.php?id={encode($book->id)}&action=EDIT">{_('Edit')}</a></p>
 		{/if}

@@ -32,6 +32,10 @@ class QQUtil {
 		$data = array ('code' => $code, 'client_id' => $this->client_id, 'client_secret' => $this->client_secret, 'redirect_uri' => $this->redirect_uri, 'grant_type' => 'authorization_code', 'state' => 'qq' );
 		$s = http_build_query ( $data );
 		$result = http_get ( $this->token_url . '?' . $s );
+		
+		echo $result;
+		echo '<br /><br />';
+		
 		parse_str ( $result );
 		return $access_token;
 	}

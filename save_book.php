@@ -19,12 +19,22 @@
 		$short_desc = addslashes($_REQUEST['short_description']);
 	}
 	$attachment_ids = $_REQUEST['file_ids'];
+	
+	
+	//handle the cover upload
+	//upload($db, $uploaded_file, $name, $size, $type)
+	$cover = '';
+	if(isset($_FILES['cover'])){
+		if ($_FILES['cover']['error']==0) {
+			$cover = handleUpload('cover');
+		}
+	}
 
 	//if it's save for new
 	if($action=='NEW'){
 		$point = 1;
 		$create_by = $_SESSION['user']->id;
-		$id = addBook($db, $name, $desc, $short_desc,$point, $create_by,$attachment_ids);
+		$id = addBook($db, $name, $desc, $short_desc,$point, $create_by,$attachment_ids,$cover);
 	}else{
 		$id = isset($_REQUEST['id']) ? decode_and_int(urldecode($_REQUEST['id'])) : null;  //the field is pass into by hidden fields ,so need to decode first
 		if(!$id){
@@ -32,8 +42,11 @@
 			redirect('index.php');
 		}
 		//update the record
-		$db->query("update books set name='$name',description='$desc',short_description='$short_desc',pages='$attachment_ids',version=version+1 where id=$id;");
-//		$db->debug();
+		if ($cover) {
+			$db->query("update books set name='$name',description='$desc',short_description='$short_desc',pages='$attachment_ids',cover='$cover',version=version+1 where id=$id;");
+		}else {
+			$db->query("update books set name='$name',description='$desc',short_description='$short_desc',pages='$attachment_ids',version=version+1 where id=$id;");
+		}
 
 		//delete all the book_category record
 		$db->query("delete from book_category where book_id=$id;");
@@ -53,27 +66,16 @@
 		
 	
 	//create the XML content for ipad etc
-	$cover = '';
-
-	$changed_name = urlencode($_REQUEST['name']);
-		
-	
-	$xml = "<?xml version='1.0' encoding='utf-8'?><book id='$id' name='$changed_name'>";
+	$changed_name = $_REQUEST['name'];
+	$xml = "<?xml version='1.0' encoding='utf-8'?><book id='$id'><name><![CDATA[$changed_name]]></name><pages>";
 	$file_paths = array();
 	foreach (explode('|', $attachment_ids) as $v) {	
 		if(isset($_SESSION['attachments']) && isset($_SESSION['attachments'][$v])){
 			$xml .= "<page url='".WEBSITE_URL.$_SESSION['attachments'][$v]['url']."' version='1'></page>";
 			$file_paths[] = $_SESSION['attachments'][$v]['path'];
-			if(!$cover){
-				$p = pathinfo($_SESSION['attachments'][$v]['url']);
-				$ext = strtolower ($p['extension']);
-				if($ext =='jpg' || $ext =='jpeg' || $ext =='gif' || $ext == 'png'){
-					$cover = $_SESSION['attachments'][$v]['url'];
-				}
-			}
 		}
 	}
-	$xml .= "</book>";	
+	$xml .= "</pages></book>";	
 	$xml = addslashes($xml);
 //	if (!get_magic_quotes_gpc()) {
 //	    $xml = addslashes($xml);
@@ -98,7 +100,7 @@
 		$zip_file_url = null;
 	}
 		
-	$sql = "update books set xml='$xml',file_path='$zip_file_path',file_url='$zip_file_url',cover='$cover' where id=$id;";
+	$sql = "update books set xml='$xml',file_path='$zip_file_path',file_url='$zip_file_url' where id=$id;";
 //	
 //	echo $sql;
 //	return;

@@ -7,6 +7,13 @@
 	$repassword = $_REQUEST['repassword'];
 	
 	$msg = array();
+	
+	#check the email format
+	if(!preg_match("/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/",$email)){
+		array_push($msg, _('Please provide a valid email address!'));
+	}
+	
+	
 	if($password != $repassword){
 		array_push($msg, _('Password and Confirmed Password are not the same!'));
 	}

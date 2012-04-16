@@ -125,8 +125,8 @@ function getAllBooks($db) {
 	return $db->get_results ( $sql );
 }
 
-function addBook($db, $name, $desc, $short_desc, $point, $create_by, $pages) {
-	$sql = "insert into books(name,description,short_description,points,create_by,pages) values ('$name','$desc','$short_desc',$point,$create_by,'$pages');";
+function addBook($db, $name, $desc, $short_desc, $point, $create_by, $pages,$cover) {
+	$sql = "insert into books(name,description,short_description,points,create_by,pages,cover) values ('$name','$desc','$short_desc',$point,$create_by,'$pages','$cover');";
 	$db->query ( $sql );
 	return $db->insert_id;
 }

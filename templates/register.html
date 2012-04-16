@@ -1,11 +1,18 @@
 {extends file='base.html'}
 
 {block name="extJavaScript"}
+
 <script language="JavaScript" type="text/javascript">
  //<![CDATA[
        function submit_form(){
     	   var msg = Array();
+    	   {literal}var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;{/literal}
+    	   
     	   if(!$("#email").val()){ msg.push("{_('The E-mail could not be blank!')}"); }
+    	   else if (!filter.test($("#email").val())) {
+    		   msg.push("{_('Please provide a valid email address!')}");
+    	   }
+    	   
     	   if(!$("#password").val()){ msg.push("{_('The password could not be blank!')}"); }
     	   if(!$("#repassword").val()){ msg.push("{_('The confirmed password could not be blank!')}"); }
     	   if( $("#password").val()!=$("#repassword").val() ){ msg.push("{_('The password and the confirmed password are not the same!')}"); }
