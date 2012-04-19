@@ -23,12 +23,24 @@
 		$all_categories = getAllRows($db, 'categories');
 		if($book->pages){
 			$aids = str_replace('|',',',$book->pages);
-			$attachments = getRowsByCondition($db, 'attachments', array("id in ($aids)"));
+			$pages = getRowsByCondition($db, 'attachments', array("id in ($aids)"));
 			
+			$attachments = array();
+			foreach (explode('|',$book->pages) as $aid){
+				$attachments[$aid] = null;
+			}
+			
+			foreach ($pages as $p){
+				if(key_exists($p->id, $attachments)){
+					$attachments[$p->id] = $p;
+				}
+			}
+					
 			unset($_SESSION['attachments']);
 			$_SESSION['attachments'] = array();
-			foreach ($attachments as $a){
-				$_SESSION['attachments'][$a->id] = array('url'=>$a->file_url,'path'=>$a->file_path);
+
+			foreach ($attachments as $k=>$v){
+				$_SESSION['attachments'][$k] = array('url'=>$v->file_url,'path'=>$v->file_path);
 			}
 		}else{
 			$attachments = array();

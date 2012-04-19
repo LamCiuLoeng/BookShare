@@ -11,7 +11,8 @@
 				</div>
 				<a href="book.php?id={encode($b->id)}">{$b->name}</a>
 			    <!-- <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>  -->
-			    <p><a href="download.php?id={encode($b->id)}">{_('Download')}</a></p>
+			    <!-- <p><a href="download.php?id={encode($b->id)}">{_('Download')}</a></p> -->
+				<p><a href="download_xml.php?id={encode($b->id)}">{_('Download')}</a></p>
 			</div>
 		{/foreach}
 	</div>

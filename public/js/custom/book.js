@@ -6,8 +6,10 @@ $(document).ready(function(){
             $.each(data.result, function (index, file) {               
                 var html = '<tr class="fs" fid="'+file.id+'"><td>'+file.file_name+'</td><td>'+file.file_size+' kb</td><td><a href="#" onclick="deleteAttachment('+file.id+')">Delete</a></td></tr>' ;
                 $(html).appendTo('#files_list');
-	                getIDs();
 	        });
+            $( "tbody.content" ).sortable({
+                revert: true
+            }).disableSelection();
         }
     });
 });

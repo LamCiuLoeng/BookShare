@@ -4,5 +4,5 @@
 	$id = decode($_REQUEST['id']);
 	$book = getRowById(getDBInstance(), 'books', $id);
 	header("Content-type: text/xml");
-	echo $book->xml;
+	echo stripcslashes($book->xml);
 ?>

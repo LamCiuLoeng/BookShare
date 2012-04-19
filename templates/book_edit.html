@@ -9,8 +9,37 @@
 <script type="text/javascript" src="../public/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="../public/js/jquery.iframe-transport.js"></script>
 <script type="text/javascript" src="../public/js/jquery.fileupload.js"></script>
-
 <script type="text/javascript" src="../public/js/custom/book.js"></script>
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+       $(document).ready(function(){
+    	   $( "tbody.content" ).sortable({
+               revert: true
+           }).disableSelection();
+       });
+           
+           
+       function toSave(){
+           var msg = new Array();
+           if(!$('#name').val()){
+               msg.push( '{_('Please input the book name!')}' );
+           }
+           if(!$('#file_ids').val()){
+               msg.push( '{_('Please uplolad the book file(s)!')}' );
+           }
+           
+           if(msg.length>0){
+               alert(msg.join('\n'));
+               return false;
+           }else{
+               getIDs();
+               $("form").submit();
+               //alert($("#file_ids").val());
+           }
+           
+       }
+//]]>
+</script>
 {/block}
 		                
 
@@ -28,7 +57,7 @@
 		<table>
 		  <tr>
 		      <td><label>{_('Book Name')}</label></td>
-		      <td><input type="text" name="name" value="{$book->name}"/></td>
+		      <td><input type="text" name="name" id="name" value="{$book->name}"/></td>
 		  </tr>
 		  <tr>
 		      <td><label>{_('Category')}</label></td>
@@ -60,22 +89,26 @@
 		      <td><input id="fileupload" type="file" name="files[]" multiple></td>
 		  </tr>
 		  <tr>
-		      <td colspan="2"><p style="text-align:right;"><input type="submit" value="{_('Submit')}"/></p></td>
+		      <td colspan="2"><p style="text-align:right;"><input type="button" value="{_('Submit')}" onclick="toSave()"/></p></td>
 		  </tr>
 		</table>
 
         <br />
         <br />
         		
-		<table id="files_list">
+		<table id="files_list" class="plain">
+		    <thead>
 			<tr>
 				<td width="200">{_('Book Name')}</td><td width="200">{_('File Size')}</td><td width="100">{_('Delete')}</td>
 			</tr>
+		    </thead>
+		    <tbody class="content">
 			{foreach from=$attachments item=a}
 				<tr class="fs" fid="{$a->id}">
 					<td>{$a->name}</td><td>{$a->file_size} kb</td><td><a href="#" onclick="deleteAttachment({$a->id})">delete</a></td>
 				</tr>
 			{/foreach}
+		    </tbody>
 		</table>
 	</form>
 	</div>

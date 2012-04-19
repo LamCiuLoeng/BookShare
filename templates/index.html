@@ -13,7 +13,8 @@
 		          <p>{$promote_book->description}</p>
 		          <p>{$promote_book->short_description}</p>
 		          <!-- <p><a href="#" onclick="add2cart('{encode($promote_book->id)}')">{_('Add To Shopping Cart')}</a></p>  -->
-		          <p><a href="download.php?id={encode($promote_book->id)}">{_('Download')}</a></p>
+		          <!-- <p><a href="download.php?id={encode($promote_book->id)}">{_('Download')}</a></p> -->
+				  <p><a href="download_xml.php?id={encode($promote_book->id)}">{_('Download')}</a></p>
 		       </div>
 	       </div>
 	   </div>
@@ -30,7 +31,8 @@
 				</div>
 				<a href="book.php?id={encode($b->id)}">{$b->name}</a>
 			    <!-- <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>  -->
-				<p><a href="download.php?id={encode($b->id)}">{_('Download')}</a></p>
+				<!-- <p><a href="download.php?id={encode($b->id)}">{_('Download')}</a></p> -->
+				<p><a href="download_xml.php?id={encode($b->id)}">{_('Download')}</a></p>
 			</div>
 		{/foreach}
 	</div>
@@ -49,7 +51,8 @@
 	                </div>
 	                <a href="book.php?id={encode($b->id)}">{$b->name}</a>
                     <!-- <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>  -->
-                    <p><a href="download.php?id={encode($b->id)}">{_('Download')}</a></p>
+                    <!-- <p><a href="download.php?id={encode($b->id)}">{_('Download')}</a></p> -->
+					<p><a href="download_xml.php?id={encode($b->id)}">{_('Download')}</a></p>
 	            </div>
 	        {/foreach}
 	    </div>

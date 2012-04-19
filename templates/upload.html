@@ -25,7 +25,9 @@
     		   alert(msg.join('\n'));
     		   return false;
     	   }else{
+    		   getIDs();
     		   $("form").submit();
+    		   //alert($("#file_ids").val());
     	   }
     	   
        }
@@ -82,10 +84,14 @@
 		<br />
 		<br />
 		
-		<table id="files_list">
+		<table id="files_list" class="plain">
+		    <thead>
 			<tr>
 				<td width="200">{_('File Name')}</td><td width="200">{_('File Size')}</td><td width="100">{_('Delete')}</td>
 			</tr>
+		    </thead>
+		    <tbody class="content">
+		    </tbody>
 		</table>
 	</form>
 	</div>
