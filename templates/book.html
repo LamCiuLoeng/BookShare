@@ -10,18 +10,26 @@
     
     <div class="obj_left" style="width:600px">
 			
+    <p>{_('Book Name')} : {$book->name}</p>
+    
 		<p>{_('Category')} : 
 			{foreach from=$categories item=c}
 				{$c->name} 
 			{/foreach}
 		</p>
 	
-	<p>{_('Description')} : {$book->description}</p>
+	<p>{_('Author')} : {$book->author}</p>
 	
 	<p>{_('Short Description')} : {$book->short_description}</p>
+	
+	<p>{_('Description')} : {$book->description}</p>
     
+    <!-- 
     <p><a href="download.php?id={encode($book->id)}">{_('Download')}</a></p>
     <p><a href="download_xml.php?id={encode($book->id)}">XML</a></p>
+     -->
+        
+    <p><a href="download_xml.php?id={encode($book->id)}">{_('Download')}</a></p>
     {if isset($smarty.session['logged'])}
 		<!-- <p><a href="download.php?id={encode($book->id)}">{_('Download')}</a></p> -->
 		

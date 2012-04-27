@@ -11,10 +11,12 @@
 	$db = getDBInstance();
 	if (get_magic_quotes_gpc()) {
 		$name = $_REQUEST['name'];
+		$author = $_REQUEST['author'];
 		$desc = $_REQUEST['description'];
 		$short_desc = $_REQUEST['short_description'];
 	}else{
 		$name = addslashes($_REQUEST['name']);
+		$author = addslashes($_REQUEST['author']);
 		$desc = addslashes($_REQUEST['description']);
 		$short_desc = addslashes($_REQUEST['short_description']);
 	}
@@ -34,7 +36,7 @@
 	if($action=='NEW'){
 		$point = 1;
 		$create_by = $_SESSION['user']->id;
-		$id = addBook($db, $name, $desc, $short_desc,$point, $create_by,$attachment_ids,$cover);
+		$id = addBook($db, $name,$author, $desc, $short_desc,$point, $create_by,$attachment_ids,$cover);
 	}else{
 		$id = isset($_REQUEST['id']) ? decode_and_int(urldecode($_REQUEST['id'])) : null;  //the field is pass into by hidden fields ,so need to decode first
 		if(!$id){
@@ -43,9 +45,9 @@
 		}
 		//update the record
 		if ($cover) {
-			$db->query("update books set name='$name',description='$desc',short_description='$short_desc',pages='$attachment_ids',cover='$cover',version=version+1 where id=$id;");
+			$db->query("update books set name='$name',author='$author',description='$desc',short_description='$short_desc',pages='$attachment_ids',cover='$cover',version=version+1 where id=$id;");
 		}else {
-			$db->query("update books set name='$name',description='$desc',short_description='$short_desc',pages='$attachment_ids',version=version+1 where id=$id;");
+			$db->query("update books set name='$name',author='$author',description='$desc',short_description='$short_desc',pages='$attachment_ids',version=version+1 where id=$id;");
 		}
 
 		//delete all the book_category record

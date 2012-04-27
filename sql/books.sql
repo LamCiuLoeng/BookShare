@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : bookshare
+Source Server         : 157
 Source Server Version : 50067
 Source Host           : 192.168.21.157:3306
 Source Database       : bookshare
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50067
 File Encoding         : 65001
 
-Date: 2012-04-05 17:59:53
+Date: 2012-04-27 12:32:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,6 +37,7 @@ CREATE TABLE `books` (
   `cover` varchar(500) default NULL,
   `thumb` varchar(500) default NULL,
   `version` int(11) NOT NULL default '1',
+  `author` varchar(100) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 

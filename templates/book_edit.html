@@ -72,13 +72,17 @@
                 {/foreach}
 		      </td>
 		  </tr>
-		  <tr>
-		      <td><label>{_('Description')}</label></td>
-		      <td><textarea name="description">{$book->description}</textarea></td>
-		  </tr>
+		            <tr>
+              <td><label>{_('Author')}</label></td>
+              <td><input type="text" name="author" id="author" value="{$book->author}"/></td>
+          </tr>
 		  <tr>
 		      <td><label>{_('Short Description')}</label></td>
 		      <td><textarea name="short_description">{$book->short_description}</textarea></td>
+		  </tr>
+		  <tr>
+		      <td><label>{_('Description')}</label></td>
+		      <td><textarea name="description">{$book->description}</textarea></td>
 		  </tr>
 		  <tr>
 		      <td><label>{_('Cover')}</label></td>

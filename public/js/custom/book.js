@@ -6,6 +6,7 @@ $(document).ready(function(){
             $.each(data.result, function (index, file) {               
                 var html = '<tr class="fs" fid="'+file.id+'"><td>'+file.file_name+'</td><td>'+file.file_size+' kb</td><td><a href="#" onclick="deleteAttachment('+file.id+')">Delete</a></td></tr>' ;
                 $(html).appendTo('#files_list');
+                getIDs();
 	        });
             $( "tbody.content" ).sortable({
                 revert: true
@@ -19,7 +20,9 @@ function getIDs(){
     $(".fs").each(function(){
         ids.push($(this).attr('fid'));
 	});
-    $("#file_ids").val(ids.join("|"));
+    var idstr = ids.join("|");
+    $("#file_ids").val(idstr);
+    return idstr;
 }
 
 

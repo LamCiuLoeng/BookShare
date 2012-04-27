@@ -73,6 +73,7 @@ CREATE TABLE `books` (
   `cover` varchar(500) default NULL,
   `thumb` varchar(500) default NULL,
   `version` int(11) NOT NULL default '1',
+  `author` varchar(100) default NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
