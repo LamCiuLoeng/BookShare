@@ -115,9 +115,12 @@ function loginUser($user,$groups) {
 	$_SESSION ['locale'] = $user->locale;
 	$_SESSION['logged'] = true;
 	$_SESSION['groups'] = array();
-	foreach ($groups as $g){
-		array_push($_SESSION['groups'], $g->name);
+	if($groups){
+		foreach ($groups as $g){
+			array_push($_SESSION['groups'], $g->name);
+		}
 	}
+		
 	return true;
 }
 

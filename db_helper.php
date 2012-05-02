@@ -28,6 +28,13 @@ function getRowsByCondition($db, $table, $where) {
 
 }
 
+function updateRecordActive($db,$table,$id,$active){
+	$sql = "update $table set active=$active where id=$id";
+	$db->query ( $sql );
+	return $db->rows_affected;
+}
+
+
 //**********************************
 //function related to the user
 //**********************************	
@@ -36,11 +43,11 @@ function getUserInfo($db, $user_id) {
 	return $db->get_row ( $sql );
 }
 
-function addUser($db, $email, $password, $pic, $locale = NULL, $account_type = 'normal') {
+function addUser($db, $email, $password, $pic, $locale = NULL, $account_type = 'normal' ,$active=0) {
 	if (! $locale) {
 		$locale = DEFAULT_LOCALE;
 	}
-	$sql = "insert into users (email,password,pic,locale,account_type) values ('$email','$password','$pic','$locale','$account_type');";
+	$sql = "insert into users (email,password,pic,locale,account_type,active) values ('$email','$password','$pic','$locale','$account_type',$active);";
 	$db->query ( $sql );
 	return getUserInfo ( $db, $db->insert_id );
 }

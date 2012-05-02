@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookshare\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-27 12:56+0800\n"
-"PO-Revision-Date: 2012-04-27 12:57+0800\n"
+"POT-Creation-Date: 2012-05-02 12:45+0800\n"
+"PO-Revision-Date: 2012-05-02 12:48+0800\n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
 "Language-Team: sys2do <lamciuloeng@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -15,6 +15,19 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
+#: active.php:6
+msgid "No ID Supplied"
+msgstr "沒有提供ID"
+
+#: active.php:16
+#: download.php:11
+msgid "No such record!"
+msgstr "沒有這條記錄！"
+
+#: active.php:19
+msgid "The record has been actived!"
+msgstr "該帳戶已被激活！"
+
 #: books.php:8
 msgid "New Upload Books"
 msgstr "最新上傳的書"
@@ -22,10 +35,6 @@ msgstr "最新上傳的書"
 #: buy_books_via_points.php:10
 msgid "Successfully buy the books!"
 msgstr "成功購買圖書！"
-
-#: download.php:11
-msgid "No such record!"
-msgstr "沒有這條記錄！"
 
 #: exchange_points.php:10
 msgid "Please input the points you want to exchange!"
@@ -67,21 +76,21 @@ msgstr "成功支付，獲利積分！"
 msgid "No such action!"
 msgstr "沒有這個操作"
 
-#: save_register.php:13
+#: save_register.php:37
 msgid "Please provide a valid email address!"
 msgstr "請填寫正確的郵箱地地址！"
 
-#: save_register.php:18
+#: save_register.php:41
 msgid "Password and Confirmed Password are not the same!"
 msgstr "密碼與確認密碼不相同！"
 
-#: save_register.php:29
+#: save_register.php:52
 msgid "This account has been registered!"
 msgstr "該帳戶已被註冊！"
 
-#: save_register.php:35
-msgid "Register successfully,please login."
-msgstr "註冊成功，請登入。"
+#: save_register.php:67
+msgid "There is some problem when sending e-mail to this address, please try it again."
+msgstr "發送郵件到指定地址出錯，請重試。"
 
 #: admin/exchange_process.php:8
 msgid "No such operation!"
@@ -168,43 +177,8 @@ msgstr "下一頁"
 msgid "Last Page"
 msgstr "最後頁"
 
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:40
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:40
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:40
-msgid "Administrator Platform"
-msgstr "管理平臺"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:79
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:100
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:100
-msgid "Administrator"
-msgstr "管理員"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:84
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:98
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:105
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:99
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:98
-#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:137
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:105
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:133
-msgid "Logout"
-msgstr "註銷"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:126
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:147
-msgid "Add New Category"
-msgstr "添加新類別"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:131
-msgid "Group Name"
-msgstr "組別名稱"
-
-#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:133
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:154
-msgid "Create Time"
-msgstr "創建時間"
-
+#: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:100
+#: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:106
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:97
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:103
 #: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:98
@@ -213,40 +187,75 @@ msgstr "創建時間"
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:103
 #: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:136
 #: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:142
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:132
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:138
 msgid "Shopping Cart"
 msgstr "購物車"
 
+#: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:101
+#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:84
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:98
+#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:105
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:99
+#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:98
+#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:137
+msgid "Logout"
+msgstr "註銷"
+
+#: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:104
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:101
 #: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:102
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:101
 #: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:140
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:136
 msgid "Login"
 msgstr "登錄"
 
+#: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:105
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:102
 #: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:103
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:102
 #: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:141
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:137
 msgid "Register"
 msgstr "註冊"
 
+#: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:145
+msgid "Acount Active Successfully!"
+msgstr "帳戶成功激活！"
+
+#: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:147
+msgid "Please click this link if the broswer does not redirect to the login page in 3 seconds."
+msgstr "如果流覽器3秒內沒有轉向登錄頁面，請點擊該連結。"
+
+#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:40
+#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:40
+msgid "Administrator Platform"
+msgstr "管理平臺"
+
+#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:79
+#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:100
+msgid "Administrator"
+msgstr "管理員"
+
+#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:126
+msgid "Add New Category"
+msgstr "添加新類別"
+
+#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:131
+msgid "Group Name"
+msgstr "組別名稱"
+
+#: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:133
+msgid "Create Time"
+msgstr "創建時間"
+
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:145
 #: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:184
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:180
 msgid "E-mail"
 msgstr "電子郵件"
 
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:150
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:185
 msgid "Password"
 msgstr "密碼"
 
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:156
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:196
 msgid "Submit"
 msgstr "提交"
 
@@ -384,21 +393,33 @@ msgstr "顯示在首頁"
 msgid "The E-mail could not be blank!"
 msgstr "電子郵箱不能為空！"
 
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:92
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:90
 msgid "The password could not be blank!"
 msgstr "密碼不能為空！"
 
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:94
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:92
 msgid "The confirmed password could not be blank!"
 msgstr "確認密碼不能為空！"
 
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:96
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:94
 msgid "The password and the confirmed password are not the same!"
 msgstr "密碼與確認密碼不相同！"
 
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:190
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:188
 msgid "Confirmed Password"
 msgstr "確認密碼"
+
+#: templates_c/9423d7bb3dfa6b02c56c5ca024713f8e7485b865.file.register_succ.html.php:145
+msgid "Register Successfully!"
+msgstr "註冊成功！"
+
+#: templates_c/9423d7bb3dfa6b02c56c5ca024713f8e7485b865.file.register_succ.html.php:147
+msgid "An E-mail has been sent to your mailbox, please follow the steps in the E-mail to active your account."
+msgstr "一封郵件已經送抵你的郵箱，請根據郵件中的指示激活你的帳戶。"
+
+#: templates_c/9423d7bb3dfa6b02c56c5ca024713f8e7485b865.file.register_succ.html.php:149
+msgid "Please click this link if the broswer does not redirect to the homepage in 3 seconds."
+msgstr "如果流覽器在3秒內沒有轉向首頁，請點擊該連結。"
 
 #: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:171
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:212

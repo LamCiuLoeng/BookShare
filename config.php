@@ -1,15 +1,16 @@
 <?php
 	//CONFIG FOR THE WEBSITE
-	define('DB_USER', 'isofthk_book');
-	define('DB_PASSWORD', 'Book709394');
-	define('DB_NAME', 'isofthk_book');
-	define('DB_IP', 'localhost');
-	define('WEBSITE_URL', 'http://mobileapp.bookcat.hk');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', 'admin');
+	define('DB_NAME', 'bookshare');
+	define('DB_IP', '192.168.21.157');
+	define('WEBSITE_URL', 'http://localhost');
 	define('UPLOAD_PREFIX','/public/upload/');
 	define('UPLOAD_PATH', $_SERVER["DOCUMENT_ROOT"]);
 	define('DEFAULT_LOCALE', 'zh_CN');
 	define('APPID', '188767117872337');
 	define('PRIVATEKEY','1233211234567');
+	define('EMAIL_FROM', 'r-track@r-pac.com');
 	
 	//config for google auth
 	define('LOGIN_CALLBACK_URL', WEBSITE_URL.'/login_via_3party_callback.php');
@@ -23,7 +24,7 @@
 	define('QQ_CLIENT_ID', '100257086');
 	define('QQ_CLIENT_SECRET', '3844d1713e4807fe99b8098dfd5c9c5d');
 	
-	define('YAHOO_APPID', '7gEiFq6o');
-	define('YAHOO_CLIENT_ID','dj0yJmk9aDhlNmEyQnBPQVpsJmQ9WVdrOU4yZEZhVVp4Tm04bWNHbzlPVFl4TVRrM05qSS0mcz1jb25zdW1lcnNlY3JldCZ4PTg3');
-	define('YAHOO_CLIENT_SECRET','0b9da7113070e22dea818644273d5d93a11f4853');
+	define('YAHOO_APPID', 'L5de6536');
+	define('YAHOO_CLIENT_ID','dj0yJmk9YzFjSDMyMVZLOWFNJmQ9WVdrOVREVmtaVFkxTXpZbWNHbzlNVEV4T1RNME5qVTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD0xOA--');
+	define('YAHOO_CLIENT_SECRET','bcb05523702536ce4504125886de9a9450d12eff');
 ?>
