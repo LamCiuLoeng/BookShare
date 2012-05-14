@@ -18,7 +18,7 @@ function makeActiveEmail($to, $from, $subject, $url) {
 	$content .= "Click here : <a href='$url' target='_blank'>$url</a><br />";
 	
 	$result = mail ( $to, $subject, $content, $headers );
-	echo $result;
+//	echo $result;
 	if ($result) {
 		return TRUE;
 	} else {
@@ -53,7 +53,7 @@ if (count ( $check ) > 0) {
 	return redirect ( 'register.php' );
 }
 
-$user = addUser ( $db, $email, $password, null, null, 'normal', 2 );
+$user = addUser ( $db, $email, $password, null, null, 'normal', 0,1 );
 if ($user) {
 	// message(_('Register successfully,please login.'));
 	// redirect('login.php');

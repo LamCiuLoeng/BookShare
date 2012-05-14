@@ -15,12 +15,13 @@
 	if(!$row){
 		message(_('No such record!'));
 		redirect('index.php');
-	}else if($row->active != 2){
+	}else if($row->register ==0 ){
 		message(_('The record has been actived!'));
 		redirect('index.php');
 	}
 	
-	updateRecordActive($db,'users',$id,0); //active the account
+// 	updateRecordActive($db,'users',$id,0); //active the account
+	activeRegister($db,$id,0);
 	$smarty = getSmartyInstance();
 	$smarty->display('active_succ.html');
 ?>

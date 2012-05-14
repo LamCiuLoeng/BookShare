@@ -43,11 +43,11 @@ function getUserInfo($db, $user_id) {
 	return $db->get_row ( $sql );
 }
 
-function addUser($db, $email, $password, $pic, $locale = NULL, $account_type = 'normal' ,$active=0) {
+function addUser($db, $email, $password, $pic, $locale = NULL, $account_type = 'normal' ,$active=0,$register=0) {
 	if (! $locale) {
 		$locale = DEFAULT_LOCALE;
 	}
-	$sql = "insert into users (email,password,pic,locale,account_type,active) values ('$email','$password','$pic','$locale','$account_type',$active);";
+	$sql = "insert into users (email,password,pic,locale,account_type,active,register) values ('$email','$password','$pic','$locale','$account_type',$active,$register);";
 	$db->query ( $sql );
 	return getUserInfo ( $db, $db->insert_id );
 }
@@ -101,6 +101,13 @@ function points2Books($db, $user_id, $book_ids) {
 		$result = array ('0', 'OK', $user->points, $total_points );
 	}
 	return $result;
+}
+
+
+function activeRegister($db,$id,$register){
+	$sql = "update users set register=$register where id=$id;";
+	$db->query ( $sql );
+	return $db->rows_affected;
 }
 
 //**********************************
