@@ -214,13 +214,18 @@ function point2money($points, $locale) {
 	return $result;
 }
 
-function encode($v) {
+function encode($v,$urlencode=TRUE) {
 	$key = md5 ( PRIVATEKEY );
 	$iv_size = mcrypt_get_iv_size ( MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB );
 	$iv = mcrypt_create_iv ( $iv_size, MCRYPT_RAND );
 	$passcrypt = mcrypt_encrypt ( MCRYPT_RIJNDAEL_256, $key, $v, MCRYPT_MODE_ECB, $iv );
 	$passcrypt = base64_encode ( $passcrypt );
-	return urlencode ( $passcrypt );
+	if($urlencode){
+		return urlencode ( $passcrypt );
+	}else{
+		return $passcrypt;
+	}
+		
 }
 
 function decode($v) {

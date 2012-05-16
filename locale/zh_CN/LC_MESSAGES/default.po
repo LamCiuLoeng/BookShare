@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookshare\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-02 12:41+0800\n"
-"PO-Revision-Date: 2012-05-02 12:45+0800\n"
+"POT-Creation-Date: 2012-05-16 16:47+0800\n"
+"PO-Revision-Date: 2012-05-16 16:48+0800\n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
 "Language-Team: sys2do <lamciuloeng@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -52,6 +52,14 @@ msgstr "你的兑换请求已经成功发送，请耐心等候审批。"
 msgid "The service is not avaiable now,please try it later."
 msgstr "服务暂时不可用，请稍候再度。"
 
+#: input_password.php:15
+msgid "The account no need to reset password!"
+msgstr "该账户不需要重置密码！"
+
+#: input_password.php:18
+msgid "Your action is illegal!"
+msgstr "非法操作！"
+
 #: login_handler.php:16
 msgid "E-mail or password is wrong!"
 msgstr "电子邮箱或者密码错误！"
@@ -71,6 +79,14 @@ msgstr "认证码缺失！"
 #: pay_succ.php:24
 msgid "Successfully pay the points!"
 msgstr "成功支付，已获利积分！"
+
+#: reset_succ.php:11
+msgid "The password and the confirmed password are not the same!"
+msgstr "密码与确认密码不相符！"
+
+#: reset_succ.php:18
+msgid "Your password has been reset successfully!"
+msgstr "你的密码已经成功重置！"
 
 #: save_book.php:7
 msgid "No such action!"
@@ -92,6 +108,26 @@ msgstr "该账户已被注册使用！"
 msgid "There is some problem when sending e-mail to this address, please try it again."
 msgstr "系统发送邮件到指定地址失败，请重试。"
 
+#: send_reset_email.php:6
+msgid "Please input the e-mail address to reset password!"
+msgstr "请输入邮箱地址来重置你的密码！"
+
+#: send_reset_email.php:16
+msgid "The account is not exist!"
+msgstr "该账户不存在！"
+
+#: send_reset_email.php:36
+msgid "Reset BookCat Password"
+msgstr "重置BookCat密码"
+
+#: send_reset_email.php:40
+msgid "Please chick the link below to reset your passwrod."
+msgstr "请点击以下链接来重置密码。"
+
+#: send_reset_email.php:41
+msgid "Click Here"
+msgstr "点击这里"
+
 #: admin/exchange_process.php:8
 msgid "No such operation!"
 msgstr "没有该操作！"
@@ -105,6 +141,8 @@ msgid "Update the record successfully!"
 msgstr "成功更新这条记录！"
 
 #: libs/plugins/insert.admin_menu_bar.php:10
+#: libs/plugins/insert.menu_bar.php:11
+#: libs/plugins/insert.menu_bar.php:13
 msgid "Home"
 msgstr "主页"
 
@@ -179,40 +217,19 @@ msgstr "最后页"
 
 #: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:100
 #: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:106
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:97
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:103
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:98
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:104
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:97
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:103
-#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:136
-#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:142
 msgid "Shopping Cart"
 msgstr "购物车"
 
 #: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:101
 #: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:84
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:98
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:105
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:99
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:98
-#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:137
 msgid "Logout"
 msgstr "注销"
 
 #: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:104
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:101
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:102
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:101
-#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:140
 msgid "Login"
 msgstr "登录"
 
 #: templates_c/02f69bcdd7dd3b4de04dd9b961043c445ebd385e.file.active_succ.html.php:105
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:102
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:103
-#: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:102
-#: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:141
 msgid "Register"
 msgstr "注册"
 
@@ -225,12 +242,10 @@ msgid "Please click this link if the broswer does not redirect to the login page
 msgstr "如果浏览器在3秒内没有转向登录页面，请点击此链接。"
 
 #: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:40
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:40
 msgid "Administrator Platform"
 msgstr "管理平台"
 
 #: templates_c/2085919f70dabe3c873fdedd3973c719081dc15b.file.groups.html.php:79
-#: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:100
 msgid "Administrator"
 msgstr "管理员"
 
@@ -246,22 +261,37 @@ msgstr "组别名称"
 msgid "Create Time"
 msgstr "创建时间"
 
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:145
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:155
 #: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:184
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:178
 msgid "E-mail"
 msgstr "电子邮件"
 
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:150
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:160
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:183
 msgid "Password"
 msgstr "密码"
 
-#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:156
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:166
+#: templates_c/4d814112580b45cd47cf913d4b54c0f0b7a1504e.file.reset_pw.html.php:156
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:194
+#: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:237
+#: templates_c/e05e7c6c4ee1e9b4a139a9b97ecb094127e6b8fa.file.input_password.html.php:191
+#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:258
 msgid "Submit"
 msgstr "提交"
+
+#: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:167
+msgid "Forget password?"
+msgstr "忘记密码？"
 
 #: templates_c/234ee4e2cebde290e4bf4f19d85c9ca1f090394a.file.books.html.php:150
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:155
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:203
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:154
+#: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:189
+#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:199
+#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:269
 msgid "Book Name"
 msgstr "书名"
 
@@ -291,12 +321,35 @@ msgid "Promoted"
 msgstr "推介"
 
 #: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:163
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:207
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:160
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:196
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:242
 msgid "Add To Shopping Cart"
 msgstr "加入到购物车"
 
 #: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:166
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:185
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:192
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:196
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:163
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:166
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:199
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:202
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:245
+#: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:248
 msgid "Download"
 msgstr "下载"
+
+#: templates_c/4d814112580b45cd47cf913d4b54c0f0b7a1504e.file.reset_pw.html.php:153
+msgid "Please input the e-mail address to reset password."
+msgstr "请输入邮箱地址来重置密码。"
+
+#: templates_c/4d814112580b45cd47cf913d4b54c0f0b7a1504e.file.reset_pw.html.php:157
+#: templates_c/e05e7c6c4ee1e9b4a139a9b97ecb094127e6b8fa.file.input_password.html.php:192
+#, fuzzy
+msgid "Cancel"
+msgstr "取消"
 
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:144
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:193
@@ -310,6 +363,9 @@ msgstr "我下载的书"
 
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:157
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:205
+#: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:175
+#: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:217
+#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:236
 msgid "Short Description"
 msgstr "简介"
 
@@ -394,18 +450,17 @@ msgid "The E-mail could not be blank!"
 msgstr "电子邮箱不能为空！"
 
 #: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:90
+#: templates_c/e05e7c6c4ee1e9b4a139a9b97ecb094127e6b8fa.file.input_password.html.php:85
 msgid "The password could not be blank!"
 msgstr "密码不能为空！"
 
 #: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:92
+#: templates_c/e05e7c6c4ee1e9b4a139a9b97ecb094127e6b8fa.file.input_password.html.php:89
 msgid "The confirmed password could not be blank!"
 msgstr "确认密码不能为空！"
 
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:94
-msgid "The password and the confirmed password are not the same!"
-msgstr "密码与确认密码不相符！"
-
 #: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:188
+#: templates_c/e05e7c6c4ee1e9b4a139a9b97ecb094127e6b8fa.file.input_password.html.php:187
 msgid "Confirmed Password"
 msgstr "确认密码"
 
@@ -418,6 +473,7 @@ msgid "An E-mail has been sent to your mailbox, please follow the steps in the E
 msgstr "一封邮件已经发送到你的邮箱，请根据邮件中的指示激活你的账户。"
 
 #: templates_c/9423d7bb3dfa6b02c56c5ca024713f8e7485b865.file.register_succ.html.php:149
+#: templates_c/e35878f9efd09c3f022973ebdf66c7eebd4770a3.file.send_reset_email.html.php:148
 msgid "Please click this link if the broswer does not redirect to the homepage in 3 seconds."
 msgstr "如果浏览器在3秒内没有转向首页，请点击此链接。"
 
@@ -480,6 +536,14 @@ msgstr "推介书"
 msgid "More"
 msgstr "更多"
 
+#: templates_c/e05e7c6c4ee1e9b4a139a9b97ecb094127e6b8fa.file.input_password.html.php:183
+msgid "New Password"
+msgstr "新密码"
+
+#: templates_c/e35878f9efd09c3f022973ebdf66c7eebd4770a3.file.send_reset_email.html.php:146
+msgid "A reset password e-mail has been sent to your e-mail address.Please follow the steps in the mail to complete the action."
+msgstr "一封重置密码的邮件已经发送到你的邮箱，请根据邮件中的指示来完成该操作。"
+
 #: templates_c/ff8693bea5f07478bf365ca8ee2111aca6d24188.file.users.html.php:131
 msgid "Register Time"
 msgstr "注册时间"
@@ -487,6 +551,9 @@ msgstr "注册时间"
 #: templates_c/ff8693bea5f07478bf365ca8ee2111aca6d24188.file.users.html.php:135
 msgid "Account Type"
 msgstr "账户类型"
+
+#~ msgid "The record does not exist!"
+#~ msgstr "The record does not exist!"
 
 #~ msgid "File"
 #~ msgstr "文件"

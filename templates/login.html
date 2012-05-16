@@ -1,5 +1,14 @@
 {extends file='base.html'}
 
+{block name="extJavaScript"}
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    function gotoreset(){
+    	window.location = "reset_pw.php";
+    }
+//]]>
+</script>
+{/block}
 
 {block name="main_content"}
 	<form action="login_handler.php" method="post">
@@ -14,7 +23,7 @@
 		    </tr>
 		    <tr>
 		        <td>&nbsp;</td>
-		        <td><input type="submit" value="{_('Submit')}"/></td>
+		        <td><input type="submit" value="{_('Submit')}"/>&nbsp;&nbsp;&nbsp;<input type="button" value="{_('Forget password?')}" onclick="gotoreset();"/></td>
 		    </tr>
 		</table>
 	</form>

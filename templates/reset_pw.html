@@ -1,0 +1,20 @@
+{extends file='base.html'}
+
+{block name="extJavaScript"}
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+    function gohome(){
+        window.location = "index.php";
+    }
+//]]>
+</script>
+{/block}
+
+
+{block name="main_content"}
+	<form action="send_reset_email.php" method="post">
+	   <p>{_('Please input the e-mail address to reset password.')}</p>
+	   <p><input type="text" name="email" value=""/></p>
+	   <p><input type="submit" value="{_('Submit')}"/>&nbsp;&nbsp;&nbsp;<input type="button" value="{_('Cancel')}" onclick="gohome();"/></p>
+	</form>
+{/block}
