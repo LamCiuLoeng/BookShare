@@ -18,9 +18,12 @@ function makeActiveEmail($to, $from, $subject) {
 	}
 }
 
-$check_time = date_create ();
-date_sub ( $check_time, new DateInterval ( "P30D" ) );
-$time_str = $check_time->format ( 'Y-m-d' );
+#$check_time = date_create ();
+#date_sub ( $check_time, new DateInterval ( "P30D" ) );
+#$time_str = $check_time->format ( 'Y-m-d' );
+
+
+$time_str = date("Y-m-d",strtotime("-30 days"));
 $sql = "update users set active=1 where account_type='normal' and active=0 and register!=0 and create_time < '$time_str';";
 $db = getDBInstance ();
 $db->query ( $sql );

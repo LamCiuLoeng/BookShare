@@ -15,7 +15,7 @@
 	}
 	
 	$current = isset($_REQUEST['page']) ? $_REQUEST['page'] : 1;
-	$books = paginate($db, $sql, $current,$perpage=6);
+	$books = paginate($db, $sql, $current,$perpage=30);
 	
 	$smarty = getSmartyInstance();
 //	var_dump($books);

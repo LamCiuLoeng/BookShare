@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bookshare\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-16 16:48+0800\n"
-"PO-Revision-Date: 2012-05-16 16:51+0800\n"
+"POT-Creation-Date: 2012-05-25 11:42+0800\n"
+"PO-Revision-Date: 2012-05-25 11:43+0800\n"
 "Last-Translator: CL.Lam <lamciuloeng@gmail.com>\n"
 "Language-Team: sys2do <lamciuloeng@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "該帳戶不需要重置密碼！"
 msgid "Your action is illegal!"
 msgstr "非法操作！"
 
-#: login_handler.php:16
+#: login_handler.php:17
 msgid "E-mail or password is wrong!"
 msgstr "電子郵箱或者密碼錯誤！"
 
@@ -263,21 +263,21 @@ msgstr "創建時間"
 
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:155
 #: templates_c/7ed82cd1a42c3ac9c85bf372c6b4e02d87499373.file.profile.html.php:184
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:178
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:179
 msgid "E-mail"
 msgstr "電子郵件"
 
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:160
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:183
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:184
 msgid "Password"
 msgstr "密碼"
 
 #: templates_c/226f582f68a5854acfdf07e316c48fbe7312b8ea.file.login.html.php:166
 #: templates_c/4d814112580b45cd47cf913d4b54c0f0b7a1504e.file.reset_pw.html.php:156
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:194
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:195
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:237
 #: templates_c/e05e7c6c4ee1e9b4a139a9b97ecb094127e6b8fa.file.input_password.html.php:191
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:258
+#: templates_c/e3c0d9cf9ff67effa3c0edb5fef9b9c028516425.file.category_edit.html.php:157
 msgid "Submit"
 msgstr "提交"
 
@@ -290,8 +290,6 @@ msgstr "忘記密碼？"
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:203
 #: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:154
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:189
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:199
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:269
 msgid "Book Name"
 msgstr "書名"
 
@@ -320,7 +318,7 @@ msgstr "下載次數"
 msgid "Promoted"
 msgstr "推介"
 
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:163
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:164
 #: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:207
 #: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:160
 #: templates_c/deeacf7a4de335099794bb1bcdb85b697dc06836.file.index.html.php:196
@@ -328,7 +326,8 @@ msgstr "推介"
 msgid "Add To Shopping Cart"
 msgstr "加入到購物車"
 
-#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:166
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:167
+#: templates_c/2df10e4e30bc0bd42b7871da77b101497ac1fc03.file.books.html.php:170
 #: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:185
 #: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:192
 #: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:196
@@ -364,7 +363,6 @@ msgstr "我下載的書"
 #: templates_c/6dc4cfb0832335c88949d93ff451fb0ea685101e.file.mybooks.html.php:205
 #: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:175
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:217
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:236
 msgid "Short Description"
 msgstr "簡介"
 
@@ -432,17 +430,37 @@ msgstr "成功"
 msgid "Pending"
 msgstr "進行中"
 
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:152
+#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:165
+msgid "Index"
+msgstr "序列"
+
+#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:167
+#: templates_c/e3c0d9cf9ff67effa3c0edb5fef9b9c028516425.file.category_edit.html.php:132
+#: templates_c/e3c0d9cf9ff67effa3c0edb5fef9b9c028516425.file.category_edit.html.php:150
 msgid "Category Name"
 msgstr "類別名稱"
 
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:156
+#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:171
 msgid "Create User"
 msgstr "創建的用戶"
 
-#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:158
+#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:173
+#: templates_c/e3c0d9cf9ff67effa3c0edb5fef9b9c028516425.file.category_edit.html.php:138
+#: templates_c/e3c0d9cf9ff67effa3c0edb5fef9b9c028516425.file.category_edit.html.php:154
 msgid "Show On Homepage"
 msgstr "顯示在首頁"
+
+#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:175
+msgid "Action"
+msgstr "操作"
+
+#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:206
+msgid "Up"
+msgstr "向上"
+
+#: templates_c/8dfd300efa87fb7c46831570f8d9f4cff3a2435e.file.category.html.php:208
+msgid "Down"
+msgstr "向下"
 
 #: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:83
 msgid "The E-mail could not be blank!"
@@ -458,7 +476,7 @@ msgstr "密碼不能為空！"
 msgid "The confirmed password could not be blank!"
 msgstr "確認密碼不能為空！"
 
-#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:188
+#: templates_c/930903dabd1d8d48ff6b030acefd06cafaeb127a.file.register.html.php:189
 #: templates_c/e05e7c6c4ee1e9b4a139a9b97ecb094127e6b8fa.file.input_password.html.php:187
 msgid "Confirmed Password"
 msgstr "確認密碼"
@@ -478,13 +496,13 @@ msgstr "如果流覽器在3秒內沒有轉向首頁，請點擊該連結。"
 
 #: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:171
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:212
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:230
 msgid "Author"
 msgstr "作者"
 
 #: templates_c/9fdd048cd6632a23a53e83a1181fcb19a8c09c34.file.book.html.php:179
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:222
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:242
+#: templates_c/e3c0d9cf9ff67effa3c0edb5fef9b9c028516425.file.category_edit.html.php:135
+#: templates_c/e3c0d9cf9ff67effa3c0edb5fef9b9c028516425.file.category_edit.html.php:152
 msgid "Description"
 msgstr "介紹"
 
@@ -493,22 +511,18 @@ msgid "Edit"
 msgstr "編輯"
 
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:88
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:95
 msgid "Please input the book name!"
 msgstr "請輸入書名！"
 
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:92
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:99
 msgid "Please uplolad the book file(s)!"
 msgstr "請上載書的內容！"
 
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:227
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:248
 msgid "Cover"
 msgstr "封面"
 
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:232
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:253
 msgid "Pages"
 msgstr "頁面"
 
@@ -517,12 +531,10 @@ msgid "File Name"
 msgstr "文件名"
 
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:249
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:270
 msgid "File Size"
 msgstr "文件大小"
 
 #: templates_c/d07c90884bc0140d25c51c157633712987757b37.file.upload.html.php:250
-#: templates_c/ef65d7aee2c9a70f556f828452898e65192fcc59.file.book_edit.html.php:271
 msgid "Delete"
 msgstr "刪除"
 
@@ -556,9 +568,6 @@ msgstr "帳戶類型"
 
 #~ msgid "welcome"
 #~ msgstr "歡迎"
-
-#~ msgid "Action"
-#~ msgstr "操作"
 
 #~ msgid "Exchenge by points"
 #~ msgstr "通過積分兌換"

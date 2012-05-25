@@ -74,6 +74,15 @@ function addExchangeLog($db, $user_id, $points) {
 	return $db->insert_id;
 }
 
+
+function getUserGroups($db,$user_id){
+	$sql = "select g.* from groups g,user_group ug where g.id=ug.group_id and ug.user_id=$user_id;";
+	$groups = $db->get_results ( $sql );
+	return $groups;
+}
+
+
+
 function points2Books($db, $user_id, $book_ids) {
 	$download_book_ids = array ();
 	foreach ( getDownloadBooks ( $db, $user_id ) as $b ) {
@@ -154,7 +163,8 @@ function saveCateogry($db, $type, $id, $name, $desc, $create_by, $promote) {
 	if ($type == 'UPDATE') {
 		$sql = "update categories set name='$name',description='$desc',promote=$promote where id=$id;";
 	} elseif ($type == 'NEW') {
-		$sql = "insert into categories (name,description,create_by,promote) values ('$name','$desc',$create_by,$promote);";
+		$seq = date("YmdHis");
+		$sql = "insert into categories (name,description,create_by,promote,seq) values ('$name','$desc',$create_by,$promote,'$seq');";
 	} elseif ($type == 'DELETE') {
 		$sql = "update categories set active = 1 where id=$id;";
 	}

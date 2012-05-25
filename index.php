@@ -4,7 +4,7 @@
 	require_once 'db_helper.php';
 	$smarty = getSmartyInstance();
 	
-	$qty = 7;
+	$qty = 6;
 	
 	$db = getDBInstance();
 	$new_books = $db->get_results("select * from books order by create_time desc limit $qty;");
@@ -15,7 +15,10 @@
 	
 	$promote_categories = array();
 	
-	$categories = getRowsByCondition($db, 'categories', array(' promote!=0 '));
+// 	$categories = getRowsByCondition($db, 'categories', array(' promote!=0 '));
+	
+	$sql = "select * from categories where promote!=0 order by seq;";
+	$categories = $db->get_results ( $sql );
 	foreach ($categories as $c){
 		$t = $db->get_results("SELECT b.* FROM books b, book_category bc where b.id=bc.book_id and bc.category_id=".$c->id." LIMIT $qty;");
 		$promote_categories[$c->id] = array(

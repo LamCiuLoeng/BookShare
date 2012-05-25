@@ -68,6 +68,8 @@ if ($user) {
 		updateRecordActive($db, 'users', $user->id, -1);
 		redirect('register.php');
 	} else {
+		$groups = getUserGroups($db, $user->id);
+		loginUser($user,$groups);
 		$smarty = getSmartyInstance ();
 		$smarty->display ( 'register_succ.html' );
 	}

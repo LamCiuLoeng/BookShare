@@ -6,8 +6,8 @@
 	   <div>
 	       <h4>{_('Promoted Book')} : {$promote_book->name}</h4>
 	       <div>
-	           <div class="obj_left" style="width : 250px; height: 250px; text-align: center;">
-			       <a href="book.php?id={encode($promote_book->id)}"><img width="200" height="200" src="{$promote_book->cover|default:'../public/images/no_cover.jpg'}"/></a>
+	           <div class="obj_left" style="width : 230px; height: 290px; text-align: center;">
+			       <a href="book.php?id={encode($promote_book->id)}"><img width="180" height="240" src="{$promote_book->cover|default:'../public/images/no_cover.jpg'}"/></a>
 	           </div>
 		       <div class="obj_left" style="width:600px">
 		          <p>{$promote_book->description}</p>
@@ -27,7 +27,7 @@
 		{foreach from=$new_books item=b}
 			<div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
 				<div class="preface_div">
-					<a href="book.php?id={encode($b->id)}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
+					<a href="book.php?id={encode($b->id)}"><img width="120" height="160" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 				</div>
 				<a href="book.php?id={encode($b->id)}">{$b->name}</a>
 			    <!-- <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>  -->
@@ -47,7 +47,7 @@
 	        {foreach from=$c['data'] item=b}
 	            <div class="{cycle values='book_div,book_div,book_div,book_div,book_div,last_book_div'}">
 	                <div class="preface_div">
-	                    <a href="book.php?id={encode($b->id)}"><img width="120" height="120" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
+	                    <a href="book.php?id={encode($b->id)}"><img width="120" height="160" src="{$b->cover|default:'../public/images/no_cover.jpg'}"/></a>
 	                </div>
 	                <a href="book.php?id={encode($b->id)}">{$b->name}</a>
                     <!-- <p><a href="#" onclick="add2cart('{encode($b->id)}')">{_('Add To Shopping Cart')}</a></p>  -->
